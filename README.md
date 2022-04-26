@@ -9,6 +9,14 @@ Lets make this forum theme much much better together. 😊
 
 
 
+
+
+## Installation and Settings
+ 
+to be documented...
+
+
+
 ## Features
 
 to be documented...
@@ -19,8 +27,3 @@ to be documented...
 
 to be documented...
 
-
-
-## Installation and Settings
- 
-to be documented...
