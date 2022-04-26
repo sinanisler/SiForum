@@ -14,7 +14,7 @@ Lets make this forum theme better together. 😊
 
 ## Installation and Settings
  
-- Native WordPress
+- WordPress
 - BuddyPress
 - Custom Color/Icon Categories
 - Advance Profiles
