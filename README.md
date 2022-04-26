@@ -14,7 +14,15 @@ Lets make this forum theme better together. 😊
 
 ## Installation and Settings
  
-to be documented...
+- Native WordPress
+- BuddyPress
+- Custom Color/Icon Categories
+- Advance Profiles
+- Friend Follow
+- Private Messaging
+- Profile Status Sharing (Twitter/FB)
+- @Mention Users
+- Notifications
 
 
 
