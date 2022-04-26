@@ -1,4 +1,4 @@
-# SiForum
+# SiForum a WordPress Theme
 **Minimalist Forum** and **Community Theme** made with **WordPress Core** and **BuddyPress**
 
 Inspired from Discourse, Disqus and NodeBB.
