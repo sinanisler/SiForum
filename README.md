@@ -9,7 +9,11 @@ This is a OpenSource project.
 
 
 
-## Installation and Settings
+## Installation, Requirements and Settings
+
+- WordPress
+- BuddyPress
+- 
 
 to be documented...
 
