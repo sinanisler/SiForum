@@ -2,9 +2,11 @@
 
 **Minimalist Forum** and **Community Theme** made with **WordPress** and **BuddyPress**
 
-Inspired from Discourse, Flarum and NodeBB. But much much simpler...
+Inspired from Discourse, Flarum and NodeBB. But much much simpler.
 
+Feel free to contribute. 
 
+Lets make this forum much much better.
 
 ## Installation, Requirements and Settings
 
