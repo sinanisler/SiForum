@@ -1,4 +1,5 @@
-# SiForum a WordPress Forum Theme (Under Development)
+# SiForum a WordPress Forum Theme 
+(Under Development)
 **Minimalist Forum** and **Community Theme** made with **WordPress** and **BuddyPress**
 
 Inspired from Discourse, Disqus, Flarum and NodeBB. But much much simpler...
