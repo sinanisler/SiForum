@@ -3,11 +3,11 @@
 
 Inspired from Discourse, Disqus and NodeBB. But much much simpler...
 
-This is a OpenSource project. 
+This is a OpenSource project. Feel free to contribute.
 
 I am hoping I get some help to make this forum theme much much better together. 😊
 
-Feel free to Commit...
+
 
 ## Features
 
