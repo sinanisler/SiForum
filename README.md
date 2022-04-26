@@ -4,7 +4,8 @@
 Inspired from Discourse, Disqus and NodeBB.
 
 This is a OpenSource project. 
-I am hoping people would contibute and make this forum theme much much better with me. 😊
+
+I am hoping I get some help to make this forum theme much much better together. 😊
 
 
 // Features
