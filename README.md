@@ -4,9 +4,6 @@
 
 Inspired from Discourse, Flarum and NodeBB. But much much simpler...
 
-This is a OpenSource project. 
-
-
 
 
 ## Installation, Requirements and Settings
