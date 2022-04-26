@@ -38,6 +38,7 @@ to be documented...
 
 ## Advantages
 - This is WordPress 
+![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/gigi.gif)
 
 ## Screenshot (Not Final Yet)
 
