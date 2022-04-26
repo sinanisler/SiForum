@@ -1,7 +1,7 @@
 # SiForum a WordPress Forum Theme
 **Minimalist Forum** and **Community Theme** made with **WordPress** and **BuddyPress**
 
-Inspired from Discourse, Disqus and NodeBB. But much much simpler...
+Inspired from Discourse, Disqus, Flarum and NodeBB. But much much simpler...
 
 This is a OpenSource project. Feel free to contribute.
 
