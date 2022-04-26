@@ -12,5 +12,9 @@ I am hoping I get some help to make this forum theme much much better together. 
 
 to be documented...
 
+## Screenshots
 
+
+
+## Installation and Settings
  
