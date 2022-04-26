@@ -4,10 +4,7 @@
 
 Inspired from Discourse, Disqus, Flarum and NodeBB. But much much simpler...
 
-This is a OpenSource project. Feel free to contribute.
-
-Lets make this forum theme better together. 😊
-
+This is a OpenSource project. 
 
 
 
@@ -41,6 +38,7 @@ to be documented...
 
 - Localizations
 - More Customizer Settings ?
+- Feel free to contribute
 
 
 ## Advantages
