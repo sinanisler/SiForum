@@ -1,10 +1,5 @@
 # SiForum a WordPress Forum Theme 
 
-
-
-![](https://img.shields.io/badge/OpenSource-%100-f39f37)
-
-
 **Minimalist Forum** and **Community Theme** made with **WordPress** and **BuddyPress**
 
 Inspired from Discourse, Disqus, Flarum and NodeBB. But much much simpler...
