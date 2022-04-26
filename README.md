@@ -10,6 +10,7 @@ I am hoping I get some help to make this forum theme much much better together. 
 
 ## Features
 
+to be documented...
 
 
 ## Why Make this Forum ınstead use ready
