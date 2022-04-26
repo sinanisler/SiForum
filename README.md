@@ -26,6 +26,6 @@ to be documented...
 
 ## Screenshot (Not Final Yet)
 
-![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/SiForum-v2.png)
+![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/SiForum-v3.png)
 
 
