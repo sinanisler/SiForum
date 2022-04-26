@@ -46,8 +46,8 @@ to be documented...
 
 
 ## Advantages
-- This is WordPress 
 - Unlimited Plugins
 - Endless Posibilities 
+- This is WordPress 
 
 ![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/gigi.gif)
