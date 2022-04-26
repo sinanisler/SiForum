@@ -18,11 +18,15 @@ Lets make this forum theme better together. 😊
 - BuddyPress
 - Custom Color/Icon Categories
 - Advance Profiles
+- Custom Avatar
+- Custom Profile Banner
+- Profile Status Sharing (Twitter/FB)
 - Friend Follow
 - Private Messaging
-- Profile Status Sharing (Twitter/FB)
 - @Mention Users
 - Notifications
+- Subscriptions
+- 
 
 
 
