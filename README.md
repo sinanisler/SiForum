@@ -18,6 +18,10 @@ Lets make this forum theme better together. 😊
 
 
 ## Installation and Settings
+
+to be documented...
+
+## Features
  
 - WordPress
 - BuddyPress
@@ -31,18 +35,16 @@ Lets make this forum theme better together. 😊
 - @Mention Users
 - Notifications
 - Subscriptions
-- 
 
-
-
-## Features
-
-to be documented...
-
-
+## Advantages
+- This is WordPress 
 
 ## Screenshot (Not Final Yet)
 
 ![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/SiForum-v3.png)
 
 
+## To-Do
+
+- Localizations
+- More Customizer Settings ?
