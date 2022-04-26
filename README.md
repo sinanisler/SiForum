@@ -6,7 +6,7 @@ Inspired from Discourse, Disqus, Flarum and NodeBB. But much much simpler...
 
 This is a OpenSource project. Feel free to contribute.
 
-Lets make this forum theme much much better together. 😊
+Lets make this forum theme better together. 😊
 
 
 
