@@ -36,9 +36,6 @@ to be documented...
 - Notifications
 - Subscriptions
 
-## Advantages
-- This is WordPress 
-![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/gigi.gif)
 
 ## Screenshot (Not Final Yet)
 
@@ -49,3 +46,9 @@ to be documented...
 
 - Localizations
 - More Customizer Settings ?
+
+
+## Advantages
+- This is WordPress 
+
+![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/gigi.gif)
