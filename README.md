@@ -37,7 +37,7 @@ to be documented...
 - Subscriptions
 
 
-## Screenshot (Not Final Yet)
+## Screenshot
 
 ![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/SiForum-v3.png)
 
