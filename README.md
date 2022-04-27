@@ -11,8 +11,8 @@ Lets make this theme much much better.
 ## Installation, Requirements and Settings
 
 - WordPress
-- BuddyPress
-- 
+- BuddyPress (Recommended)
+
 
 to be documented...
 
