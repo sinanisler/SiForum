@@ -20,6 +20,7 @@ to be documented...
  
 - WordPress
 - BuddyPress
+- Post/Category Based (no custom posttypes or taxonomies)
 - Custom Color/Icon Categories
 - Advance Profiles
 - Custom Avatar
