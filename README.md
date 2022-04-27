@@ -20,7 +20,7 @@ to be documented...
  
 - WordPress
 - BuddyPress
-- Best SEO 😎
+- Best SEO 
 - Post/Category Based (no custom posttypes or taxonomies)
 - Custom Category Colors (Hex, RGB or Name)
 - Custom Category Icons (Native WordPress Dash Icons No 3th party)
