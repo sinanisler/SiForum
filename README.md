@@ -6,17 +6,12 @@ Inspired from Discourse, Flarum and NodeBB. But much much simpler.
 
 Feel free to contribute. 
 
-Lets make this theme much much better.
-
-## Installation, Requirements
-
-- WordPress
-- BuddyPress (Recommended)
+Lets make this theme better together.
 
 
-## Settings
-to be documented...
+## Screenshot
 
+![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/SiForum-v3.png)
 
 ## Features
  
@@ -37,9 +32,14 @@ to be documented...
 - Subscriptions
 
 
-## Screenshot
+## Installation, Requirements
 
-![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/SiForum-v3.png)
+- WordPress
+- BuddyPress (Recommended)
+
+
+## Settings
+to be documented...
 
 
 ## To-Do
