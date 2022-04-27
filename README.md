@@ -8,13 +8,15 @@ Feel free to contribute.
 
 Lets make this theme much much better.
 
-## Installation, Requirements and Settings
+## Installation, Requirements
 
 - WordPress
 - BuddyPress (Recommended)
 
 
+## Settings
 to be documented...
+
 
 ## Features
  
