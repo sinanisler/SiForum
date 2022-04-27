@@ -50,8 +50,8 @@ to be documented...
 ## Advantages
 - Unlimited Plugins
 - Endless Posibilities 
-- This is WordPress 
 - Backward Compatibility
 - Forward Compatibilty
+- This is WordPress 
 
 ![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/gigi.gif)
