@@ -45,6 +45,7 @@ to be documented...
 - Localizations
 - More Customizer Settings ?
 - Feel free to contribute
+- Upload theme to wp.org ?
 
 
 ## Advantages
