@@ -6,7 +6,7 @@ Inspired from Discourse, Flarum and NodeBB. But much much simpler.
 
 Feel free to contribute. 
 
-Lets make this forum much much better.
+Lets make this theme much much better.
 
 ## Installation, Requirements and Settings
 
