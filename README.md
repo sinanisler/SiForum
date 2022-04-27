@@ -27,7 +27,7 @@ to be documented...
 - Advance Profiles
 - Custom Avatar
 - Custom Profile Banner
-- Profile Status Sharing (Twitter/FB)
+- Profile Status Sharing 
 - Friend Follow
 - Private Messaging
 - @Mention Users
