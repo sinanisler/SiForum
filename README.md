@@ -51,6 +51,7 @@ to be documented...
 ## Advantages
 - Unlimited Plugins
 - Endless Posibilities 
+- Easy to Edit Theme
 - Backward Compatibility
 - Forward Compatibilty
 - This is WordPress 
