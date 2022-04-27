@@ -51,5 +51,7 @@ to be documented...
 - Unlimited Plugins
 - Endless Posibilities 
 - This is WordPress 
+- Backward Compatibility
+- Forward Compatibilty
 
 ![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/gigi.gif)
