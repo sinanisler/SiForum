@@ -10,6 +10,7 @@ Feel free to contribute.
 
 ## To-Do
 
+- scrool indicator (adding 🆗)
 - More Customizer Settings ?
 - Upload theme to wp.org ?
 - Ajax psoting native theme or plugin ?
