@@ -11,11 +11,11 @@ Feel free to contribute.
 ## To-Do
 
 - scrool indicator   ![](https://img.shields.io/badge/Status-OK-green.svg)
-- More Customizer Settings ?   ![](https://img.shields.io/badge/Status%3F-Maybe-yellow.svg)
-- Upload theme to wp.org ?  ![](https://img.shields.io/badge/Status%3F-Maybe-yellow.svg)
-- Ajax psoting native theme or plugin ?  ![](https://img.shields.io/badge/Status%3F-Maybe-yellow.svg)
-- right top side profile avatar name ?  ![](https://img.shields.io/badge/Status%3F-Maybe-yellow.svg)
-- Localizations  ![](https://img.shields.io/badge/Status%3F-Maybe-yellow.svg)
+- More Customizer Settings ?   ![](https://img.shields.io/badge/Status-Maybe-yellow.svg)
+- Upload theme to wp.org ?  ![](https://img.shields.io/badge/Status-Maybe-yellow.svg)
+- Ajax psoting native theme or plugin ?  ![](https://img.shields.io/badge/Status-Maybe-yellow.svg)
+- right top side profile avatar name ?  ![](https://img.shields.io/badge/Status-Maybe-yellow.svg)
+- Localizations  ![](https://img.shields.io/badge/Status-Maybe-yellow.svg)
 
 - Feel free to contribute
 
