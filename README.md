@@ -10,7 +10,8 @@ Feel free to contribute.
 
 ## To-Do
 
-- scrool indicator   ![](https://img.shields.io/badge/Status-OK-green.svg)
+- scrool indicator   ![](https://img.shields.io/badge/Status-Adding-green.svg)
+- load more/next posts  ![](https://img.shields.io/badge/Status-Adding-green.svg)
 - More Customizer Settings ?   ![](https://img.shields.io/badge/Status-Maybe-yellow.svg)
 - Upload theme to wp.org ?  ![](https://img.shields.io/badge/Status-Maybe-yellow.svg)
 - Ajax psoting native theme or plugin ?  ![](https://img.shields.io/badge/Status-Maybe-yellow.svg)
