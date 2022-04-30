@@ -46,6 +46,7 @@ to be documented...
 - More Customizer Settings ?
 - Feel free to contribute
 - Upload theme to wp.org ?
+- Ajax psoting native theme or plugin ?
 
 
 ## Advantages
