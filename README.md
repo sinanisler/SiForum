@@ -12,10 +12,10 @@ Feel free to contribute.
 
 - scrool indicator   ![](https://img.shields.io/badge/Status%3F-OK-green.svg)
 - More Customizer Settings ?   ![](https://img.shields.io/badge/Status%3F-Maybe-yellow.svg)
-- Upload theme to wp.org ?
-- Ajax psoting native theme or plugin ?
-- right top side profile avatar name ?
-- Localizations
+- Upload theme to wp.org ?  ![](https://img.shields.io/badge/Status%3F-Maybe-yellow.svg)
+- Ajax psoting native theme or plugin ?  ![](https://img.shields.io/badge/Status%3F-Maybe-yellow.svg)
+- right top side profile avatar name ?  ![](https://img.shields.io/badge/Status%3F-Maybe-yellow.svg)
+- Localizations  ![](https://img.shields.io/badge/Status%3F-Maybe-yellow.svg)
 
 - Feel free to contribute
 
