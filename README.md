@@ -10,8 +10,8 @@ Feel free to contribute.
 
 ## To-Do
 
-- scrool indicator (adding 🆗)
-- More Customizer Settings ?
+- scrool indicator (adding https://img.shields.io/badge/Adding%3F-OK-green.svg)
+- More Customizer Settings ?  (adding https://img.shields.io/badge/Adding%3F-Maybe-yellow.svg)
 - Upload theme to wp.org ?
 - Ajax psoting native theme or plugin ?
 - right top side profile avatar name ?
