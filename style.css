@@ -1,0 +1,367 @@
+/*
+Theme Name: SiForum Theme
+Theme URI: https://sinanisler.com/
+Author: sinanisler
+Author URI: https://sinanisler.com/
+Description: Minimalist Forum and Community Theme made with WordPress and BuddyPress. 2022
+Version: 0.1
+*/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, 
+em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, video, time, mark, audio 
+{margin: 0;	padding: 0;	border: 0;  list-style:none; text-decoration: none !important; }
+
+@media (min-width: 1000px){ .container {  max-width: 1200px;} }
+@media (max-width: 768px) { 
+    .sidebar_index .cat-list li{ width: 50%; float: left; padding-left:20px } 
+    .forum-post-index-category{top:43px !important}
+    .forum-header-menu-logo{display:none !important}
+    .forum-header-menu{height:auto !important}
+}
+
+body    { background:#14191f;    color:white;}
+a       {  transition: 0.5s;}
+#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before { content: '\f319' !important; top: 2px; }
+
+
+
+/* HEADER MENU STYLES */
+
+.forum-header-menu{
+    width: 100%;
+    height: 69px;
+    line-height: 69px; 
+    background: #C10C0C;
+    box-shadow: 0px 4px 10px #000000;
+    z-index: 999;
+
+}
+
+.forum-header-menu-logo {
+  width: 69px;
+  height: 69px;
+  float: left;
+  box-sizing: border-box;
+  outline: none;
+  text-align: left;
+  background: url(img/logo.png) center no-repeat;
+  margin-right: 15px;
+  margin-left: 13px;
+}
+.forum-header-menu-logo:hover {
+  opacity: 0.6 ;
+}
+
+.forum-header-menu li {
+    float: left;
+    line-height: 69px;
+    margin-left: 12px;
+    padding-left: 16px;
+}
+
+.forum-header-menu li a {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* HEADER CATEGORY PAGE STYLES */
+
+body.category .forum-header-menu{
+    margin-bottom: 0;
+}
+
+.category-header{
+    width: 100%;
+    height: 150px;
+    padding-top: 50px;
+    text-align: center;
+    position: relative;
+    z-index: -1;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.category-header-title{
+    font-size:21px;
+    position: relative;
+    top: -5px;
+}
+
+.category-header .dashicons{
+    color:white;
+    margin-right: 3px;
+    position: relative;
+    top: 3px;
+}
+
+.category-header .container{
+    z-index: 2;
+}
+
+.category-header h1{
+    font-size:29px
+}
+
+
+
+
+
+/* INDEX POSTS STYLES  */
+.forum-post-index{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    position: relative;
+}
+
+.index-container{
+    margin-top: 40px;
+}
+
+.forum-post-index:hover{
+    background:#1b2028;
+}
+
+.forum-post-index-avatar{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 15px;
+}
+
+.forum-post-index-avatar img{
+    border-radius: 25px;
+}
+
+.forum-post-index-title{
+    font-size:18px;
+    line-height: 22px;
+    color: #AAAAAD;
+}
+
+.forum-post-index-author{
+    color: #757578;
+    font-size:14px;
+}
+
+.forum-post-index-comment-count{
+    position: absolute;
+    right: 20px;
+    height: 30px;
+    color: #757578;
+    font-weight: bold;    
+}
+
+.forum-post-index .dashicons-welcome-comments{
+    margin-right: 2px;
+    position: relative;
+    top: 5px;
+}
+
+.forum-post-index-category{
+    position: absolute;
+    right: 66px;
+    top: 20px;
+    height: 30px;
+    color: #757578;  
+    font-size: 13px;
+    border-radius: 4px;
+    opacity: 0.9;
+    color: white;
+}
+
+.forum-post-index-category span{
+    padding:3px 5px 3px 5px;
+    background: gray;
+}
+.forum-post-index-category span:first-child{
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.forum-post-index-category span:last-child{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+
+/* INDEX SIDEBAR STYLES */
+
+.sidebar_index{
+    padding: 5px 0 0 0;
+    color:  #757578;
+}
+
+.sidebar_index .cat-list  {
+    margin-top: 10px;
+}
+.sidebar_index .cat-list li {
+    margin-bottom: 10px;
+}
+
+.sidebar_index .cat-list .children {
+    margin-left: 10px;
+}
+
+.sidebar_index .cat-list li a{
+    font-size: 15px;
+    line-height: 16px;
+    padding: 5px;
+    color: #AAAAAD;
+    display: block;
+}
+
+.sidebar_index .cat-list li a:hover{
+    color: #ac3030;
+}
+
+.sidebar_index .cat-list li a span{
+    margin-left: 3px;
+    margin-right: 10px;
+    position: relative;
+    top: -1px;
+}
+
+.sidebar_index .cat-list p {
+    padding: 0 0 0 5px;
+    font-size: 11px;
+    line-height: 16px;
+    opacity: 0.7;
+}
+
+
+/* SINGLE POST STYLES */
+.forum-post-block a{
+    color:white;
+    font-weight: bold;
+  }
+
+.forum-post-block a:hover{
+      text-decoration: underline !important;
+  }
+
+.forum-post-single{
+    display: inline-flex;
+    height: auto;
+  }
+
+.forum-post-author {
+    width: 100px;
+    height: 100%;
+    display: inline-block;
+}
+
+.forum-post-content img{
+    max-width: 920px;
+    height: auto;    
+}
+
+.forum-post-replies img{
+    max-width: 920px;
+    height: auto;    
+}
+
+
+.forum-post-author{
+    width: 100px;
+    height: 100%;
+    display:inline-block;
+    
+}
+
+.forum-post-author img{
+    border-radius: 35px;
+    
+}
+
+.forum-post-content {
+    height: auto;
+    padding-left: 21px;
+    line-height: 36px;
+    font-size: 17px;
+}
+
+
+.forum-post-content p{
+    margin-bottom: 30px;
+}
+
+
+.post-reply{
+    width: 100%;
+  }
+
+.post-reply-list{
+    width: 100%;
+  }
+
+.post-reply .comment-wrap{
+    display: inline-flex;
+    height: auto;
+    margin-bottom: 60px;
+  }
+
+
+.post-reply .comment-img{
+    width: 100px;
+    height: 100%;
+    display:inline-block;
+    
+}
+
+.post-reply .comment-img img{
+    border-radius: 35px;
+}
+
+.post-reply .comment-body{
+    display: inline-block;
+    width: 130%;
+    height: auto;
+    padding-left: 21px;
+    line-height: 36px;
+    font-size: 17px;
+    position: relative;
+}
+
+.comment-date{
+    display: block;
+}
+
+
+.forum-post-content .comment-body p{
+    margin-bottom: 30px;
+}
+
+[for="comment"],
+.comment-form-attachment__file-size-notice,
+.comment-form-attachment__file-types-notice,
+.comment-form-attachment__autoembed-links-notice
+{display:none !important}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
