@@ -7,6 +7,18 @@ Inspired from Discourse, Flarum and NodeBB. But much much simpler.
 Feel free to contribute. 
 
 
+
+## To-Do
+
+- Localizations
+- More Customizer Settings ?
+- Feel free to contribute
+- Upload theme to wp.org ?
+- Ajax psoting native theme or plugin ?
+- right top side profile avatar name ?
+
+
+
 ## Screenshot
 
 ![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/SiForum-v3.png)
@@ -39,14 +51,6 @@ Feel free to contribute.
 ## Settings
 to be documented...
 
-
-## To-Do
-
-- Localizations
-- More Customizer Settings ?
-- Feel free to contribute
-- Upload theme to wp.org ?
-- Ajax psoting native theme or plugin ?
 
 
 ## Advantages
