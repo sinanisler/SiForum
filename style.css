@@ -282,10 +282,12 @@ body.category .forum-header-menu{
 }
 
 .forum-post-content {
+    width: 100%;
     height: auto;
     padding-left: 21px;
     line-height: 36px;
     font-size: 17px;
+    
 }
 
 
@@ -306,6 +308,7 @@ body.category .forum-header-menu{
     display: inline-flex;
     height: auto;
     margin-bottom: 60px;
+    width: 100%;
   }
 
 
@@ -332,6 +335,10 @@ body.category .forum-header-menu{
 
 .comment-date{
     display: block;
+    color: #404b59;
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 10px;
 }
 
 
@@ -347,7 +354,18 @@ body.category .forum-header-menu{
 
 
 
+.sce-edit-comment {
+    margin: 0 0 !important;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color:#404b59;
+    font-size: 14px;
+}
 
+.sce-edit-comment a{
+    color:#404b59;
+}
 
 
 

@@ -303,11 +303,49 @@ function atarikafa_comments($comment, $args, $depth) {
 
 
 
+add_action('bulk_actions-edit-comments', 'author_remove_comments_actions');
+add_action('comment_row_actions', 'author_remove_comments_actions');
+
+function author_remove_comments_actions($actions) {
+
+    if (!current_user_can('moderate_comments')) {
+        if (isset($actions['delete'])) {
+            unset($actions['delete']);
+        }
+        if (isset($actions['trash'])) {
+            unset($actions['trash']);
+        }
+        if (isset($actions['spam'])) {
+            unset($actions['spam']);
+        }
+        if (isset($actions['edit'])) {
+            unset($actions['edit']);
+        }
+        if (isset($actions['quickedit'])) {
+            unset($actions['quickedit']);
+        }
+        if (isset($actions['approve'])) {
+            unset($actions['approve']);
+        }
+        if (isset($actions['unapprove'])) {
+            unset($actions['unapprove']);
+        }
+    }
+
+    return $actions;
+}
 
 
 
+function lp_remove_IP_for_user( $comment_author_IP, $comment_ID, $comment ) {
 
+    if ( ! is_admin() ) return $comment_author_IP; // only do this on admin, though with this particular function, it probably only applies to admin at all
+    if ( ! current_user_can( 'manage_options' ) ) return '';
 
+    return $comment_author_IP;
+
+}
+add_filter( 'get_comment_author_IP', 'lp_remove_IP_for_user', 10, 3 );
 
 
 
