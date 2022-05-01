@@ -16,6 +16,7 @@ Forum DEMO: https://www.atarikafa.com/topluluk/
 - ![](https://img.shields.io/badge/Status-Coding-228B22.svg) load more/next posts
 - ![](https://img.shields.io/badge/Status-Coding-228B22.svg) right top side header profile avatar name 
 - ![](https://img.shields.io/badge/Status-Coding-228B22.svg) jQuery quote select/copy reply  / social share
+- ![](https://img.shields.io/badge/Status-Coding-228B22.svg) buddypress profile css
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) More Customizer Settings 
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) Upload theme to wp.org 
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) Ajax posting native wp or plugin 
