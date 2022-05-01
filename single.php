@@ -44,10 +44,12 @@
             <div class="scrool-container">
                 
                 <div class="scrool-container">
-                    <div class="scrool-container-reply-button">REPLY BUTTON</div>
-                    <div class="scrool-container-position">
+                <div class="scrool-container-reply-button">REPLY BUTTON</div>
+                <div class="scrool-container-first-button">FİRST POST BUTTON</div>
+                <div class="scrool-container-position">
 
-                    </div>
+                </div>
+                <div class="scrool-container-first-button">LAST REPLY BUTTON</div>
                 </div>
             </div>
             <?php dynamic_sidebar('Sidebar_Single'); ?>
