@@ -14,6 +14,7 @@ Forum DEMO: https://www.atarikafa.com/toplulukk/
 - ![](https://img.shields.io/badge/Status-Adding-green.svg) scrool indicator
 - ![](https://img.shields.io/badge/Status-Adding-green.svg) load more/next posts
 - ![](https://img.shields.io/badge/Status-Adding-green.svg) right top side profile avatar name 
+- ![](https://img.shields.io/badge/Status-Adding-green.svg) jQuery quote select/copy reply 
 - ![](https://img.shields.io/badge/Status-Maybe-yellow.svg) More Customizer Settings 
 - ![](https://img.shields.io/badge/Status-Maybe-yellow.svg) Upload theme to wp.org 
 - ![](https://img.shields.io/badge/Status-Maybe-yellow.svg) Ajax posting native wp or plugin 
