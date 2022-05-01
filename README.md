@@ -12,6 +12,7 @@ Forum DEMO: https://www.atarikafa.com/topluluk/
 ## To-Do
 
 - ![](https://img.shields.io/badge/Status-Adding-228B22.svg) scrool indicator
+- ![](https://img.shields.io/badge/Status-Adding-228B22.svg) top left Start Disqussion/Post Button ajax posting ?
 - ![](https://img.shields.io/badge/Status-Adding-228B22.svg) load more/next posts
 - ![](https://img.shields.io/badge/Status-Adding-228B22.svg) right top side profile avatar name 
 - ![](https://img.shields.io/badge/Status-Adding-228B22.svg) jQuery quote select/copy reply 
