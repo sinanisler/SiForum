@@ -41,11 +41,12 @@
 
 
         <div class="col-md-1 single-sidebar">
+            <div class="scrool-container">
+                <div class="scrool-container-"></div>
+                <div class="scroll-position">
 
-            <div class="scroll-position">
-
+                </div>
             </div>
-
             <?php dynamic_sidebar('Sidebar_Single'); ?>
         </div>
 
