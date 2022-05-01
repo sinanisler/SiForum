@@ -45,6 +45,7 @@ Feel free to contribute
 - @Mention Users
 - Notifications
 - Subscriptions
+- Invite System
 
 
 ## Installation, Requirements
