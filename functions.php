@@ -230,13 +230,13 @@ function wcr_category_fields($term) {
         ?>
         <div class="form-field">
             <label for="term_fields[icon_slug]"><?php _e('Dash-Icon-Name-Slug'); ?></label>
-            <textarea cols="40" rows="5" id="term_fields[icon_slug]" name="term_fields[icon_slug]"></textarea>
-            <p class="description"><?php _e('Please enter short description'); ?></p>
+            <textarea cols="40" rows="1" id="term_fields[icon_slug]" name="term_fields[icon_slug]"></textarea>
+            <p class="description">enter dashicon name - https://developer.wordpress.org/resource/dashicons/</p>
         </div>
         <div class="form-field">
             <label for="term_fields[color_code]"><?php _e('Color code'); ?></label>
             <input type="text" size="40" value="" id="term_fields[color_code]" name="term_fields[color_code]">
-            <p class="description"><?php _e('Please enter color hex code'); ?></p>
+            <p class="description">enter color code/name - https://www.w3.org/wiki/CSS/Properties/color/keywords</p>
         </div>  
     <?php
     }

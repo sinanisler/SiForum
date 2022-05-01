@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel=icon href="<?php bloginfo("stylesheet_directory"); ?>/img/favicon.png" type="image/png">
     <title><?php if(is_front_page() || is_home()){ echo get_bloginfo('name');    } else{ echo wp_title('');    }?></title>
@@ -21,7 +20,7 @@
 <header class="forum-header-menu">
     <div class="container">
     <div class="row">
-        <a href="https://www.atarikafa.com" class="forum-header-menu-logo"> </a>
+        <a href="<?php bloginfo( 'url' ); ?>" class="forum-header-menu-logo"> </a>
         <?php
         wp_nav_menu( array(
             'theme_location' => 'header_menu',
