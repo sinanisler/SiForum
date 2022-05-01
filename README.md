@@ -25,7 +25,7 @@ Forum DEMO: https://www.atarikafa.com/toplulukk/
 
 ## Screenshot
 
-![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/SiForum-v3.png)
+![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/img/main/SiForum-v3.png)
 
 ## Features
  
@@ -65,4 +65,4 @@ to be documented...
 - Forward Compatibilty
 - This is WordPress 
 
-![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/gigi.gif)
+![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/img/main/gigi.gif)
