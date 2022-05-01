@@ -11,7 +11,20 @@
 
 
 <?php if (is_single()){ ?>
-<script>/*
+<script>
+
+
+jQuery(window).scroll(function() {
+
+    ScrollPosition = jQuery(window).scrollTop();
+
+    jQuery('.scroll-position').html(ScrollPosition)
+    
+    
+});
+
+
+/*
 ClassicEditor
     .create( document.querySelector( '#comment' ) )
     .catch( error => {

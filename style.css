@@ -370,13 +370,20 @@ body.category .forum-header-menu{
 
 
 
+/* SCROLL INDICATOR */ 
+
+.single-sidebar{
+    padding-top: 200px ;
+    padding-left: 50px;
+    position: relative;
+}
 
 
 
 
-
-
-
+.scroll-position{
+    position: fixed;
+}
 
 
 

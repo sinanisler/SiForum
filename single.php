@@ -40,8 +40,12 @@
 
 
 
-        <div class="col-md-1 p-0">
-            
+        <div class="col-md-1 single-sidebar">
+
+            <div class="scroll-position">
+
+            </div>
+
             <?php dynamic_sidebar('Sidebar_Single'); ?>
         </div>
 
