@@ -30,7 +30,7 @@
     </div>
     </div>
 </header>
-
+ 
 
 <?php if(is_archive()) { ?>
 <?php $termid = get_queried_object_id(); $color_code = get_term_meta($termid, 'color_code', true); ?>

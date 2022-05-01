@@ -12,6 +12,8 @@ table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details,
 menu, nav, output, ruby, section, summary, video, time, mark, audio 
 {margin: 0;	padding: 0;	border: 0;  list-style:none; text-decoration: none !important; }
 
+html {    scroll-behavior: smooth;  }
+
 @media (min-width: 1000px){ .container {  max-width: 1200px;} }
 @media (max-width: 768px) { 
     .sidebar_index .cat-list li{ width: 50%; float: left; padding-left:20px } 
@@ -23,6 +25,7 @@ menu, nav, output, ruby, section, summary, video, time, mark, audio
 body    { background:#14191f;    color:white;}
 a       {  transition: 0.5s;}
 #wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before { content: '\f319' !important; top: 2px; }
+
 
 
 
@@ -259,7 +262,7 @@ body.category .forum-header-menu{
 }
 
 .forum-post-content img{
-    max-width: 920px;
+    max-width: 880px;
     height: auto;    
 }
 
@@ -282,7 +285,6 @@ body.category .forum-header-menu{
 }
 
 .forum-post-content {
-    width: 100%;
     height: auto;
     padding-left: 21px;
     line-height: 36px;
@@ -357,7 +359,7 @@ body.category .forum-header-menu{
 .sce-edit-comment {
     margin: 0 0 !important;
     position: absolute;
-    bottom: 0px;
+    bottom: -15px;
     right: 0px;
     color:#404b59;
     font-size: 14px;
@@ -373,21 +375,89 @@ body.category .forum-header-menu{
 /* SCROLL INDICATOR */ 
 
 .single-sidebar{
-    padding-top: 200px ;
-    padding-left: 50px;
+    padding: 15px 0 0 15px ;
     position: relative;
 }
 
 
-
-.scrool-container{
+.sidebar-scroll-container{
     position: fixed;
 }
 
-
-.scroll-position{
-    
+.scroll-container{
+    width: 100%;
+    display: inline-block;
 }
+
+.scroll-container span{
+    display: inline-block;
+}
+
+.scroll-block1{
+    margin-bottom: 20px;
+}
+
+.scroll-container-reply-button{
+    display: inline-block;
+    background: #404b59;
+    color:#c2c2c2;
+    font-size: 16px;
+    padding: 10px 40px 10px 40px;
+    line-height: 20px;
+    border-radius: 6px;
+}
+
+.scroll-container-reply-button:hover{
+    background: #2a313a;
+    color:#8f8f8f;
+}
+
+.scroll-container-first-button{
+    display: inline-block;
+    color:#404b59;
+    font-size: 16px;
+    padding: 10px 40px 10px 40px;
+    line-height: 20px;
+    border-radius: 6px;
+}
+
+.scroll-container-first-button:hover{
+    color:#606770;
+}
+
+.scroll-container-last-button{
+    display: inline-block;
+    color:#404b59;
+    font-size: 16px;
+    padding: 10px 40px 10px 40px;
+    line-height: 20px;
+    border-radius: 6px;
+}
+
+.scroll-container-last-button:hover{
+    color:#606770;
+}
+.scroll-block3{
+    width: 100px;
+    height: 320px;
+    display: inline-block;
+    color:#404b59;
+    font-size: 15px;
+    padding: 10px 40px 10px 15px;
+    margin: 0 0 0 48px;
+    border-left: #404b59 solid 3px;
+    position: relative;
+}
+
+.scroll-container-position{
+    position: absolute;
+    top: 0;
+  }
+
+
+
+
+
 
 
 
