@@ -7,7 +7,7 @@ Inspired from Discourse, Flarum and NodeBB. But much much simpler.
 
 
 
-Forum DEMO: https://www.atarikafa.com/toplulukk/
+Forum DEMO: https://www.atarikafa.com/topluluk/
 
 ## To-Do
 
