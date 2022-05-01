@@ -18,7 +18,7 @@ jQuery(window).scroll(function() {
 
     ScrollPosition = jQuery(window).scrollTop();
 
-    jQuery('.scroll-position').html(ScrollPosition)
+    jQuery('.scrool-container-position').html(ScrollPosition)
     
     
 });

@@ -42,9 +42,12 @@
 
         <div class="col-md-1 single-sidebar">
             <div class="scrool-container">
-                <div class="scrool-container-"></div>
-                <div class="scroll-position">
+                
+                <div class="scrool-container">
+                    <div class="scrool-container-reply-button">REPLY BUTTON</div>
+                    <div class="scrool-container-position">
 
+                    </div>
                 </div>
             </div>
             <?php dynamic_sidebar('Sidebar_Single'); ?>

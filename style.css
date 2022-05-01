@@ -380,9 +380,13 @@ body.category .forum-header-menu{
 
 
 
+.scrool-container{
+    position: fixed;
+}
+
 
 .scroll-position{
-    position: fixed;
+    
 }
 
 
