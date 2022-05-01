@@ -21,7 +21,7 @@ Forum DEMO: https://www.atarikafa.com/topluluk/
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) Ajax posting native wp or plugin 
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) Localizations
 
-- Feel free to contribute
+Feel free to contribute https://github.com/sinanisler/SiForum/issues
 
 ## Screenshot
 
