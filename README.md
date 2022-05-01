@@ -4,6 +4,7 @@
 **Minimalist Forum** and **Community Theme** made with **WordPress** and **BuddyPress**
 
 Inspired from Discourse, Flarum and NodeBB. 
+
 But much much simpler. My goal is to make a good minimalist community theme.
 
 
