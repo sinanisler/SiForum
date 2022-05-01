@@ -11,10 +11,10 @@ Forum DEMO: https://www.atarikafa.com/toplulukk/
 
 ## To-Do
 
-- ![](https://img.shields.io/badge/Status-Adding-ForestGreen.svg) scrool indicator
-- ![](https://img.shields.io/badge/Status-Adding-ForestGreen.svg) load more/next posts
-- ![](https://img.shields.io/badge/Status-Adding-ForestGreen.svg) right top side profile avatar name 
-- ![](https://img.shields.io/badge/Status-Adding-ForestGreen.svg) jQuery quote select/copy reply 
+- ![](https://img.shields.io/badge/Status-Adding-DarkGreen.svg) scrool indicator
+- ![](https://img.shields.io/badge/Status-Adding-DarkGreen.svg) load more/next posts
+- ![](https://img.shields.io/badge/Status-Adding-DarkGreen.svg) right top side profile avatar name 
+- ![](https://img.shields.io/badge/Status-Adding-DarkGreen.svg) jQuery quote select/copy reply 
 - ![](https://img.shields.io/badge/Status-Maybe-yellow.svg) More Customizer Settings 
 - ![](https://img.shields.io/badge/Status-Maybe-yellow.svg) Upload theme to wp.org 
 - ![](https://img.shields.io/badge/Status-Maybe-yellow.svg) Ajax posting native wp or plugin 
