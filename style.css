@@ -369,7 +369,8 @@ body.category .forum-header-menu{
     color:#404b59;
 }
 
-
+.sce-seperator{display: none;}
+.sce-timer{display: none;}
 
 
 /* SCROLL INDICATOR */ 

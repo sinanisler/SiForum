@@ -73,33 +73,27 @@ jQuery(window).scroll(function() {
     
     viewportHeight  = jQuery(window).height();
     documentHeight  = jQuery(document).height();
-    hasScrolled     = jQuery(window).scrollTop();
     postcount       = <?php echo get_comments_number( get_the_ID());  ?>+1;
+    ScrollPosition  = jQuery(window).scrollTop();
 
-    ScrollPosition = jQuery(window).scrollTop();
 
-    let comment_count = postcount;
-
-    divide_scroll_with_count = ScrollPosition / comment_count;
+    divide_scroll_with_count = ScrollPosition / postcount;
 
     total_window_height = jQuery(document).height();
-    percent = (hasScrolled / (documentHeight - viewportHeight)) * 100;
-    clear_percentage = Math.floor(percent);
 
-    divide_percentage_with_post_count = clear_percentage / postcount;
-    divide_percentage_with_post_count = Math.floor(divide_percentage_with_post_count);
+    percent = (ScrollPosition / (documentHeight - viewportHeight)) * 100;
+    clear_percentage = percent.toFixed(1);
 
-
-    //100 * divide_percentage_with_post_count = 
-
-    
-    jQuery('.scroll-container-position').html(divide_percentage_with_post_count + " / " + comment_count);
+    divide_p_with_p = clear_percentage / postcount;
 
 
     
+    // Count Print
+    jQuery('.scroll-container-position').html(divide_p_with_p.toFixed(1) + " / " + postcount);
 
-    // Indicator CSS Vertical Position
-    jQuery(".scroll-container-position").css("top", clear_percentage*3);
+    
+    // CSS Pos
+    jQuery(".scroll-container-position").css("top", clear_percentage * 3);
 
 });
  
