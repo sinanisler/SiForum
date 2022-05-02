@@ -9,5 +9,7 @@
 
 <?php wp_footer(); ?>
 
+<script src="<?php bloginfo("stylesheet_directory"); ?>/inc/siforum.js"></script>
+
 </body>
 </html>
