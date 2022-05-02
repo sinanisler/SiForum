@@ -76,7 +76,6 @@ jQuery(window).scroll(function() {
     postcount       = <?php echo get_comments_number( get_the_ID());  ?>+1;
     ScrollPosition  = jQuery(window).scrollTop();
 
-
     divide_scroll_with_count = ScrollPosition / postcount;
 
     total_window_height = jQuery(document).height();

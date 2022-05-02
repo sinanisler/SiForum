@@ -393,5 +393,80 @@ function remove_items_from_edit( $views ) {
 
 
 
+function misha_my_load_more_scripts() {
+ 
+	global $wp_query; 
+ 
+	wp_enqueue_script('jquery');
+ 
+	wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/myloadmore.js', array('jquery') );
+ 
+	wp_localize_script( 'my_loadmore', 'misha_loadmore_params', array(
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'max_page' => $wp_query->max_num_pages
+	) );
+ 
+ 	wp_enqueue_script( 'my_loadmore' );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'misha_my_load_more_scripts' );
+
+
+
+
+function misha_loadmore_ajax_handler(){
+ 
+	// prepare our arguments for the query
+	$args = json_decode( stripslashes( $_POST['query'] ), true );
+	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+	$args['post_status'] = 'publish';
+ 
+	// it is always better to use WP_Query but not here
+	query_posts( $args );
+ 
+	if( have_posts() ) :
+ 
+		// run the loop
+		while( have_posts() ): the_post(); ?>
+ 
+        <a href="<?php the_permalink(); ?>" class="forum-post-index">
+            <span class="forum-post-index-comment-count">
+                <span class="dashicons dashicons-welcome-comments"></span><?php echo get_comments_number($post->ID); ?>
+            </span>
+            <span class="forum-post-index-category">
+                <?php 
+                $categories = get_the_terms( $post->ID, 'category' ); $i=1;
+                foreach( $categories as $c ) {
+                    $termid = $c->term_id;
+                    $color_code = get_term_meta($termid, 'color_code', true);
+                    echo '<span style="background:'.$color_code.'">' . $c->name.'</span>'; if(++$i > 3) break;
+                } ?>
+            </span>
+            <div class="forum-post-index-avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?></div>
+            <div href="<?php the_permalink(); ?>" class="forum-post-index-title"><?php the_title(); ?> </div> 
+            <span class="forum-post-index-author"><b><?php the_author(); ?></b>
+            <?php $t = get_the_time('U'); echo human_time_diff($t,current_time( 'U' )). " önce"; ?> 
+            </span> 
+        </a>
+
+ 
+ <?php
+		endwhile;
+ 
+	endif;
+	die; 
+}
+ 
+ 
+ 
+add_action('wp_ajax_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+
+
+
+
 
 ?>

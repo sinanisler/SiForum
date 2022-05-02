@@ -1,27 +1,17 @@
 <?php get_header(); ?>
 
 
-<div class="container">
+<div class="container index-container">
     <div class="row">
-        <aside class="col-md-3 sidebar_index">
-            <ul class="cat-list">
-                <?php $taxonomies = get_terms( array( 'taxonomy' => 'category', 'hide_empty' => false, 'exlude' => array(19,19) ) ); 
-                foreach( $taxonomies as $c ) { ?>
-                
-                <li>
-                    <a href="<?php echo get_term_link( $c ); ?>">
-                    <span style="color:<?php echo get_term_meta($c->term_id, 'color_code', true); ?>" class="dashicons <?php echo get_term_meta($c->term_id, 'icon_slug', true); ?>"></span><?php echo $c->name; ?> 
-                    <p style="display:none"><?php echo $c->description; ?></p>
-                    </a>
-                </li>
-                <?php } ?> 
-            </ul>
+        <div class="col-md-3 sidebar_index">
+
+            <?php include('sidecategories.php'); ?>
 
             <?php dynamic_sidebar('Sidebar_Index'); ?>
 
 
-        </aside>
-        <div class="col-md-9 animate__animated animate__fadeIn">
+        </div>
+        <div class="col-md-9">
             
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -46,18 +36,58 @@
         </a>
         <?php endwhile; else : ?><p><?php esc_html_e( 'No posts here.' ); ?></p><?php endif; ?>
 
+
+
+
+        <?php
+        global $wp_query; 
+        
+        if (  $wp_query->max_num_pages > 1 )
+            echo '<div class="load_more_posts">Daha Fazla Yükle</div>'; 
+        ?>
+
+
+
+
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-9">
-            <div class="nav-previous alignleft"><?php next_posts_link( 'Daha Fazla' ); ?></div>
-            <div class="nav-next alignright"><?php previous_posts_link( 'Geri Dön' ); ?></div>
-        </div>
-    </div>
- </div>
+
+
+ <script>
+jQuery(function($){ 
+	$('.load_more_posts').click(function(){
+ 
+		var button = $(this),
+		    data = {
+			'action': 'loadmore',
+			'query': misha_loadmore_params.posts, 
+			'page' : misha_loadmore_params.current_page
+		};
+ 
+		$.ajax({ 
+			url : misha_loadmore_params.ajaxurl,
+			data : data,
+			type : 'POST',
+			beforeSend : function ( xhr ) {
+				button.text('Yükleniyor...'); 
+			},
+			success : function( data ){
+				if( data ) { 
+					button.text( 'Daha Fazla Yükle' ).prev().before(data); 
+					misha_loadmore_params.current_page++;
+ 
+					if ( misha_loadmore_params.current_page == misha_loadmore_params.max_page ) 
+						button.remove(); 
+				} else {
+					button.remove(); 
+				}
+			}
+		});
+	});
+});
+ </script>
+
 
 
 <?php get_footer(); ?>
