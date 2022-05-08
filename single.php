@@ -1,5 +1,14 @@
 <?php get_header(); ?>
 
+<?php $cc = get_the_category(); $c_id = $cc[0]->cat_ID;    $color_code = get_term_meta($c_id, 'color_code', true);     ?>
+<div class="category-header" style="background:<?php echo $color_code; ?>">
+<div class="container">
+    <span class="dashicons <?php echo get_term_meta($c_id, 'icon_slug', true); ?>"></span>
+    <span class="category-header-title"><?php echo $cc[0]->cat_name; ?></span>
+    <h1 style=""><?php if(is_category() or is_tag()){   echo category_description( $c_id );  } ?> <?php the_title(); ?></h1>
+</div>
+</div>
+
 
 
 <div class="container">
@@ -29,10 +38,10 @@
             <?php endwhile; else : endif; ?>
 
 
-            <div class="forum-post-replies">
+                
+
             <?php comments_template('/comments.php'); ?>
-            </div>
-                                
+            
 
         </div>
 
@@ -42,7 +51,20 @@
                 
                 <div class="scroll-container">
                     <div class="scroll-block1">
-                    <a href="#respond" class="scroll-container-reply-button"><span class="dashicons dashicons-admin-comments"></span> Cevap Yaz</a>
+                        <?php 
+                        $get_post = get_post( get_the_ID() ); 
+                        $status = $get_post->comment_status;
+
+                        if($status == 'open'){ ?>
+
+                        <a href="#respond" class="scroll-container-reply-button">
+                        <span class="dashicons dashicons-admin-comments"></span> Cevap Yaz</a>
+                            <?php } else { ?>
+                        <a href="#respond" class="scroll-container-reply-button">
+                        <span class="dashicons dashicons-lock"></span> Cevap Kapalı</a>
+                        <?php } ?>
+
+                            
                     </div>
 
                     <div class="scroll-block2">
@@ -58,6 +80,7 @@
                     </div>
                 </div>
             </div>
+            
 
             <?php dynamic_sidebar('Sidebar_Single'); ?>
         </div>
@@ -94,9 +117,21 @@ jQuery(window).scroll(function() {
     // CSS Pos
     jQuery(".scroll-container-position").css("top", clear_percentage * 3);
 
+
+
+
+
+
 });
  
 
+// Comment Textarea Width Dynamic Pos
+setInterval(function() {
+    var width = jQuery('.post-reply-list').width();
+
+    jQuery(".comment-respond").css("width", width);
+
+}, 100);
 
 
 

@@ -203,7 +203,7 @@ add_action('customize_register', 'siforum_customize_register');
 
 
 
-// CATEGORY META ICONS
+// CATEGORY ICONS
 
 function wcr_category_fields($term) {
     // we check the name of the action because we need to have different output
@@ -275,8 +275,7 @@ add_action('create_category', 'wcr_save_category_fields', 10, 2);
 
 
 
-// Comment Custom Callback
-            
+// SiForum Comments Custom Callback
 function atarikafa_comments($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
@@ -297,7 +296,6 @@ function atarikafa_comments($comment, $args, $depth) {
 		</div>
 <?php }
 
-// Enqueue comment-reply
 
 
 

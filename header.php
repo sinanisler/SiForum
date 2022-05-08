@@ -31,27 +31,3 @@
     </div>
 </header>
  
-
-<?php if(is_archive()) { ?>
-<?php $termid = get_queried_object_id(); $color_code = get_term_meta($termid, 'color_code', true); ?>
-<div class="category-header" style="background:<?php echo $color_code; ?>">
-<div class="container">
-    <span style="color:white" class="dashicons <?php echo get_term_meta($termid, 'icon_slug', true); ?>"></span>
-    <span class="category-header-title"><?php if(is_category()){ single_cat_title(); } if(is_tag()){ single_tag_title(); }  ?></span>
-    <p style=""><?php if(is_category() or is_tag()){ $catID = get_the_category(); echo category_description( $catID[0] );  } ?></p>
-</div>
-</div>
-<?php } ?>
-
-
-<?php if(is_single()) { ?>
-<?php $cc = get_the_category(); $c_id = $cc[0]->cat_ID;    $color_code = get_term_meta($c_id, 'color_code', true);     ?>
-<div class="category-header" style="background:<?php echo $color_code; ?>">
-<div class="container">
-    <span class="dashicons <?php echo get_term_meta($c_id, 'icon_slug', true); ?>"></span>
-    <span class="category-header-title"><?php echo $cc[0]->cat_name; ?></span>
-    <h1 style=""><?php if(is_category() or is_tag()){   echo category_description( $c_id );  } ?> <?php the_title(); ?></h1>
-</div>
-</div>
-<?php } ?>
-

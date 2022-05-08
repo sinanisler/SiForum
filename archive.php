@@ -1,5 +1,14 @@
 <?php get_header(); ?>
 
+<?php $termid = get_queried_object_id(); $color_code = get_term_meta($termid, 'color_code', true); ?>
+<div class="category-header" style="background:<?php echo $color_code; ?>">
+<div class="container">
+    <span style="color:white" class="dashicons <?php echo get_term_meta($termid, 'icon_slug', true); ?>"></span>
+    <span class="category-header-title"><?php if(is_category()){ single_cat_title(); } if(is_tag()){ single_tag_title(); }  ?></span>
+    <p style=""><?php if(is_category() or is_tag()){        echo category_description( );      } ?></p>
+</div>
+</div>
+
 
 <div class="container index-container">
     <div class="row">

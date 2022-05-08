@@ -13,11 +13,15 @@
 
 
 	<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) { ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'atarikafa'); ?></p>
+		<p class="no-comments" id="respond">Yorumlar Kapalı</p>
 	<?php } ?>
 
+	<div class="siforum-comment-form">
 
-	<?php comment_form(); ?>
+		<?php get_avatar( get_current_user_id(), '70' ) ?>
 
+		<?php comment_form(); ?>
+		
+	</div>
 
 </div>
