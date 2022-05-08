@@ -11,20 +11,12 @@ Forum DEMO: https://www.atarikafa.com/topluluk/
 
 ## To-Do
 
-- ![](https://img.shields.io/badge/Done-228B22.svg) scrool indicator   
-- ![](https://img.shields.io/badge/Status-Coding-228B22.svg) top left Start discussion/Post Button ajax posting ?
-- ![](https://img.shields.io/badge/Done-228B22.svg) ajax load more/next posts
-- ![](https://img.shields.io/badge/Status-Coding-228B22.svg) right top side header profile avatar name 
-- ![](https://img.shields.io/badge/Status-Coding-228B22.svg) jQuery quote select/copy reply  / social share
-- ![](https://img.shields.io/badge/Status-Coding-228B22.svg) buddypress profile css
-- ![](https://img.shields.io/badge/Status-Coding-228B22.svg) sticky post icon
-- ![](https://img.shields.io/badge/Status-Coding-228B22.svg) Locked post icon / comment closed
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) More Customizer Settings 
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) Upload theme to wp.org 
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) Ajax posting native wp or plugin 
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) Localizations
 
-Feel free to contribute https://github.com/sinanisler/SiForum/discussions
+Feel free give ideas https://github.com/sinanisler/SiForum/discussions
 
 ## Screenshot
 
