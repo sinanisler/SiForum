@@ -13,7 +13,6 @@ Forum DEMO: https://www.atarikafa.com/topluluk/
 
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) More Customizer Settings 
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) Upload theme to wp.org 
-- ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) Ajax posting native wp or plugin 
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) Localizations
 
 Feel free give ideas --> https://github.com/sinanisler/SiForum/discussions/new?category=ideas
