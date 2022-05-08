@@ -17,7 +17,7 @@
             <?php include('sidecategories.php'); ?>
 
             <?php dynamic_sidebar('Sidebar_Index'); ?>
-
+ 
 
         </div>
         <div class="col-md-9">

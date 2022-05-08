@@ -419,11 +419,15 @@ body.category .forum-header-menu{
     padding: 18px;
     position: fixed;
     bottom: 0px;
+    box-shadow: 0 0 16px #0e1012;
+    display:none;
 }
 
 .comment-respond:focus{
     outline: #7c1515;
 }
+
+
 
 .comment-form-comment textarea {
     width: 100%;
@@ -434,6 +438,7 @@ body.category .forum-header-menu{
     line-height: 30px;
     background: #101317;
     font-size: 17px;
+    resize: none;
 }
 
 .comment-form-comment textarea:focus { 
@@ -446,7 +451,18 @@ body.category .forum-header-menu{
     
 }
 
+#submit{
+    padding: 8px 16px 8px 16px;
+    background: #404b59;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+}
 
+#submit:hover{
+    background: #2c323a;
+}
 
 
 

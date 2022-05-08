@@ -42,7 +42,7 @@
 
             <?php comments_template('/comments.php'); ?>
             
-
+            <div id="comment-bottom"></div>
         </div>
 
 
@@ -57,10 +57,10 @@
 
                         if($status == 'open'){ ?>
 
-                        <a href="#respond" class="scroll-container-reply-button">
+                        <a href="#comment-bottom" class="scroll-container-reply-button">
                         <span class="dashicons dashicons-admin-comments"></span> Cevap Yaz</a>
                             <?php } else { ?>
-                        <a href="#respond" class="scroll-container-reply-button">
+                        <a href="#comment-bottom" class="scroll-container-reply-button">
                         <span class="dashicons dashicons-lock"></span> Cevap Kapalı</a>
                         <?php } ?>
 
@@ -76,7 +76,7 @@
                     </div>
 
                     <div class="scroll-block4">
-                    <a href="#respond"  class="scroll-container-last-button"><span class="dashicons dashicons-arrow-down-alt2"></span> Son Cevap</a>
+                    <a href="#comment-bottom"  class="scroll-container-last-button"><span class="dashicons dashicons-arrow-down-alt2"></span> Son Cevap</a>
                     </div>
                 </div>
             </div>
@@ -108,37 +108,14 @@ jQuery(window).scroll(function() {
 
     divide_p_with_p = clear_percentage / postcount;
 
-
-    
     // Count Print
     jQuery('.scroll-container-position').html(percent.toFixed(1) + " / " + postcount);
 
-    
     // CSS Pos
     jQuery(".scroll-container-position").css("top", clear_percentage * 3);
 
-
-
-
-
-
 });
  
-
-// Comment Textarea Width Dynamic Pos
-setInterval(function() {
-    var width = jQuery('.post-reply-list').width();
-
-    jQuery(".comment-respond").css("width", width);
-
-}, 100);
-
-
-
-
-jQuery( ".scroll-container-first-button" ).on( "click", function() {    jQuery(document).scrollTop(0);      });
-
-
 </script> 
 
 
