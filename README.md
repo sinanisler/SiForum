@@ -15,7 +15,7 @@ Forum DEMO: https://www.atarikafa.com/topluluk/
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) Upload theme to wp.org 
 - ![](https://img.shields.io/badge/Status-Maybe-FF8C00.svg) Localizations
 
-Feel free give ideas --> https://github.com/sinanisler/SiForum/discussions/new?category=ideas
+Feel free give to ideas  CLICK --> https://github.com/sinanisler/SiForum/discussions/new?category=ideas
 
 ## Screenshot
 
