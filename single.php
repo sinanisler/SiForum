@@ -18,16 +18,20 @@
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <article id="post" class="forum-post-single .ff1">
                     <div class="forum-post-author "> 
-                        <?php if(function_exists(bp_is_active)){ ?> <a href ="<?php bloginfo(url); ?>/members/<?php echo get_the_author_meta( 'login'); ?>" >
+                        <?php // if(is_plugin_active('buddypress/bp-loader.php')){                           
+                            if(in_array('buddypress/bp-loader.php', apply_filters('active_plugins', get_option('active_plugins')))){ 
+                            ?> <a href ="<?php bloginfo('url'); ?>/members/<?php echo get_the_author_meta( 'login'); ?>" >
                         <?php echo get_avatar( get_the_author_meta( 'ID') , 70); ?>  </a>
-                        <?php } else{ ?> <a href ="<?php bloginfo(url); ?>/author/<?php echo get_the_author_meta( 'login'); ?>" >
+                        <?php } else{ ?> <a href ="<?php bloginfo('url'); ?>/author/<?php echo get_the_author_meta( 'login'); ?>" >
                         <?php echo get_avatar( get_the_author_meta( 'ID') , 70); ?>  </a> <?php } ?>
                     </div>
                     <div class="forum-post-content">
                         <div class="forum-post-content-author">
-                            <?php if(function_exists(bp_is_active)){ ?> <a href ="<?php bloginfo(url); ?>/members/<?php echo get_the_author_meta( 'login'); ?>" >
+                            <?php //if(is_plugin_active('buddypress/bp-loader.php')){ 
+                                if(in_array('buddypress/bp-loader.php', apply_filters('active_plugins', get_option('active_plugins')))){ 
+                                ?> <a href ="<?php bloginfo('url'); ?>/members/<?php echo get_the_author_meta( 'login'); ?>" >
                             <?php echo get_the_author_meta( 'login'); ?> </a>
-                            <?php } else{ ?> <a href ="<?php bloginfo(url); ?>/author/<?php echo get_the_author_meta( 'login'); ?>" >
+                            <?php } else{ ?> <a href ="<?php bloginfo('url'); ?>/author/<?php echo get_the_author_meta( 'login'); ?>" >
                             <?php echo get_the_author_meta( 'login'); ?> </a> <?php } ?>
                             <span class="comment-date"><?php the_date( 'F n, Y - H:i' ); ?>  </span>
                         </div>
@@ -85,7 +89,7 @@
             </div>
             
 
-            <?php dynamic_sidebar('Sidebar_Single'); ?>
+            <?php // dynamic_sidebar('Sidebar_Single'); ?>
         </div>
 
     </div>
@@ -139,16 +143,14 @@ jQuery( ".scroll-container-first-button" ).on( "click", function() { jQuery(docu
 
 // Comment Editor Show/Hide Slide
 jQuery( ".scroll-container-reply-button" ).click(function() {
-    jQuery( ".comment-respond" ).slideToggle( "slow", function() {  });
+    jQuery( ".comment-respond" ).slideToggle( "fast", function() {  });
 });
-
-
 
 
 // Comment Editor Buttons
 jQuery(".comment-respond").append('<span  title="Kapat" class="editor-close dashicons dashicons-no"></span>');
 jQuery(document).on('click',".editor-close", function(){
-    jQuery( ".comment-respond" ).slideToggle( "slow", function() {  });
+    jQuery( ".comment-respond" ).slideToggle( "fast", function() {  });
 });
 
 jQuery(".comment-respond").append('<span title="Kalın" class="editor-bold dashicons     dashicons-editor-bold"></span>');
@@ -158,7 +160,7 @@ jQuery(".comment-respond").append('<span title="Kod" class="editor-code dashicon
 jQuery(".comment-respond").append('<span title="Link" class="editor-link dashicons      dashicons-admin-links"></span>');
 jQuery(".comment-respond").append('<span title="Foto" class="editor-image dashicons     dashicons-format-image"></span>');
 jQuery(".comment-respond").append('<span title="List" class="editor-list dashicons      dashicons-editor-ul"></span>');
-jQuery(".comment-respond").append('<span title="Mention" class="editor-mention      dashicons  ">@</span>');
+jQuery(".comment-respond").append('<span title="Mention" class="editor-mention          dashicons  ">@</span>');
 jQuery(document).on('click',".editor-bold", function(){ jQuery('#comment').val(function(i, text) {  return text + '<b> Kalın </b>';   }); });
 jQuery(document).on('click',".editor-italic", function(){ jQuery('#comment').val(function(i, text) {  return text + '<i> Yatay </i>';   }); });
 jQuery(document).on('click',".editor-h2", function(){ jQuery('#comment').val(function(i, text) {  return text + '<h2> Başlık </h2>';   }); });
@@ -169,10 +171,8 @@ jQuery(document).on('click',".editor-list", function(){ jQuery('#comment').val(f
 jQuery(document).on('click',".editor-mention", function(){ jQuery('#comment').val(function(i, text) {  return text + '@username';   }); });
 
 
-
 // Text Selection, Quote Reply and Share Button
 document.onselectionchange = function() {
-
 
 var ele = document.getElementById('quote-reply-share');
 var sel = window.getSelection();
@@ -186,35 +186,23 @@ rel2.selectNode(document.getElementById('cal2'));
 window.addEventListener('mouseup', function () {
     if (!sel.isCollapsed && window.getSelection().rangeCount >0) {
 
-        var r = sel.getRangeAt(0).getBoundingClientRect();
-        var rb1 = rel1.getBoundingClientRect();
-        var rb2 = rel2.getBoundingClientRect();
-        ele.style.top = (r.bottom - rb2.top)*100/(rb1.top-rb2.top) + 'px'; 
-        ele.style.left = (r.left - rb2.left)*100/(rb1.left-rb2.left) + 'px'; 
+            var r = sel.getRangeAt(0).getBoundingClientRect();
+            var rb1 = rel1.getBoundingClientRect();
+            var rb2 = rel2.getBoundingClientRect();
+            ele.style.top = (r.bottom - rb2.top)*100/(rb1.top-rb2.top) + 'px'; 
+            ele.style.left = (r.left - rb2.left)*100/(rb1.left-rb2.left) + 'px'; 
 
-        //code to set content
-
-        ele.style.display = 'block';
-
-
-    } else{
-
-        ele.style.display = 'none';
-        
-
-    }
-});
-
+            ele.style.display = 'block';
+        } else{
+            ele.style.display = 'none';
+        }
+    });
 
 };
 
 selection_range = sel.toString ()
 
 jQuery(document).on('click',"#share-reply", function(){ jQuery('#comment').val(function(i, text) { return text + selection_range  }); });
-
-
-
-
 
 </script> 
 

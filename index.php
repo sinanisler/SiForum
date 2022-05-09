@@ -5,12 +5,9 @@
     <div class="row">
         <div class="col-md-3 sidebar_index">
 
-
             <?php include('sidecategories.php'); ?>
 
-
-            <?php dynamic_sidebar('Sidebar_Index'); ?>
-
+            <?php // dynamic_sidebar('Sidebar_Index'); ?>
 
         </div>
         <div class="col-md-9">

@@ -658,6 +658,9 @@ pre {line-height: 19px;}
 .scroll-container-position{
     position: absolute;
     top: 0;
+    border-left: solid 4px white;
+    padding-left: 14px;
+    left: -3px;
   }
 
 
