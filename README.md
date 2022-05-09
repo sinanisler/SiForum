@@ -20,7 +20,8 @@ Feel free to give ideas  CLICK --> https://github.com/sinanisler/SiForum/discuss
 
 ## Screenshot
 
-![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/img/SiForum-v3.png)
+![image](https://user-images.githubusercontent.com/1686324/167501411-f93c8941-1e3e-4d37-b018-b80651755df9.png)
+
 
 ## Features
  
