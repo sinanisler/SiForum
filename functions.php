@@ -397,7 +397,7 @@ function misha_my_load_more_scripts() {
  
 	wp_enqueue_script('jquery');
  
-	//wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/myloadmore.js', array('jquery') );
+	wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/js/siforum.js', array('jquery') );
  
 	wp_localize_script( 'my_loadmore', 'misha_loadmore_params', array(
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
