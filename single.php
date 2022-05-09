@@ -1,13 +1,23 @@
 <?php get_header(); ?>
 
+
+
+
+
+
+
 <?php $cc = get_the_category(); $c_id = $cc[0]->cat_ID;    $color_code = get_term_meta($c_id, 'color_code', true);     ?>
 <div class="category-header" style="background:<?php echo $color_code; ?>">
 <div class="container">
-    <span class="dashicons <?php echo get_term_meta($c_id, 'icon_slug', true); ?>"></span>
-    <span class="category-header-title"><?php echo $cc[0]->cat_name; ?></span>
+    <a href="<?php echo get_category_link( get_the_ID() ); ?>" class="category-header-link">
+        <span class="dashicons <?php echo get_term_meta($c_id, 'icon_slug', true); ?>"></span>
+        <span class="category-header-title"><?php echo $cc[0]->cat_name; ?></span>
+    </a>
     <h1 style=""><?php if(is_category() or is_tag()){   echo category_description( $c_id );  } ?> <?php the_title(); ?></h1>
 </div>
 </div>
+
+
 
 
 
@@ -116,7 +126,7 @@ jQuery(window).scroll(function() {
     divide_p_with_p = clear_percentage / postcount;
 
     // Count Print
-    jQuery('.scroll-container-position').html(percent.toFixed(1) + " / " + postcount);
+    jQuery('.scroll-container-position').html(percent.toFixed(1) + " / " + postcount );
 
     // CSS Pos
     jQuery(".scroll-container-position").css("top", clear_percentage * 3);
@@ -200,7 +210,7 @@ window.addEventListener('mouseup', function () {
 
 };
 
-selection_range = sel.toString ()
+// selection_range = sel.toString ()
 
 jQuery(document).on('click',"#share-reply", function(){ jQuery('#comment').val(function(i, text) { return text + selection_range  }); });
 

@@ -19,6 +19,65 @@ register_sidebars(1, array('name'=>'Sidebar_Index'));
 
 
 
+
+
+
+
+// Login - Register Logo Change
+function siforum_logo_change() { ?>
+    <style type="text/css">
+        body{
+            background:#14191f !important;
+            font-size:20px !important;
+        }
+        .login form{
+            border-radius:10px;
+        }
+
+        #login h1 a, .login h1 a {
+            background: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png) center no-repeat red;
+            height:105px;
+            width:320px;
+            padding-bottom: 30px ;
+            border-radius:10px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'siforum_logo_change' );
+
+
+
+
+// Allow most of the html tags like the_content output
+
+function filter_html_usage() {
+    global $allowedtags;
+    $allowedtags['code'] = array('class'=>array());
+    $allowedtags['pre'] = array('class'=>array());
+    $allowedtags['p'] = array('class'=>array());
+    $allowedtags['strong'] = array('class'=>array());
+    $allowedtags['href'] = array('class'=>array());
+    $allowedtags['a'] = array('class'=>array());
+    $allowedtags['ul'] = array('class'=>array());
+    $allowedtags['li'] = array('class'=>array());
+    $allowedtags['i'] = array('class'=>array());
+    $allowedtags['h1'] = array('class'=>array());
+    $allowedtags['h2'] = array('class'=>array());
+    $allowedtags['h3'] = array('class'=>array());
+    $allowedtags['b'] = array('class'=>array());
+    $allowedtags['abbr'] = array('class'=>array());
+    $allowedtags['acronym'] = array('class'=>array());
+    $allowedtags['blockquote'] = array('class'=>array());
+    $allowedtags['cite'] = array('class'=>array());
+    $allowedtags['em'] = array('class'=>array());
+  }
+   
+  // Add WordPress hook to use the function
+  add_action('init', 'filter_html_usage',11);
+
+
+
+
 // Settings
 function siforum_customize_register($wp_customize){
      
