@@ -1,5 +1,5 @@
 # SiForum a WordPress Forum Theme 
-![](https://img.shields.io/badge/Status-Beta-Blue.svg)
+![](https://img.shields.io/badge/Status-Beta-lightblue.svg)
 ![](https://img.shields.io/badge/Version-Beta-red.svg)
 
 **Minimalist Forum** and **Community Theme** made with **WordPress** and **BuddyPress**
