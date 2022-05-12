@@ -15,6 +15,7 @@ menu, nav, output, ruby, section, summary, video, time, mark, audio
 html {    scroll-behavior: smooth;  }
 
 a {color:#C10C0C}
+a:hover {color:#f06a6a}
 
 ::selection {
     color: #FFFFFF;
@@ -22,9 +23,9 @@ a {color:#C10C0C}
   }
 
 @media (min-width: 1000px){ .container {  max-width: 1200px;} }
-@media (max-width: 768px) { 
+@media (max-width: 768px) {  
     .sidebar_index .cat-list li{ width: 50%; float: left; padding-left:20px } 
-    .forum-post-index-category{top:43px !important}
+    .forum-post-index-category{ position: static !important; margin-bottom: 5px;  }
     .forum-header-menu-logo{display:none !important}
     .forum-header-menu{height:auto !important}
 }
@@ -91,9 +92,14 @@ img     {  max-width: 880px;}
     position: absolute;
     right: 0px;
     z-index: 99;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 130px;
 }
 
+.forum-header-menu .forum-header-profile:hover{
+    background:#14191F;
+}
 
 .forum-header-menu .forum-header-profile a {
     color: #fff;
@@ -107,6 +113,32 @@ img     {  max-width: 880px;}
       margin-right: 5px;
       border-radius: 15px;
   }
+
+
+.forum-header-profile:hover .dropdown-user{
+    display: block;
+    position: relative;
+    width: 130px;
+}
+
+.forum-header-menu  .dropdown-user{
+    display: none;
+}
+
+.forum-header-menu  .dropdown-user li{
+    width: 130px;
+    background:#14191F;
+    line-height: 30px;
+    padding: 10px;
+    display: block;
+}
+
+.forum-header-menu  .dropdown-user li:hover{ 
+}
+
+
+
+
 
 
 /* HEADER CATEGORY PAGE STYLES */
@@ -388,7 +420,7 @@ body.category .forum-header-menu{
 
 .post-reply-list{
     width: 100%;
-    margin-bottom: 270px;
+    margin-bottom: 120px;
   }
 
 .post-reply .comment-wrap{
@@ -516,6 +548,30 @@ body.category .forum-header-menu{
     background: #7c1515;
 }
 
+
+.comment-reply-dashed{
+    height: 130px;
+    border: dashed 3px  #252c33 ;
+    padding: 30px;
+    line-height: 55px;
+    margin-bottom: 150px ;
+    color: #252c33;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 21px;
+}
+
+
+.comment-reply-dashed img{
+    float:left;
+    margin-right: 30px;
+    border-radius: 10px;
+}
+
+
+
+
+
 /* COMMENT EDITOR */
 
 
@@ -567,6 +623,14 @@ pre {line-height: 19px;}
     border-radius: 8px;
   }
 
+#quote-reply-share a{
+    color: #AEB0B1;
+  }
+
+#quote-reply-share a:hover{
+    color: #ffffff;
+  }
+
 #quote-reply-share  span{
     cursor: pointer;
     font-size: 24px;
@@ -608,6 +672,13 @@ pre {line-height: 19px;}
     overflow:none;
     z-index:-100;
 }
+
+.select-quote{
+    padding: 5px 15px 5px 15px;
+    background: #0a0c0f;
+    border-radius: 8px;
+}
+
 
 
 
@@ -765,6 +836,77 @@ pre {line-height: 19px;}
         left: 0 ;
     }
 }
+
+
+
+
+#buddypress .comment-reply-link, #buddypress .generic-button a, #buddypress .standard-form button, #buddypress a.button, 
+#buddypress input[type="button"], #buddypress input[type="reset"], #buddypress input[type="submit"], 
+#buddypress ul.button-nav li a, a.bp-title-button ,
+#buddypress div.item-list-tabs ul li.current a, #buddypress div.item-list-tabs ul li.selected a
+{
+    background: #C10C0C !important;
+    border: none !important;
+    color: #e0e0e0 !important;
+    border-radius: 5px !important;
+    font-size: 14px  !important;
+  }
+
+#buddypress .current a{
+    background: #C10C0C !important;
+    color: white !important;
+    border-radius: 5px !important;
+}
+
+#buddypress .bp-suggestions{
+    background: #0d1013 !important;
+    color: white !important;
+    border: none !important;
+    min-height: 100px !important;
+    border-radius: 10px !important;
+    resize: none !important;
+}
+
+
+#buddypress div.activity-comments form .ac-textarea {
+    background: none  !important;
+    border: none  !important;
+    margin-bottom: 10px !important;
+    padding: 10px !important;
+  }
+
+#buddypress div.activity-comments form .ac-textarea textarea {
+    padding: 10px !important;
+  }
+
+
+
+#buddypress ul.item-list li {
+    border-bottom: none !important;
+}
+
+#buddypress .activity-item {
+    padding: 20px !important;
+    background: #12161b !important;
+    margin-bottom: 20px!important;
+    border-radius: 20px!important;
+}
+
+#buddypress div.activity-comments ul li{
+    border-top:none !important;
+    margin-bottom: 20px!important;
+}
+
+#buddypress ul.item-list{
+    border-top:none !important;
+}
+
+
+
+
+
+
+
 
 
 

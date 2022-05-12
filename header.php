@@ -34,6 +34,10 @@
                 <?php echo get_avatar( get_current_user_id() , 30); ?>
                 <?php echo get_the_author_meta( 'login', get_current_user_id() ); ?>
             </a>
+            <ul class="dropdown-user">
+                <li><a href="<?php bloginfo('url'); ?>/members/<?php echo get_the_author_meta( 'login', get_current_user_id() ); ?>">Profil</a></li>
+                <li><a href="<?php echo wp_logout_url( home_url() ); ?>">Çıkış Yap</a></li>
+            </ul>
         <?php } else{ ?> 
             <a href ="<?php bloginfo( 'url' ); ?>/wp-login.php?redirect_to=<?php bloginfo( 'url' ); ?>" >
                 Giriş Yap

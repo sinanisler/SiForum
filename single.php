@@ -47,6 +47,12 @@
                 
 
             <?php comments_template('/comments.php'); ?>
+
+
+            <div class="comment-reply-dashed">
+                <?php echo get_avatar( get_current_user_id() , 70); ?>
+                Cevap Yaz...
+            </div>
             
             <div id="comment-bottom"></div>
         </div>
@@ -136,17 +142,19 @@ setInterval(function() {
 
 }, 100);
 
-
-
-
 // Single Post Scrool Go Top
 jQuery( ".scroll-container-first-button" ).on( "click", function() { jQuery(document).scrollTop(0); });
-
 
 // Comment Editor Show/Hide Slide
 jQuery( ".scroll-container-reply-button" ).click(function() {
     jQuery( ".comment-respond" ).slideToggle( "fast", function() {  });
 });
+
+jQuery( ".comment-reply-dashed" ).click(function() {
+    jQuery( ".comment-respond" ).slideToggle( "fast", function() {  });
+});
+
+
 
 
 // Comment Editor Buttons
@@ -155,6 +163,7 @@ jQuery(document).on('click',".editor-close", function(){
     jQuery( ".comment-respond" ).slideToggle( "fast", function() {  });
 });
 
+// Editor Buttons and Events
 jQuery(".comment-respond").append('<span title="Kalın" class="editor-bold dashicons     dashicons-editor-bold"></span>');
 jQuery(".comment-respond").append('<span title="Yatay" class="editor-italic dashicons   dashicons-editor-italic"></span>');
 jQuery(".comment-respond").append('<span title="Başlık" class="editor-h2 dashicons      dashicons-heading"></span>');
@@ -187,37 +196,49 @@ rel2.selectNode(document.getElementById('cal2'));
 
 window.addEventListener('mouseup', function () {
     if (!sel.isCollapsed && window.getSelection().rangeCount >0) {
-
             var r = sel.getRangeAt(0).getBoundingClientRect();
             var rb1 = rel1.getBoundingClientRect();
             var rb2 = rel2.getBoundingClientRect();
             ele.style.top = (r.bottom - rb2.top)*100/(rb1.top-rb2.top) + 'px'; 
             ele.style.left = (r.left - rb2.left)*100/(rb1.left-rb2.left) + 'px'; 
-
             ele.style.display = 'block';
-        } else{
-            ele.style.display = 'none';
-        }
+        } else{            ele.style.display = 'none';        }
     });
+
+
 
 };
 
-// selection_range = sel.toString ()
+var selectedText = '';
+selectedText = window.getSelection();
 
-jQuery(document).on('click',"#share-reply", function(){ jQuery('#comment').val(function(i, text) { return text + selection_range  }); });
+jQuery( document ).delegate( "#share-reply", "click", function() {
+    jQuery('#comment').val(function(i, text) { return text + '\n <div class="select-quote">' + selectedText + "</div> \n"  }); 
+    jQuery( ".comment-respond" ).show( "fast", function() {  });
+});
+
+jQuery( document ).delegate( "#share-twitter", "click", function() {
+    jQuery("#share-twitter").attr("href","https://twitter.com/intent/tweet?text=" + selectedText + " <?php the_permalink(); ?>" );
+});
+
+jQuery( document ).delegate( "#share-facebook", "click", function() {
+    jQuery("#share-facebook").attr("href","http://www.facebook.com/sharer/sharer.php?t=" + selectedText + "&u=<?php the_permalink(); ?>" );
+});
+
+jQuery( document ).delegate( "#share-linkedin", "click", function() {
+    jQuery("#share-linkedin").attr("href","https://www.linkedin.com/shareArticle?mini=true&summary=" + selectedText + "&url=<?php the_permalink(); ?>" );
+});
 
 </script> 
-
-
 
 
 <div id="cal1">&nbsp;</div>
 <div id="cal2">&nbsp;</div>
 <div id="quote-reply-share"> 
-    <span title="Cevap Yaz"         id="share-reply" class=" dashicons dashicons-admin-comments">  </span>
-    <span title="Twitter Paylaş"    id="share-twitter"  class=" dashicons dashicons-twitter">  </span>
-    <span title="Facebook Paylaş"   id="share-facebook"  class=" dashicons dashicons-facebook">  </span>
-    <span title="Linkedin Paylaş"   id="share-linkedin"  class=" dashicons dashicons-linkedin">  </span>
+    <span      title="Cevap Yaz"         id="share-reply"        class="share-reply dashicons dashicons-admin-comments">  </span>
+    <a href="" title="Twitter Paylaş"    id="share-twitter"      class="share-twitter dashicons dashicons-twitter" target="_blank">  </a>
+    <a href="" title="Facebook Paylaş"   id="share-facebook"     class="share-facebook dashicons dashicons-facebook" target="_blank" >  </a>
+    <a href="" title="Linkedin Paylaş"   id="share-linkedin"     class="share-linkedin dashicons dashicons-linkedin" target="_blank">  </a>
 </div>
 
 
