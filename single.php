@@ -124,7 +124,7 @@ jQuery(window).scroll(function() {
     divide_p_with_p = clear_percentage / postcount;
 
     // Count Print
-    jQuery('.scroll-container-position').html(percent.toFixed(1) + " / " + postcount );
+    jQuery('.scroll-container-position').html(percent.toFixed(0) + "% / " + postcount );
 
     // CSS Pos
     jQuery(".scroll-container-position").css("top", clear_percentage * 3);
