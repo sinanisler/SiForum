@@ -1,11 +1,6 @@
 <?php get_header(); ?>
 
 
-
-
-
-
-
 <?php $cc = get_the_category(); $c_id = $cc[0]->cat_ID;    $color_code = get_term_meta($c_id, 'color_code', true);     ?>
 <div class="category-header" style="background:<?php echo $color_code; ?>">
 <div class="container">
@@ -16,9 +11,6 @@
     <h1 style=""><?php if(is_category() or is_tag()){   echo category_description( $c_id );  } ?> <?php the_title(); ?></h1>
 </div>
 </div>
-
-
-
 
 
 <div class="container">

@@ -14,6 +14,8 @@ menu, nav, output, ruby, section, summary, video, time, mark, audio
 
 html {    scroll-behavior: smooth;  }
 
+a {color:#C10C0C}
+
 ::selection {
     color: #FFFFFF;
     background: #C10C0C;
@@ -31,9 +33,6 @@ body    { background:#14191f;    color:white;}
 a       {  transition: 0.5s;}
 img     {  max-width: 880px;}
 #wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before { content: '\f319' !important; top: 2px; }
-
-
-
 
 
 /* HEADER MENU STYLES */
