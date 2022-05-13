@@ -6,7 +6,7 @@
 
 Inspired from Discourse, Flarum and NodeBB. But much much simpler. 
 
-Good minimalist community/forum theme.
+Good minimalist, fast, ajax and modern community/forum theme.
 
 
 
