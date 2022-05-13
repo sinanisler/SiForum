@@ -360,6 +360,10 @@ body.category .forum-header-menu{
     font-weight: bold;
   }
 
+  .forum-post-block p a{
+    color:#ac3030;
+  }
+
 .forum-post-block a:hover{
       text-decoration: underline !important;
   }
@@ -567,7 +571,7 @@ body.category .forum-header-menu{
 .comment-reply-dashed img{
     float:left;
     margin-right: 30px;
-    border-radius: 10px;
+    border-radius: 35px;
 }
 
 
@@ -679,6 +683,8 @@ pre {line-height: 19px;}
     padding: 5px 15px 5px 15px;
     background: #0a0c0f;
     border-radius: 8px;
+    margin-bottom: 10px;
+    color: #4b5662;
 }
 
 
@@ -784,6 +790,22 @@ pre {line-height: 19px;}
 
   /* BUDDYPRESS STYLES - PROFİLE */
 
+#buddypress a:hover{
+    color: white;
+}
+
+#buddypress a span:hover{
+    color: white;
+}
+
+#buddypress .activity-comments{
+    margin-top: 20px !important;
+}
+
+.acomment-content p{
+    font-size: 16px;
+}
+
 .bp-user .user-nicename{
     background: #14191f;
     padding: 3px 10px 3px 10px;
@@ -805,15 +827,16 @@ pre {line-height: 19px;}
     display:none !important;
 }
 
-.bp-user img.avatar {
-    border-radius: 25px;
+.bp-user img.avatar{
+    border-radius: 35px;
 }
 
 .bp-user #item-nav {
-    width: 72%;
-    position: relative;
-    top: -74px;
-    left: 320px;
+    margin-top: 10px;
+}
+
+.bp-user #item-nav a{ 
+    
 }
 
 .bp-user #item-body{
@@ -826,9 +849,8 @@ pre {line-height: 19px;}
     top: -25px;
 }
 
-.bp-user #item-body #subnav{
-    padding-bottom: 20px;
-}
+
+
 
 @media (max-width: 980px) { 
     .bp-user #item-nav {
@@ -905,13 +927,51 @@ pre {line-height: 19px;}
 
 
 
+#buddypress #object-nav{
+    padding-bottom: 20px;
+}
+
+
+#buddypress  #subnav{
+    border-bottom: solid 1px #0D1013;
+    margin-bottom: 25px !important;
+}
+
+#buddypress  #subnav li{
+    margin-right: 5px;
+
+}
+#buddypress  #subnav .current a{
+    background: #0D1013  !important;
+    border: none !important;
+    color: #e0e0e0 !important;
+    border-radius: 5px !important;
+    font-size: 14px  !important;
+
+}
+
+#buddypress  #subnav  a{
+    background: #171D24  !important;
+    color: #e0e0e0 !important;
+}
 
 
 
+.activity-meta a span{
+    background: #171D24 !important;
+    color: #e0e0e0 !important;
+    padding: 0px 5px 1px 5px !important;
+    border-radius: 5px;
+}
+
+#buddypress #activity-filter-select{
+    display: none;
+}
 
 
 
-
-
-
-
+ .activity-avatar img , #whats-new-avatar img , .item-avatar img{
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}

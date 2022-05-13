@@ -163,6 +163,7 @@ jQuery(document).on('click',".editor-close", function(){
     jQuery( ".comment-respond" ).slideToggle( "fast", function() {  });
 });
 
+<?php  if( is_user_logged_in() ){  ?> 
 // Editor Buttons and Events
 jQuery(".comment-respond").append('<span title="Kalın" class="editor-bold dashicons     dashicons-editor-bold"></span>');
 jQuery(".comment-respond").append('<span title="Yatay" class="editor-italic dashicons   dashicons-editor-italic"></span>');
@@ -180,7 +181,7 @@ jQuery(document).on('click',".editor-link", function(){ jQuery('#comment').val(f
 jQuery(document).on('click',".editor-image", function(){ jQuery('#comment').val(function(i, text) {  return text + '<img src="https://atarikafa.com/foto.png">'; }); });
 jQuery(document).on('click',".editor-list", function(){ jQuery('#comment').val(function(i, text) {  return text + '<ul>'+'\n <li> bir </li>\n<li> iki </li>\n<li> üç </li> \n'+'</ul>';   }); });
 jQuery(document).on('click',".editor-mention", function(){ jQuery('#comment').val(function(i, text) {  return text + '@username';   }); });
-
+<?php  } ?> 
 
 // Text Selection, Quote Reply and Share Button
 document.onselectionchange = function() {
