@@ -193,22 +193,49 @@ jQuery(document).on('click',".editor-close", function(){
 
 <?php if ( is_user_logged_in() ) { ?>
 // Editor Buttons and Events
+var file_sec = "<?php echo wp_create_nonce( 'file_upload' ); ?>";
 jQuery(".comment-respond").append('<span title="Kalın" class="editor-bold dashicons     dashicons-editor-bold"></span>');
 jQuery(".comment-respond").append('<span title="Yatay" class="editor-italic dashicons   dashicons-editor-italic"></span>');
 jQuery(".comment-respond").append('<span title="Başlık" class="editor-h2 dashicons      dashicons-heading"></span>');
 jQuery(".comment-respond").append('<span title="Kod" class="editor-code dashicons       dashicons-editor-code"></span>');
 jQuery(".comment-respond").append('<span title="Link" class="editor-link dashicons      dashicons-admin-links"></span>');
 jQuery(".comment-respond").append('<span title="Foto" class="editor-image dashicons     dashicons-format-image"></span>');
+jQuery(".comment-respond").append('<span title="Foto" class="upload-image dashicons     dashicons-cloud-upload"></span>');
 jQuery(".comment-respond").append('<span title="List" class="editor-list dashicons      dashicons-editor-ul"></span>');
 jQuery(".comment-respond").append('<span title="Mention" class="editor-mention          dashicons  ">@</span>');
+jQuery(".comment-respond").append('<input type="file" id="image_upload" onChange="upload_image_and_return(this)" style="display:none" >');
+
 jQuery(document).on('click',".editor-bold", function(){ jQuery('#comment').val(function(i, text) {  return text + '<b> Kalın </b>';   }); });
 jQuery(document).on('click',".editor-italic", function(){ jQuery('#comment').val(function(i, text) {  return text + '<i> Yatay </i>';   }); });
 jQuery(document).on('click',".editor-h2", function(){ jQuery('#comment').val(function(i, text) {  return text + '<h2> Başlık </h2>';   }); });
 jQuery(document).on('click',".editor-code", function(){ jQuery('#comment').val(function(i, text) {  return text + '<pre><code>\n \n</code></pre>'; }); });
 jQuery(document).on('click',".editor-link", function(){ jQuery('#comment').val(function(i, text) {  return text + '<a href="https://atarikafa.com"> LİNK TEXT </a>'; }); });
 jQuery(document).on('click',".editor-image", function(){ jQuery('#comment').val(function(i, text) {  return text + '<img src="https://atarikafa.com/foto.png">'; }); });
+jQuery(document).on('click',".upload-image", function(){ jQuery('#image_upload').trigger("click"); });
 jQuery(document).on('click',".editor-list", function(){ jQuery('#comment').val(function(i, text) {  return text + '<ul>'+'\n <li> bir </li>\n<li> iki </li>\n<li> üç </li> \n'+'</ul>';   }); });
 jQuery(document).on('click',".editor-mention", function(){ jQuery('#comment').val(function(i, text) {  return text + '@username';   }); });
+
+
+async function upload_image_and_return(input){
+	const formData = new FormData();
+	formData.append("action", "sicomment_file_upload");
+	formData.append("security", window.file_sec);
+	formData.append("file", input.files[0]);
+	const rawResponse = await fetch(window.ajax_url, {
+		method: "POST",
+		body: formData,
+		});
+	const respo = await rawResponse.json();
+	if (respo.success) {
+		jQuery("#comment").val("<img src='"+respo.data+"'>");
+	} else {
+		console.log("error");
+	}
+}
+
+
+
+
 <?php } ?>
 
 // Text Selection, Quote Reply and Share Button
