@@ -195,6 +195,38 @@ body.category .forum-header-menu{
 
 
 /* INDEX POSTS STYLES  */
+
+
+
+.new-post-index-button{
+    background: #C10C0C;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-align: center;
+    user-select: none;
+}
+
+
+.new-post-index-button:hover{
+    background: #8d0707;
+}
+
+.new-post-index-button:active{
+    background: #6d0606;
+}
+
+
+
+
+
+
+
+
+
+
 .forum-post-index{
     width: 100%;
     height: auto;
@@ -607,6 +639,7 @@ body.category .forum-header-menu{
 .comment-respond .editor-link{  left: 140px;   }
 .comment-respond .editor-image{  left: 175px;   }
 .comment-respond .editor-list{  left: 210px;   }
+.comment-respond .upload-image {  left: 310px;   }
 .comment-respond .editor-mention{  left: 242px; font-size: 23px; font-weight: bold; line-height: 24px; font-family: Arial;  }
 
 pre code{color: gray;}
@@ -996,3 +1029,11 @@ body.activity-permalink #buddypress div.activity-comments{
     border: 1px solid #000 !important;
     color: #515151 !important;
   }
+
+
+
+
+
+
+
+  

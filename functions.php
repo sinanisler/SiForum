@@ -653,12 +653,41 @@ function si_comment_file_upload() {
 	wp_die();
 }
 
-function si_get_image_for_return( $id, $size = 'thumbnail' ) {
+function si_get_image_for_return( $id, $size = 'full' ) {
 	return wp_json_encode( wp_get_attachment_image_src( $id, $size )[0] );
 }
 
 /** Ajax Image Upload  */
 
+/** Ajax New Post */
+	/** Ajax Actions */
+	add_action( 'wp_ajax_create_new_from_from_index', 'create_new_from_from_index' );
+	/** Ajax Actions */
+
+	function create_new_from_from_index(){
+		check_ajax_referer( 'new_post_sec', 'security' );
+
+		$args = array(
+		'post_title'    => wp_strip_all_tags( $_POST['title'] ),
+		'post_content'  => $_POST['text'],
+		'post_status'   => 'publish',
+		'post_author'   => $_POST['author'],
+		'post_category' => array( $_POST['cat'] )
+		);
+
+		$post_id = wp_insert_post($args);
+			if(!is_wp_error($post_id)){
+				wp_send_json_success( get_the_permalink( $post_id ), 200 );
+			}else{
+				wp_send_json_error( $post_id->get_error_message(), 403, );
+			}
+
+
+		wp_die();
+	}
+
+
+/** Ajax New Post */
 
 
 

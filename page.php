@@ -1,11 +1,15 @@
 <?php get_header(); ?>
 
 
+
+
 <div class="category-header" >
 <div class="container" style="font-size:30px; margin-top:20px">
     <h1 class="category-header-title"><?php the_title(); ?></h1>
 </div>
 </div>
+
+
 
 
 <div class="container">

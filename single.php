@@ -194,6 +194,7 @@ jQuery(document).on('click',".editor-close", function(){
 <?php if ( is_user_logged_in() ) { ?>
 // Editor Buttons and Events
 var file_sec = "<?php echo wp_create_nonce( 'file_upload' ); ?>";
+var file_ajax_url = "<?php echo admin_url( 'admin-ajax.php' ) ; ?>";
 jQuery(".comment-respond").append('<span title="Kalın" class="editor-bold dashicons     dashicons-editor-bold"></span>');
 jQuery(".comment-respond").append('<span title="Yatay" class="editor-italic dashicons   dashicons-editor-italic"></span>');
 jQuery(".comment-respond").append('<span title="Başlık" class="editor-h2 dashicons      dashicons-heading"></span>');
@@ -219,15 +220,16 @@ jQuery(document).on('click',".editor-mention", function(){ jQuery('#comment').va
 async function upload_image_and_return(input){
 	const formData = new FormData();
 	formData.append("action", "sicomment_file_upload");
-	formData.append("security", window.file_sec);
+	formData.append("security", file_sec);
 	formData.append("file", input.files[0]);
-	const rawResponse = await fetch(window.ajax_url, {
+	const rawResponse = await fetch(file_ajax_url, {
 		method: "POST",
 		body: formData,
 		});
 	const respo = await rawResponse.json();
 	if (respo.success) {
-		jQuery("#comment").val("<img src='"+respo.data+"'>");
+		let $comm = jQuery("#comment").val();
+		jQuery("#comment").val($comm+"<img src='"+JSON.parse(respo.data)+"'>");
 	} else {
 		console.log("error");
 	}
@@ -288,10 +290,27 @@ jQuery( document ).delegate( "#share-linkedin", "click", function() {
 </script>
 
 
+
+
+<?php  if( is_user_logged_in() ){  ?>
+
+
+
+
+
+<?php }  ?>
+
+
+
+
+
+
+
 <div id="cal1">&nbsp;</div>
 <div id="cal2">&nbsp;</div>
 <div id="quote-reply-share">
-	<span      title="Cevap Yaz"         id="share-reply"        class="share-reply dashicons dashicons-admin-comments">  </span>
+<?php  if( is_user_logged_in() ){  ?>
+    <span      title="Cevap Yaz"         id="share-reply"        class="share-reply dashicons dashicons-admin-comments">  </span>    <?php }  ?>
 	<a href="" title="Twitter Paylaş"    id="share-twitter"      class="share-twitter dashicons dashicons-twitter" target="_blank">  </a>
 	<a href="" title="Facebook Paylaş"   id="share-facebook"     class="share-facebook dashicons dashicons-facebook" target="_blank" >  </a>
 	<a href="" title="Linkedin Paylaş"   id="share-linkedin"     class="share-linkedin dashicons dashicons-linkedin" target="_blank">  </a>
