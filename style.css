@@ -956,22 +956,43 @@ pre {line-height: 19px;}
 }
 
 
-
-.activity-meta a span{
-    background: #171D24 !important;
+.activity-meta a span , #item-nav li a span{
+    background: rgb(34, 43, 55) !important;
     color: #e0e0e0 !important;
     padding: 0px 5px 1px 5px !important;
-    border-radius: 5px;
+    border-radius: 5px !important;
+    border: none !important;
 }
 
 #buddypress #activity-filter-select{
     display: none;
 }
 
-
-
  .activity-avatar img , #whats-new-avatar img , .item-avatar img{
     width: 70px;
     height: 70px;
     border-radius: 35px;
 }
+
+#buddypress .activity-list .activity-content {
+    margin: 0 0 0 85px !important;
+  }
+
+
+body.activity-permalink #buddypress div.activity-comments{
+    margin-left:70px !important;
+}
+
+.acomment-avatar img{
+    border-radius: 10px;
+}
+
+#subnav .feed{
+    display: none;
+}
+
+#buddypress div#message p, #sitewide-notice #message {
+    background-color: #0d1014 !important;
+    border: 1px solid #000 !important;
+    color: #515151 !important;
+  }
