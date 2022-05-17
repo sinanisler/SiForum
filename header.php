@@ -19,12 +19,20 @@
     <div class="container">
     <div class="row">
         <a href="<?php bloginfo( 'url' ); ?>" class="forum-header-menu-logo"> </a>
+
+        <span class="forum-header-menu-mobile-button dashicons dashicons-menu" style="display:none"></span>
+
         <?php
         wp_nav_menu( array(
             'theme_location' => 'header_menu',
             'menu_class'     => 'header_menu',
             ) );
         ?>
+
+
+
+
+
 
     <div class="forum-header-profile">
         <?php  if( is_user_logged_in() ){  ?> 

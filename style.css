@@ -12,6 +12,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details,
 menu, nav, output, ruby, section, summary, video, time, mark, audio 
 {margin: 0;	padding: 0;	border: 0;  list-style:none; text-decoration: none !important; }
 
+
 html {    scroll-behavior: smooth;  }
 
 a {color:#C10C0C}
@@ -30,7 +31,12 @@ a:hover {color:#f06a6a}
     .forum-header-menu{height:auto !important}
     .comment-img img{width: 50px; height: 50px;}
     .post-reply .comment-img{width: auto !important; }
+
+    .forum-header-menu-mobile-button{display: block !important; }
+    .header-menu {display: none  !important; }
+
 }
+
 
 body    { background:#14191f;    color:white;}
 a       {  transition: 0.5s;}
@@ -138,9 +144,17 @@ img     {  max-width: 880px;}
 .forum-header-menu  .dropdown-user li:hover{ 
 }
 
+.forum-header-menu-mobile-button {
+    padding: 10px;
+    font-size: 53px !important;
+    cursor: pointer;
+    width: 50px !important;
+    height: 50px !important;
+}
 
-
-
+.forum-header-menu-mobile-button:hover {
+    opacity: 0.6;
+}
 
 
 /* HEADER CATEGORY PAGE STYLES */
@@ -160,7 +174,7 @@ body.category .forum-header-menu{
 }
 
 .category-header-title{
-    font-size:21px;
+    font-size:20px;
     position: relative;
     top: -5px;
 }
@@ -188,6 +202,7 @@ body.category .forum-header-menu{
 
 .category-header-link:hover{
     color:white;
+    opacity: 0.6;
 }
 
 
@@ -195,8 +210,6 @@ body.category .forum-header-menu{
 
 
 /* INDEX POSTS STYLES  */
-
-
 
 .new-post-index-button{
     background: #C10C0C;

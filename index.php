@@ -6,7 +6,7 @@
         <div class="col-md-3 sidebar_index">
 
             <?php if(is_user_logged_in()){ ?>
-                <div class="new-post-index-button">Tartışma Başlat</div>
+                <div class="new-post-index-button">Yeni Konu Başlat</div>
 
             <?php } ?>
 
@@ -98,7 +98,7 @@
 
             <p class="form-submit">
                 <input name="author" type="hidden" id="author" value="<?php echo get_current_user_id(  );?>">
-                <input name="submit" type="submit" id="submit" class="submit" value="Tartışma Başlat">
+                <input name="submit" type="submit" id="submit" class="submit" value="Yeni Konu Gönder">
             </p>
         </form>	
     </div>
@@ -117,6 +117,8 @@ setInterval(function() {
 	jQuery(".comment-respond").css("width", width);
 	jQuery(".comment-body").css("width", width-10);
 	jQuery(".new-post-form-title").css("width", (width/2) - 50);
+
+    
 
 }, 100);
 

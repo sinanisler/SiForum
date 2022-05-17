@@ -164,10 +164,15 @@ jQuery(window).scroll(function() {
 
 // Comment Textarea Width Dynamic Width
 setInterval(function() {
-	var width = jQuery('.post-reply-list').width();
+	var width = jQuery('.col-md-10').width();
 
 	jQuery(".comment-respond").css("width", width);
+
 	jQuery(".comment-body").css("width", width-10);
+	
+	jQuery(".comment-body img").css("max-width", width-80);
+
+	jQuery(".comment-body pre").css("max-width", width-80);
 
 }, 100);
 
@@ -230,7 +235,7 @@ async function upload_image_and_return(input){
 	const respo = await rawResponse.json();
 	if (respo.success) {
 		let $comm = jQuery("#comment").val();
-		jQuery("#comment").val($comm+"<img src='"+JSON.parse(respo.data)+"'>");
+		jQuery("#comment").val($comm+'<img src="'+JSON.parse(respo.data)+'">');
 	} else {
 		console.log("error");
 	}
