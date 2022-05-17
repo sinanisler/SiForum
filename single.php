@@ -105,10 +105,11 @@ endif;
 							</div>
 						<?php } ?>
 					</div>
-					<?php } ?>
-
-
-
+					<?php } else { ?>
+						<a href="<?php $purl = get_the_permalink(); bloginfo( 'url' ); echo "/wp-login.php?redirect_to=$purl"; ?>" 
+						class="scroll-container-reply-button"><span class="dashicons dashicons-admin-comments"></span> Giriş Yap</a>
+					<?php }  ?>
+					
 
 					<div class="scroll-block2">
 					<a href="#" class="scroll-container-first-button"><span class="dashicons dashicons-arrow-up-alt2"></span> İlk Yazı</a>
