@@ -172,6 +172,8 @@ setInterval(function() {
 	
 	jQuery(".comment-body img").css("max-width", width-80);
 
+	// jQuery(".comment-body pre").css("max-width", width-80);
+
 	jQuery(".comment-body pre").css("max-width", width-80);
 
 }, 100);
