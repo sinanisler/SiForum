@@ -161,7 +161,7 @@ jQuery(window).scroll(function() {
 
 
 
-// Comment Textarea Width Dynamic Pos
+// Comment Textarea Width Dynamic Width
 setInterval(function() {
 	var width = jQuery('.post-reply-list').width();
 
@@ -200,8 +200,8 @@ jQuery(".comment-respond").append('<span title="Yatay" class="editor-italic dash
 jQuery(".comment-respond").append('<span title="Başlık" class="editor-h2 dashicons      dashicons-heading"></span>');
 jQuery(".comment-respond").append('<span title="Kod" class="editor-code dashicons       dashicons-editor-code"></span>');
 jQuery(".comment-respond").append('<span title="Link" class="editor-link dashicons      dashicons-admin-links"></span>');
+jQuery(".comment-respond").append('<span title="Foto Yükle" class="upload-image dashicons     dashicons-images-alt2"></span>');
 jQuery(".comment-respond").append('<span title="Foto" class="editor-image dashicons     dashicons-format-image"></span>');
-jQuery(".comment-respond").append('<span title="Foto" class="upload-image dashicons     dashicons-cloud-upload"></span>');
 jQuery(".comment-respond").append('<span title="List" class="editor-list dashicons      dashicons-editor-ul"></span>');
 jQuery(".comment-respond").append('<span title="Mention" class="editor-mention          dashicons  ">@</span>');
 jQuery(".comment-respond").append('<input type="file" id="image_upload" onChange="upload_image_and_return(this)" style="display:none" >');

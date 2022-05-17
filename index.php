@@ -32,7 +32,18 @@
                     echo '<span style="background:'.$color_code.'">' . $c->name.'</span>'; if(++$i > 3) break;
                 } ?>
             </span>
-            <div class="forum-post-index-avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?></div>
+            <div class="forum-post-index-avatar">
+                <?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?>
+
+                <?php $get_post = get_post( get_the_ID() ); $status   = $get_post->comment_status; if ( $status == 'closed' ) {  ?>
+                    <span class="dashicons dashicons-lock locked-post" title="Konu Kilitli"></span>
+                <?php } ?>
+
+                <?php if ( is_sticky() ) {  ?>
+                    <span class="dashicons dashicons-sticky sticky-and-<?php echo $status; ?>" title="Konu Sabit"></span>
+                <?php } ?>
+
+            </div>
             <div href="<?php the_permalink(); ?>" class="forum-post-index-title"><?php the_title(); ?> </div>
             <span class="forum-post-index-author"><b><?php the_author(); ?></b>
             <?php $t = get_the_time('U'); echo human_time_diff($t,current_time( 'U' )). " önce"; ?>
@@ -57,31 +68,59 @@
     </div>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php  if( is_user_logged_in() ){  ?>
-<div id="respond" class="new-post-form" style="width: 970px;">
-    <h3 id="reply-title" class="comment-reply-title">Bir cevap yazın</h3>
-    <form action="new_post" method="post" id="newpostform" class="newpostform">
+<div class="container index-container">
+<div class="row">
+    <div class="siforum-comment-form">
+    <div id="respond" class="new-post-form comment-respond" style="">
+        <form action="new_post" method="post" id="newpostform" class="newpostform">
+            <input type="text" id="title" name="title" val="" placeholder="Başlık" class="new-post-form-title">
 
-    <p><label for="title">Başlık <span class="required" aria-hidden="true">*</span></label> <input type="text" id="title" name="title" val=""></p>
-    <p><label for="cat">Kategori <span class="required" aria-hidden="true">*</span></label> <?php wp_dropdown_categories( 'show_option_none=Select category' ); ?></p>
+            <?php wp_dropdown_categories( 'selected=1' ); ?>
 
-    <p><span class="required-field-message" aria-hidden="true">Gerekli alanlar <span class="required" aria-hidden="true">*</span> ile işaretlenmişlerdir</span></p>
-    <p class="comment-form-comment">
-        <label for="comment">Yorum <span class="required" aria-hidden="true">*</span></label>
-            <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required" spellcheck="false"></textarea>
-    </p>
-    <p class="form-submit">
-        <input name="author" type="hidden" id="author" value="<?php echo get_current_user_id(  );?>">
-        <input name="submit" type="submit" id="submit" class="submit" value="Yorum gönder">
-    </p>
-    <input type="hidden" id="_wp_unfiltered_html_comment_disabled" name="_wp_unfiltered_html_comment" value="351b62f730">
-    <script>(function(){if(window===window.parent){document.getElementById('_wp_unfiltered_html_comment_disabled').name='_wp_unfiltered_html_comment';}})();</script>
-</form>	</div>
+            <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" 
+            required="required" spellcheck="true" placeholder="Yazı Gir"></textarea>
+
+            <p class="form-submit">
+                <input name="author" type="hidden" id="author" value="<?php echo get_current_user_id(  );?>">
+                <input name="submit" type="submit" id="submit" class="submit" value="Tartışma Başlat">
+            </p>
+        </form>	
+    </div>
+    </div>
+</div>
+</div>
 <?php  } ?>
 
-<script>
 
+<script>
 <?php  if( is_user_logged_in() ){  ?>
+// Comment Textarea Width Dynamic Width
+setInterval(function() {
+	var width = jQuery('.row').width();
+
+	jQuery(".comment-respond").css("width", width);
+	jQuery(".comment-body").css("width", width-10);
+	jQuery(".new-post-form-title").css("width", (width/2) - 50);
+
+}, 100);
+
+
 // New Post Button Editor Show/Hide Form
 
 var file_sec = "<?php echo wp_create_nonce( 'file_upload' ); ?>";
@@ -103,11 +142,12 @@ jQuery(".new-post-form").append('<span title="Yatay" class="editor-italic dashic
 jQuery(".new-post-form").append('<span title="Başlık" class="editor-h2 dashicons      dashicons-heading"></span>');
 jQuery(".new-post-form").append('<span title="Kod" class="editor-code dashicons       dashicons-editor-code"></span>');
 jQuery(".new-post-form").append('<span title="Link" class="editor-link dashicons      dashicons-admin-links"></span>');
+jQuery(".new-post-form").append('<span title="Foto Yükle" class="upload-image dashicons     dashicons-images-alt2"></span>');
 jQuery(".new-post-form").append('<span title="Foto" class="editor-image dashicons     dashicons-format-image"></span>');
-jQuery(".new-post-form").append('<span title="Foto" class="upload-image dashicons     dashicons-cloud-upload"></span>');
 jQuery(".new-post-form").append('<span title="List" class="editor-list dashicons      dashicons-editor-ul"></span>');
 jQuery(".new-post-form").append('<span title="Mention" class="editor-mention          dashicons  ">@</span>');
 jQuery(".new-post-form").append('<input type="file" id="image_upload" onChange="upload_image_and_return(this)" style="display:none" >');
+
 jQuery(document).on('click',".editor-bold", function(){ jQuery('#comment').val(function(i, text) {  return text + '<b> Kalın </b>';   }); });
 jQuery(document).on('click',".editor-italic", function(){ jQuery('#comment').val(function(i, text) {  return text + '<i> Yatay </i>';   }); });
 jQuery(document).on('click',".editor-h2", function(){ jQuery('#comment').val(function(i, text) {  return text + '<h2> Başlık </h2>';   }); });
@@ -167,7 +207,6 @@ jQuery('#newpostform').submit(async function( event ){
 })
 
 <?php  } ?>
-
 
 
 

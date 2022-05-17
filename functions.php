@@ -49,10 +49,24 @@ function siforum_logo_change() { ?>
 add_action( 'login_enqueue_scripts', 'siforum_logo_change' );
 
 
+// LOGIN  and REGISTER LOGO URL
+
+function custom_loginlogo_url($url) {
+     return get_bloginfo('home');
+}
+add_filter( 'login_headerurl', 'custom_loginlogo_url' );
+
+
+
+
+
+
+
+
+
 
 
 // Allow most of the html tags like the_content output
-
 function filter_html_usage() {
 	global $allowedtags;
 	$allowedtags['code']       = array( 'class' => array() );
@@ -74,10 +88,7 @@ function filter_html_usage() {
 	$allowedtags['cite']       = array( 'class' => array() );
 	$allowedtags['em']         = array( 'class' => array() );
 }
-
-  // Add WordPress hook to use the function
-  add_action( 'init', 'filter_html_usage', 11 );
-
+add_action( 'init', 'filter_html_usage', 11 );
 
 
 
@@ -688,6 +699,9 @@ function si_get_image_for_return( $id, $size = 'full' ) {
 
 
 /** Ajax New Post */
+
+
+
 
 
 
