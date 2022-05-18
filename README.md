@@ -20,9 +20,12 @@ Forum DEMO: https://www.atarikafa.com/topluluk/
 
 Feel free to give ideas  CLICK --> https://github.com/sinanisler/SiForum/discussions/new?category=ideas
 
-## Screenshot
+## Screenshots
 
-![image](https://user-images.githubusercontent.com/1686324/167501411-f93c8941-1e3e-4d37-b018-b80651755df9.png)
+![Homepage](https://user-images.githubusercontent.com/1686324/167501411-f93c8941-1e3e-4d37-b018-b80651755df9.png)
+
+
+![Custom Editor](https://user-images.githubusercontent.com/1686324/168934187-949246dd-6b25-48ed-8c79-d814de178c0b.png)
 
 
 ## Features
