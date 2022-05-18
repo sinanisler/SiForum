@@ -22,10 +22,17 @@ Feel free to give ideas  CLICK --> https://github.com/sinanisler/SiForum/discuss
 
 ## Screenshots
 
+Index
 ![Homepage](https://user-images.githubusercontent.com/1686324/167501411-f93c8941-1e3e-4d37-b018-b80651755df9.png)
 
-
+Post
 ![Custom Editor](https://user-images.githubusercontent.com/1686324/168934187-949246dd-6b25-48ed-8c79-d814de178c0b.png)
+
+Activity (BuddyPress)
+![image](https://user-images.githubusercontent.com/1686324/169060592-f96a4b27-6857-4ecc-bfde-dc4fd8855e3d.png)
+
+Profile (BuddyPress)
+![image](https://user-images.githubusercontent.com/1686324/169060860-5ee057ea-1e8a-463f-afab-2d860565d070.png)
 
 
 ## Features
