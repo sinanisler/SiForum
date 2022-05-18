@@ -640,6 +640,7 @@ body.category .forum-header-menu{
     border-radius: 30px;
     cursor: pointer;
     font-size: 21px;
+    user-select: none;
 }
 
 
@@ -1120,9 +1121,29 @@ body.activity-permalink #buddypress div.activity-comments{
   }
 
 
+.activity-comments ul li {
+    background: #14191f;
+    padding: 20px !important;
+    border-radius: 1px 20px 20px 20px;
+    margin-bottom: 10px !important;
+}
+
+
+.atwho-view {
+    background: rgba(6, 6, 6, 0.8) !important;
+    border: 1px solid #000 !important;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25),0 0 1px #000 !important;
+    color: #8b2929 !important;
+}
+
+.atwho-view ul {
+    background: #101317 !important;
+}
+
+.atwho-view ul li {
+    border-bottom: 1px solid #000 !important;
+}
 
 
 
 
-
-  
