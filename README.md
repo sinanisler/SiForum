@@ -28,6 +28,9 @@ Index
 Post
 ![Custom Editor](https://user-images.githubusercontent.com/1686324/168934187-949246dd-6b25-48ed-8c79-d814de178c0b.png)
 
+@Mentions
+![image](https://user-images.githubusercontent.com/1686324/169062414-58d1d427-4d73-4f5c-b419-43f6d1e37352.png)
+
 Activity (BuddyPress)
 ![image](https://user-images.githubusercontent.com/1686324/169060592-f96a4b27-6857-4ecc-bfde-dc4fd8855e3d.png)
 
