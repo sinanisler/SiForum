@@ -11,7 +11,6 @@ Inspired from Discourse, Flarum and NodeBB. But much much simpler.
 Good minimalist, fast, ajax and modern community/forum theme.
 
 
-
 Forum DEMO: https://www.atarikafa.com/topluluk/
 
 ## To-Do
@@ -57,7 +56,7 @@ Profile (BuddyPress)
 - @Mention Users
 - Notifications
 - Subscriptions
-- Invite System
+- Invite System 
 
 
 ## Installation, Requirements
