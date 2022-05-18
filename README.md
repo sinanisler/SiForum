@@ -63,12 +63,10 @@ Profile (BuddyPress)
 ## Installation, Requirements
 
 - WordPress
-- BuddyPress (Recommended)
+- BuddyPress
+- SiForum
 
-
-## Settings
-to be documented...
-
+Have fun...
 
 
 ## Advantages
