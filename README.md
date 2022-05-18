@@ -25,7 +25,7 @@ Feel free to give ideas  CLICK --> https://github.com/sinanisler/SiForum/discuss
 ## Screenshots
 
 Index
-![Homepage](https://user-images.githubusercontent.com/1686324/167501411-f93c8941-1e3e-4d37-b018-b80651755df9.png)
+![image](https://user-images.githubusercontent.com/1686324/169101872-89df1396-f50e-4b2a-883b-7a5349285155.png)
 
 Post
 ![Custom Editor](https://user-images.githubusercontent.com/1686324/168934187-949246dd-6b25-48ed-8c79-d814de178c0b.png)
