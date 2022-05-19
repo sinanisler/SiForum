@@ -6,7 +6,7 @@
 
 **Minimalist Forum** and **Community Theme** made with **WordPress** and **BuddyPress**
 
-Inspired from Discourse, Flarum and NodeBB. But much much simpler. 
+Inspired from Discourse, Flarum and NodeBB. But much much simpler and FAST.
 
 
 Forum DEMO: https://www.atarikafa.com/topluluk/
