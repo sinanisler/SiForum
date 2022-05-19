@@ -280,6 +280,7 @@ body.category .forum-header-menu{
     color: white;
     border-radius: 12px;
     cursor: default;
+    transform: rotate(-30deg);
 }
 
 .forum-post-index-avatar .dashicons-lock{
