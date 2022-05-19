@@ -9,7 +9,7 @@
 Inspired from Discourse, Flarum and NodeBB. But much much simpler and FAST.
 
 
-Forum DEMO: https://www.atarikafa.com/topluluk/
+DEMO: https://www.atarikafa.com/topluluk/
 
 
 ## Screenshots
