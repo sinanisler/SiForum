@@ -1,4 +1,6 @@
-![]([https://img.shields.io/badge/Version-Beta-lightblue.svg](https://raw.githubusercontent.com/sinanisler/sinanisler/master/img/siforum.png)
+![]([https://img.shields.io/badge/Status-Under_Development-orange.svg](https://raw.githubusercontent.com/sinanisler/sinanisler/master/img/siforum.png))
+
+
 
 # SiForum a WordPress Forum Theme 
 ![](https://img.shields.io/badge/Status-Under_Development-orange.svg)
