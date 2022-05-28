@@ -27,10 +27,10 @@ Post
 @Mentions
 ![image](https://user-images.githubusercontent.com/1686324/169062414-58d1d427-4d73-4f5c-b419-43f6d1e37352.png)
 
-Activity (BuddyPress)
+Activity 
 ![image](https://user-images.githubusercontent.com/1686324/169060592-f96a4b27-6857-4ecc-bfde-dc4fd8855e3d.png)
 
-Profile (BuddyPress)
+Profile 
 ![image](https://user-images.githubusercontent.com/1686324/169060860-5ee057ea-1e8a-463f-afab-2d860565d070.png)
 
 
