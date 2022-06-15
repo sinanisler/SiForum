@@ -2,7 +2,6 @@
 
 
 # SiForum a WordPress Forum Theme 
-![](https://img.shields.io/badge/Status-Short_Break_Working_on_Client_Project_Now-6029b3.svg)
 ![](https://img.shields.io/badge/Status-Beta_Release-orange.svg)
 ![](https://img.shields.io/badge/License-GPL-green.svg)
 ![](https://img.shields.io/badge/Version-0.1-lightblue.svg)
