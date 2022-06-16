@@ -35,18 +35,23 @@ DEMO: https://www.atarikafa.com/topluluk/
 - Invite System 
 
 
-## Installation, Requirements
+## Requirements
 
 - WordPress
 - BuddyPress
 - SiForum Theme
 
-Theme is in beta stage rightnow I recommend using some plugins with this theme. 
 
+## Setup
+
+- Install BuddyPress Plugin
+- Install SiForum Theme
 - Add some categories, category colors and category icons
 - Recommended: Install a Comment Edit plugin for users. (This will be added as a native feature later. )
-- Recommended: Add a security and role restriction plugin for disabling the wp-admin for some users. (This will be added as a native feature later. )
+- Recommended: Install a security and role restriction plugin for disabling the wp-admin for some users. (This will be added as a native feature later. )
 
+
+Done. You can start to have fun posting topics...
 
 
 ## Advantages
