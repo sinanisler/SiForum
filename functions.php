@@ -22,9 +22,6 @@ register_sidebars( 1, array( 'name' => 'Sidebar_Index' ) );
 
 
 
-
-
-
 // Login - Register Logo Change
 function siforum_logo_change() { ?>
 	<style type="text/css">
