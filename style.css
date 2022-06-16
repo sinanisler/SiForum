@@ -64,7 +64,7 @@ img     {  max-width: 880px;}
   box-sizing: border-box;
   outline: none;
   text-align: left;
-  background: url(img/logo.png) center no-repeat;
+  background: url(assets/img/logo.png) center no-repeat;
   margin-right: 15px;
   margin-left: 13px;
 }
