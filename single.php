@@ -216,8 +216,6 @@ async function upload_image_and_return(input){
 <?php } ?>
 
 
-
-
 // SiForum Custom Share Button , Text Selection, Quote, Reply, Twitter, Linkedin
 document.onselectionchange = function() {
 
