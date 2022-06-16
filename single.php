@@ -136,6 +136,7 @@ endif;
 
 <script>
 
+// SiForum Single Post Scroll Percentage and Post Count Indicator
 jQuery(window).scroll(function() {
 
 	viewportHeight  = jQuery(window).height();
@@ -162,45 +163,14 @@ jQuery(window).scroll(function() {
 
 
 
-// Comment Textarea Width Dynamic Width
-setInterval(function() {
-	var width = jQuery('.col-md-10').width();
-
-	jQuery(".comment-respond").css("width", width);
-
-	jQuery(".comment-body").css("width", width-10);
-	
-	jQuery(".comment-body img").css("max-width", width-80);
-
-	jQuery(".forum-post-content img").css("max-width", width-80);
-
-	jQuery(".comment-body pre").css("max-width", width-80);
-
-}, 100);
-
-// Single Post Scrool Go Top
-jQuery( ".scroll-container-first-button" ).on( "click", function() { jQuery(document).scrollTop(0); });
-
-// Comment Editor Show/Hide Slide
-jQuery( ".scroll-container-reply-button" ).click(function() {
-	jQuery( ".comment-respond" ).slideToggle( "fast", function() {  });
-});
-
-jQuery( ".comment-reply-dashed" ).click(function() {
-	jQuery( ".comment-respond" ).slideToggle( "fast", function() {  });
-});
-
-
-
-
-// Comment Editor Buttons
+// SiForum Comment Editor Close (X) Button
 jQuery(".comment-respond").append('<span  title="Kapat" class="editor-close dashicons dashicons-no"></span>');
 jQuery(document).on('click',".editor-close", function(){
 	jQuery( ".comment-respond" ).slideToggle( "fast", function() {  });
 });
 
 <?php if ( is_user_logged_in() ) { ?>
-// Editor Buttons and Events
+// SiForum Custom Editor Buttons, Events and Ajax
 var file_sec = "<?php echo wp_create_nonce( 'file_upload' ); ?>";
 var file_ajax_url = "<?php echo admin_url( 'admin-ajax.php' ) ; ?>";
 jQuery(".comment-respond").append('<span title="Kalın" class="editor-bold dashicons     dashicons-editor-bold"></span>');
@@ -243,12 +213,12 @@ async function upload_image_and_return(input){
 	}
 }
 
-
-
-
 <?php } ?>
 
-// Text Selection, Quote Reply and Share Button
+
+
+
+// SiForum Custom Share Button , Text Selection, Quote, Reply, Twitter, Linkedin
 document.onselectionchange = function() {
 
 var ele = document.getElementById('quote-reply-share');
@@ -270,8 +240,6 @@ window.addEventListener('mouseup', function () {
 			ele.style.display = 'block';
 		} else{            ele.style.display = 'none';        }
 	});
-
-
 
 };
 
@@ -296,21 +264,6 @@ jQuery( document ).delegate( "#share-linkedin", "click", function() {
 });
 
 </script>
-
-
-
-
-<?php  if( is_user_logged_in() ){  ?>
-
-
-
-
-
-<?php }  ?>
-
-
-
-
 
 
 
