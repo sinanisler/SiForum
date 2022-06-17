@@ -60,12 +60,6 @@ Done. You can start to have fun posting topics...
 - Easy to Edit Theme
 - Backward Compatibility
 - Forward Compatibilty
-- This is WordPress 
-
-![Not Final Yet!](https://raw.githubusercontent.com/sinanisler/SiForum/main/img/gigi.gif)
-
-
-
 
 
 
