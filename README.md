@@ -51,7 +51,7 @@ DEMO: https://www.atarikafa.com/topluluk/
 - Recommended: Install a security and role restriction plugin for disabling the wp-admin for some users. (This will be added as a native feature later. )
 
 
-Done. You can start to have fun posting topics...
+Done. You can start to have fun posting topics and engaging with community...
 
 
 ## Advantages
