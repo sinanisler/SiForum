@@ -59,7 +59,7 @@ Done. You can start to have fun posting topics and engaging with community...
 ## Advantages
 - Unlimited Plugins
 - Great SEO
-- Endless Posibilities 
+- Endless Possibilities 
 - Easy to Edit Theme
 - Backward Compatibility
 - Forward Compatibilty
