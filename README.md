@@ -47,6 +47,7 @@ DEMO: https://www.atarikafa.com/topluluk/
 - Install BuddyPress Plugin
 - Install SiForum Theme
 - Add some categories, category colors and category icons
+- Be sure to disable guest commenting since this theme using comments as replies
 - Recommended: Install a Comment Edit plugin for users. (This will be added as a native feature later. )
 - Recommended: Install a security and role restriction plugin for disabling the wp-admin for some users. (This will be added as a native feature later. )
 
