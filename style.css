@@ -733,6 +733,41 @@ pre {line-height: 19px;}
 
 
 
+.comment-body .sce-comment-text{
+    width: 800px;
+    background: #101317;
+    color: #fbfbfb;
+    padding: 5px;
+    border: none;
+    position: relative;
+    font-size: 16px;
+}
+
+.comment-body .sce-comment-edit-buttons{
+    background: #101317;
+    padding: 0;
+    margin: 0;
+}
+
+.comment-body .sce-textarea{
+    background: #101317;
+}
+
+.comment-body .sce-comment-edit-buttons .sce-comment-save,
+.comment-body .sce-comment-edit-buttons .sce-comment-cancel,
+.comment-body .sce-comment-edit-buttons .sce-comment-delete  {
+    border:none !important;
+    cursor: pointer;
+}
+
+.comment-body .sce-comment-edit-buttons .sce-comment-save{
+    background:   #4b8149 !important;
+}
+
+
+
+
+
 
 
 /* SELECTION , QUOTE , SHARE */
@@ -1144,7 +1179,3 @@ body.activity-permalink #buddypress div.activity-comments{
 .atwho-view ul li {
     border-bottom: 1px solid #000 !important;
 }
-
-
-
-

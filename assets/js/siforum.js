@@ -15,7 +15,9 @@ setInterval(function() {
 	jQuery(".comment-respond").css("width", width);
 
 	jQuery(".comment-body").css("width", width-10);
-	
+
+	jQuery(".sce-comment-text").css("width", width-90);
+
 	jQuery(".comment-body img").css("max-width", width-80);
 
 	jQuery(".forum-post-content img").css("max-width", width-80);
