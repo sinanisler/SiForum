@@ -106,10 +106,10 @@ endif;
 						<?php } ?>
 					</div>
 					<?php } else { ?>
-						<a href="<?php $purl = get_the_permalink(); bloginfo( 'url' ); echo "/wp-login.php?redirect_to=$purl"; ?>" 
+						<a href="<?php $purl = get_the_permalink(); bloginfo( 'url' ); echo "/wp-login.php?redirect_to=$purl"; ?>"
 						class="scroll-container-reply-button"><span class="dashicons dashicons-admin-comments"></span> Giriş Yap</a>
 					<?php }  ?>
-					
+
 
 					<div class="scroll-block2">
 					<a href="#" class="scroll-container-first-button"><span class="dashicons dashicons-arrow-up-alt2"></span> İlk Yazı</a>
@@ -154,7 +154,13 @@ jQuery(window).scroll(function() {
 	divide_p_with_p = clear_percentage / postcount;
 
 	// Count Print
-	jQuery('.scroll-container-position').html(percent.toFixed(0) + "% / " + postcount );
+
+	// Post Number
+
+	let pn = postcount * parseInt(percent.toFixed(0)) / 100;
+
+	//jQuery('.scroll-container-position').html(percent.toFixed(0) + "% / " + postcount );
+	jQuery('.scroll-container-position').html(Math.round(pn));
 
 	// CSS Pos
 	jQuery(".scroll-container-position").css("top", clear_percentage * 3);
