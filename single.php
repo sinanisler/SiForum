@@ -160,7 +160,7 @@ jQuery(window).scroll(function() {
 	let pn = postcount * parseInt(percent.toFixed(0)) / 100;
 
 	//jQuery('.scroll-container-position').html(percent.toFixed(0) + "% / " + postcount );
-	jQuery('.scroll-container-position').html(Math.round(pn));
+	jQuery('.scroll-container-position').html(Math.round(pn) + " / " + postcount );
 
 	// CSS Pos
 	jQuery(".scroll-container-position").css("top", clear_percentage * 3);
