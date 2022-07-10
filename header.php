@@ -46,7 +46,7 @@
             </ul>
         <?php } else{ ?> 
             <a href ="<?php bloginfo( 'url' ); ?>/wp-login.php?redirect_to=<?php bloginfo( 'url' ); ?>" >
-                Giriş Yap
+                LOGIN
             </a> 
         <?php } ?>
     </div>

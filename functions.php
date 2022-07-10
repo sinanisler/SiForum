@@ -430,7 +430,7 @@ function atarikafa_comments( $comment, $args, $depth ) {
 					array_merge(
 						$args,
 						array(
-							'reply_text' => __( 'Cevap', 'atarikafa' ),
+							'reply_text' => __( 'Reply', 'atarikafa' ),
 							'depth'      => $depth,
 							'max_depth'  => $args['max_depth'],
 						)

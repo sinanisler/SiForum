@@ -78,7 +78,7 @@ endif;
 
 			<div class="comment-reply-dashed">
 				<?php echo get_avatar( get_current_user_id(), 70 ); ?>
-				Cevap Yaz...
+				Write Reply...
 			</div>
 
 			<div id="comment-bottom"></div>
@@ -98,7 +98,7 @@ endif;
 						if ( $status == 'open' ) {
 							?>
 							<a href="#comment-bottom" class="scroll-container-reply-button">
-							<span class="dashicons dashicons-admin-comments"></span> Cevap Yaz</a>
+							<span class="dashicons dashicons-admin-comments"></span> Write Reply</a>
 						<?php } else { ?>
 							<div class="scroll-container-reply-button cant-reply">
 							<span class="dashicons dashicons-lock"></span> Konu Kilitli
@@ -107,12 +107,12 @@ endif;
 					</div>
 					<?php } else { ?>
 						<a href="<?php $purl = get_the_permalink(); bloginfo( 'url' ); echo "/wp-login.php?redirect_to=$purl"; ?>" 
-						class="scroll-container-reply-button"><span class="dashicons dashicons-admin-comments"></span> Giriş Yap</a>
+						class="scroll-container-reply-button"><span class="dashicons dashicons-admin-comments"></span> Login</a>
 					<?php }  ?>
 					
 
 					<div class="scroll-block2">
-					<a href="#" class="scroll-container-first-button"><span class="dashicons dashicons-arrow-up-alt2"></span> İlk Yazı</a>
+					<a href="#" class="scroll-container-first-button"><span class="dashicons dashicons-arrow-up-alt2"></span> Original Post</a>
 					</div>
 
 					<div class="scroll-block3">
@@ -120,7 +120,7 @@ endif;
 					</div>
 
 					<div class="scroll-block4">
-					<a href="#comment-bottom"  class="scroll-container-last-button"><span class="dashicons dashicons-arrow-down-alt2"></span> Son Cevap</a>
+					<a href="#comment-bottom"  class="scroll-container-last-button"><span class="dashicons dashicons-arrow-down-alt2"></span> Now</a>
 					</div>
 				</div>
 			</div>
@@ -269,7 +269,7 @@ jQuery( document ).delegate( "#share-linkedin", "click", function() {
 <div id="cal2">&nbsp;</div>
 <div id="quote-reply-share">
 <?php  if( is_user_logged_in() ){  ?>
-    <span      title="Cevap Yaz"         id="share-reply"        class="share-reply dashicons dashicons-admin-comments">  </span>    <?php }  ?>
+    <span      title="Write Reply"         id="share-reply"        class="share-reply dashicons dashicons-admin-comments">  </span>    <?php }  ?>
 	<a href="" title="Twitter Paylaş"    id="share-twitter"      class="share-twitter dashicons dashicons-twitter" target="_blank">  </a>
 	<a href="" title="Facebook Paylaş"   id="share-facebook"     class="share-facebook dashicons dashicons-facebook" target="_blank" >  </a>
 	<a href="" title="Linkedin Paylaş"   id="share-linkedin"     class="share-linkedin dashicons dashicons-linkedin" target="_blank">  </a>
