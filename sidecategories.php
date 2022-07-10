@@ -2,7 +2,7 @@
             <ul class="cat-list">
                 <li class="cat-list-home">
                 <a href="<?php bloginfo('url'); ?>">
-                    <span style="color:white" class="dashicons dashicons-admin-comments"></span>Tüm Tartışmalar 
+                    <span style="color:white" class="dashicons dashicons-admin-comments"></span>All Discussions 
                 </a>
                 </li>
 
