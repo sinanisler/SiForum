@@ -2,114 +2,119 @@
 
 
 <div class="container index-container">
-    <div class="row">
-        <div class="col-md-3 sidebar_index">
+	<div class="row">
+		<div class="col-md-3 sidebar_index">
 
-            <?php if(is_user_logged_in()){ ?>
-                <div class="new-post-index-button">Yeni Konu Başlat</div>
+			<?php if ( is_user_logged_in() ) { ?>
+				<div class="new-post-index-button">Yeni Konu Başlat</div>
 
-            <?php } ?>
+			<?php } ?>
 
-            <?php include('sidecategories.php'); ?>
+			<?php include( 'sidecategories.php' ); ?>
 
-            <?php // dynamic_sidebar('Sidebar_Index'); ?>
+			<?php // dynamic_sidebar('Sidebar_Index'); ?>
 
-        </div>
-        <div class="col-md-9">
+		</div>
+		<div class="col-md-9">
 
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<?php
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+				the_post();
+				?>
 
-        <a href="<?php the_permalink(); ?>" class="forum-post-index">
-            <span class="forum-post-index-comment-count">
-                <span class="dashicons dashicons-welcome-comments"></span><?php echo get_comments_number($post->ID); ?>
-            </span>
-            <span class="forum-post-index-category">
-                <?php
-                $categories = get_the_terms( $post->ID, 'category' ); $i=1;
-                foreach( $categories as $c ) {
-                    $termid = $c->term_id;
-                    $color_code = get_term_meta($termid, 'color_code', true);
-                    echo '<span style="background:'.$color_code.'">' . $c->name.'</span>'; if(++$i > 3) break;
-                } ?>
-            </span>
-            <div class="forum-post-index-avatar">
-                <?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?>
+		<a href="<?php the_permalink(); ?>" class="forum-post-index">
+			<span class="forum-post-index-comment-count">
+				<span class="dashicons dashicons-welcome-comments"></span><?php echo get_comments_number( $post->ID ); ?>
+			</span>
+			<span class="forum-post-index-category">
+				<?php
+				$categories = get_the_terms( $post->ID, 'category' );
+				$i          = 1;
+				foreach ( $categories as $c ) {
+					$termid     = $c->term_id;
+					$color_code = get_term_meta( $termid, 'color_code', true );
+					echo '<span style="background:' . $color_code . '">' . $c->name . '</span>';
+					if ( ++$i > 3 ) {
+						break;
+					}
+				}
+				?>
+			</span>
+			<div class="forum-post-index-avatar">
+				<?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?>
 
-                <?php $get_post = get_post( get_the_ID() ); $status   = $get_post->comment_status; if ( $status == 'closed' ) {  ?>
-                    <span class="dashicons dashicons-lock locked-post" title="Konu Kilitli"></span>
-                <?php } ?>
+				<?php
+				$get_post = get_post( get_the_ID() );
+				$status   = $get_post->comment_status; if ( 'closed' === $status ) {
+					?>
+					<span class="dashicons dashicons-lock locked-post" title="Konu Kilitli"></span>
+					<?php } ?>
 
-                <?php if ( is_sticky() ) {  ?>
-                    <span class="dashicons dashicons-sticky sticky-and-<?php echo $status; ?>" title="Konu Sabit"></span>
-                <?php } ?>
+							<?php if ( is_sticky() ) { ?>
+					<span class="dashicons dashicons-sticky sticky-and-<?php echo $status; ?>" title="Konu Sabit"></span>
+				<?php } ?>
 
-            </div>
-            <div href="<?php the_permalink(); ?>" class="forum-post-index-title"><?php the_title(); ?> </div>
-            <span class="forum-post-index-author"><b><?php the_author(); ?></b>
-            <?php $t = get_the_time('U'); echo human_time_diff($t,current_time( 'U' )). " önce"; ?>
-            </span>
-        </a>
-        <?php endwhile; else : ?><p><?php esc_html_e( 'No posts here.' ); ?></p><?php endif; ?>
-
-
-
-
-        <?php
-        global $wp_query;
-
-        if (  $wp_query->max_num_pages > 1 )
-            echo '<div class="load_more_posts">Daha Fazla Yükle</div>';
-        ?>
+			</div>
+			<div href="<?php the_permalink(); ?>" class="forum-post-index-title"><?php the_title(); ?> </div>
+			<span class="forum-post-index-author"><b><?php the_author(); ?></b>
+							<?php
+							$t = get_the_time( 'U' );
+                            //phpcs:disable
+							echo human_time_diff( $t, current_time( 'U' ) ) . ' önce';
+                            //phpcs:enable
+							?>
+			</span>
+		</a>
+					<?php
+		endwhile; else :
+			?>
+						<p><?php esc_html_e( 'No posts here.' ); ?></p><?php endif; ?>
 
 
 
 
-        </div>
-    </div>
+		<?php
+		global $wp_query;
+
+		if ( $wp_query->max_num_pages > 1 ) {
+			echo '<div class="load_more_posts">Daha Fazla Yükle</div>';
+		}
+		?>
+		</div>
+	</div>
 </div>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<?php  if( is_user_logged_in() ){  ?>
+<?php if ( is_user_logged_in() ) { ?>
 <div class="container index-container">
 <div class="row">
-    <div class="siforum-comment-form">
-    <div id="respond" class="new-post-form comment-respond" style="">
-        <form action="new_post" method="post" id="newpostform" class="newpostform">
-            <input type="text" id="title" name="title" val="" placeholder="Başlık" class="new-post-form-title">
+	<div class="siforum-comment-form">
+	<div id="respond" class="new-post-form comment-respond" style="">
+		<form action="new_post" method="post" id="newpostform" class="newpostform">
+			<input type="text" id="title" name="title" val=""  required placeholder="Başlık" class="new-post-form-title">
 
-            <?php wp_dropdown_categories( 'selected=1' ); ?>
+			<?php wp_dropdown_categories( 'selected=1' ); ?>
 
-            <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" 
-            required="required" spellcheck="true" placeholder="Yazı Gir"></textarea>
+			<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525"
+			required="required" spellcheck="true" placeholder="Yazı Gir"></textarea>
 
-            <p class="form-submit">
-                <input name="author" type="hidden" id="author" value="<?php echo get_current_user_id(  );?>">
-                <input name="submit" type="submit" id="submit" class="submit" value="Yeni Konu Gönder">
-            </p>
-        </form>	
-    </div>
-    </div>
+			<p class="form-submit">
+				<input name="author" type="hidden" id="author" value="<?php echo get_current_user_id(); ?>">
+				<input name="submit" type="submit" id="submit" class="submit" value="Yeni Konu Gönder">
+			</p>
+		</form>
+	</div>
+	</div>
 </div>
 </div>
-<?php  } ?>
+<?php } ?>
 
 
 <script>
-<?php  if( is_user_logged_in() ){  ?>
+<?php if ( is_user_logged_in() ) { ?>
 // Comment Textarea Width Dynamic Width
 setInterval(function() {
 	var width = jQuery('.row').width();
@@ -118,7 +123,7 @@ setInterval(function() {
 	jQuery(".comment-body").css("width", width-10);
 	jQuery(".new-post-form-title").css("width", (width/2) - 50);
 
-    
+
 
 }, 100);
 
@@ -127,17 +132,17 @@ setInterval(function() {
 
 var file_sec = "<?php echo wp_create_nonce( 'file_upload' ); ?>";
 var new_post_sec = "<?php echo wp_create_nonce( 'new_post_sec' ); ?>";
-var file_ajax_url = "<?php echo admin_url( 'admin-ajax.php' ) ; ?>";
+var file_ajax_url = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
 
 jQuery( ".new-post-index-button" ).click(function() {
-    jQuery( ".new-post-form" ).slideToggle( "fast", function() {  });
+	jQuery( ".new-post-form" ).slideToggle( "fast", function() {  });
 });
 
 
 // Post Editor Buttons
 jQuery(".new-post-form").append('<span  title="Kapat" class="editor-close dashicons dashicons-no"></span>');
 jQuery(document).on('click',".editor-close", function(){
-    jQuery( ".new-post-form" ).slideToggle( "fast", function() {  });
+	jQuery( ".new-post-form" ).slideToggle( "fast", function() {  });
 });
 jQuery(".new-post-form").append('<span title="Kalın" class="editor-bold dashicons     dashicons-editor-bold"></span>');
 jQuery(".new-post-form").append('<span title="Yatay" class="editor-italic dashicons   dashicons-editor-italic"></span>');
@@ -179,19 +184,19 @@ async function upload_image_and_return(input){
 }
 
 jQuery('#newpostform').submit(async function( event ){
-    event.preventDefault();
-    let form = document.querySelector('form#newpostform');
-    let title = form.querySelector('input[name="title"]');
-    let cat = form.querySelector('select[name="cat"]');
-    let text = form.querySelector('textarea[name="comment"]');
-    let author = form.querySelector('input[name="author"]');
-    const fData = new FormData();
-    fData.append("action","create_new_from_from_index");
-    fData.append("security", new_post_sec);
-    fData.append("title",title.value);
-    fData.append("cat",cat.value);
-    fData.append("text",text.value);
-    fData.append("author",author.value);
+	event.preventDefault();
+	let form = document.querySelector('form#newpostform');
+	let title = form.querySelector('input[name="title"]');
+	let cat = form.querySelector('select[name="cat"]');
+	let text = form.querySelector('textarea[name="comment"]');
+	let author = form.querySelector('input[name="author"]');
+	const fData = new FormData();
+	fData.append("action","create_new_from_from_index");
+	fData.append("security", new_post_sec);
+	fData.append("title",title.value);
+	fData.append("cat",cat.value);
+	fData.append("text",text.value);
+	fData.append("author",author.value);
 
 	const rawResponse = await fetch(file_ajax_url, {
 		method: "POST",
@@ -200,7 +205,7 @@ jQuery('#newpostform').submit(async function( event ){
 	const respo = await rawResponse.json();
 	if (respo.success) {
 		//jQuery("#comment").val("<img src='"+JSON.parse(respo.data)+"'>");
-        window.location.href=respo.data;
+		window.location.href=respo.data;
 	} else {
 		console.log("error");
 	}
@@ -208,7 +213,7 @@ jQuery('#newpostform').submit(async function( event ){
 
 })
 
-<?php  } ?>
+<?php } ?>
 
 
 
@@ -218,7 +223,7 @@ jQuery(function($){
 	$('.load_more_posts').click(function(){
 
 		var button = $(this),
-		    data = {
+			data = {
 			'action': 'loadmore',
 			'query': misha_loadmore_params.posts,
 			'page' : misha_loadmore_params.current_page
