@@ -23,6 +23,21 @@ a:hover {color:#f06a6a}
     background: #C10C0C;
   }
 
+:-ms-input-placeholder { 
+color: black;
+}
+
+.input-search{
+    width:100%; 
+    background: #0D1014; 
+    color:White; 
+    border: none; 
+    padding: 12px; 
+    border-radius: 10px; 
+    margin-bottom:10px; 
+    box-shadow: inset 0 0 10px #000;
+}
+
 @media (min-width: 1000px){ .container {  max-width: 1200px;} }
 @media (max-width: 768px) {  
     .sidebar_index .cat-list li{ width: 50%; float: left; padding-left:20px } 
@@ -1179,3 +1194,12 @@ body.activity-permalink #buddypress div.activity-comments{
 .atwho-view ul li {
     border-bottom: 1px solid #000 !important;
 }
+
+
+
+
+
+
+
+
+

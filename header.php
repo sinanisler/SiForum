@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel=icon href="<?php bloginfo("stylesheet_directory"); ?>/assets/img/favicon.png" type="image/png">
-    <title><?php if(is_front_page() || is_home()){ echo get_bloginfo('name');    } else{ echo wp_title('');    }?></title>
+    <title><?php if(is_front_page() || is_home()){  bloginfo('name');    } else{ echo wp_title('');    }?></title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php bloginfo("stylesheet_directory"); ?>/style.css?v=73">
+    <link rel="stylesheet" href="<?php bloginfo("stylesheet_directory"); ?>/style.css?v=75">
     
 <?php wp_head(); ?>
 <?php if ( ! current_user_can( 'delete_others_posts' ) and !is_user_logged_in( ) ) { ?><style>#wpadminbar{display:none} html{margin-top: 0px !important;}</style><?php } ?>
@@ -18,7 +18,7 @@
 <header class="forum-header-menu">
     <div class="container">
     <div class="row">
-        <a href="<?php bloginfo( 'url' ); ?>" class="forum-header-menu-logo"> </a>
+        <a href="https://www.atarikafa.com/<?php // bloginfo( 'url' ); ?>" class="forum-header-menu-logo"> </a>
 
         <span class="forum-header-menu-mobile-button dashicons dashicons-menu" style="display:none"></span>
 

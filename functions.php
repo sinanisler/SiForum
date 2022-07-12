@@ -46,14 +46,14 @@ add_action( 'login_enqueue_scripts', 'siforum_logo_change' );
 
 
 // LOGIN  and REGISTER LOGO URL
-
+/*
 function custom_loginlogo_url($url) {
-     return get_bloginfo('home');
+     return bloginfo('url');
 }
 add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 
 
-
+*/
 
 
 
