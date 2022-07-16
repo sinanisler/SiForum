@@ -66,6 +66,7 @@ $color_code = get_term_meta( $c_id, 'color_code', true );
 				</article>
 					<?php
 				endwhile;
+				
 			else :
 			endif;
 			?>
