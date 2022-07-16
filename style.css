@@ -117,11 +117,13 @@ img     {  max-width: 880px;}
     z-index: 99;
     padding-left: 10px;
     padding-right: 10px;
-    min-width: 120px;
+    min-width: 130px;
 }
 
 .forum-header-menu .forum-header-profile:hover{
     background:#14191F;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .forum-header-menu .forum-header-profile a {
@@ -149,7 +151,7 @@ img     {  max-width: 880px;}
 }
 
 .forum-header-menu  .dropdown-user li{
-    width: 130px;
+    width: 120px;
     background:#14191F;
     line-height: 30px;
     padding: 10px;
