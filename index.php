@@ -25,7 +25,7 @@
 
 		<a href="<?php the_permalink(); ?>" class="forum-post-index">
 			<span class="forum-post-index-comment-count">
-				<span class="dashicons dashicons-welcome-comments"></span><?php echo get_comments_number( $post->ID ); ?>
+				<span class="dashicons dashicons-welcome-comments"></span><?php echo get_comments_number( $post->ID ) + 1; ?>
 			</span>
 			<span class="forum-post-index-category">
 				<?php
