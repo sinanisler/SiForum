@@ -3,7 +3,7 @@
             <div class="search-and-find">
             <form action="<?php bloginfo('url'); ?>" method="get">
                 <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" class="input-search" placeholder="Ara ve Enter"  />
-            </form>
+            </form> 
             </div>
 
 
