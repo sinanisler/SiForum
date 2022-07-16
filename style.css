@@ -193,7 +193,9 @@ img     {  max-width: 880px;}
     .username-text{
         display:none
     }
-
+    ..forum-header-menu .forum-header-profile{
+        min-width: auto;
+    }
 
 }
 
