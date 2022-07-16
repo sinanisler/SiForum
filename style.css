@@ -183,7 +183,9 @@ img     {  max-width: 880px;}
 @media (max-width:500px){
     .forum-header-menu-mobile-button{display: block !important; }
 
-   
+    .dashicons, .dashicons-before::before{
+        text-align: left !important;
+    }
 
     .menu-menu-1-container{
         width: 84%;
