@@ -65,10 +65,10 @@ $color_code = get_term_meta( $c_id, 'color_code', true );
 					</div>
 				</article>
 					<?php
-			endwhile;
-else :
-endif;
-?>
+				endwhile;
+			else :
+			endif;
+			?>
 
 
 

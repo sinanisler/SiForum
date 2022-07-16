@@ -538,10 +538,6 @@ function remove_items_from_edit( $views ) {
 
 
 
-
-
-
-
 // Load More Posts
 function misha_my_load_more_scripts() {
 
