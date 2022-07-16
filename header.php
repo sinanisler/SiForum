@@ -7,7 +7,7 @@
     <title><?php if(is_front_page() || is_home()){  bloginfo('name');    } else{ echo wp_title('');    }?></title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php bloginfo("stylesheet_directory"); ?>/style.css?v=80">
+    <link rel="stylesheet" href="<?php bloginfo("stylesheet_directory"); ?>/style.css?v=81">
     
 <?php wp_head(); ?>
 <?php if ( ! current_user_can( 'delete_others_posts' ) and !is_user_logged_in( ) ) { ?><style>#wpadminbar{display:none} html{margin-top: 0px !important;}</style><?php } ?>
@@ -38,7 +38,7 @@
         <?php  if( is_user_logged_in() ){  ?> 
             <a href ="<?php bloginfo('url'); ?>/members/<?php echo get_the_author_meta( 'login', get_current_user_id() ); ?>" >
                 <?php echo get_avatar( get_current_user_id() , 30); ?>
-                <?php echo get_the_author_meta( 'login', get_current_user_id() ); ?>
+                <span class="username-text"><?php echo get_the_author_meta( 'login', get_current_user_id() ); ?></span>
             </a>
             <ul class="dropdown-user">
                 <li><a href="<?php bloginfo('url'); ?>/members/<?php echo get_the_author_meta( 'login', get_current_user_id() ); ?>">Profil</a></li>

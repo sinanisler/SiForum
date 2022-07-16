@@ -1,7 +1,7 @@
 
 
 jQuery( ".forum-header-menu-mobile-button" ).click(function() {
-    jQuery( ".new-post-form" ).toggle();
+    jQuery( ".header_menu" ).toggle();
 });
 
 

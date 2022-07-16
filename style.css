@@ -102,6 +102,7 @@ img     {  max-width: 880px;}
   font-weight: bold;
 }
 
+
 .forum-header-menu a:Hover {
     opacity: 0.8;
   }
@@ -161,17 +162,47 @@ img     {  max-width: 880px;}
 .forum-header-menu  .dropdown-user li:hover{ 
 }
 
+
+
+
+
+/* MOBILE MENU */
+
 .forum-header-menu-mobile-button {
     padding: 10px;
     font-size: 53px !important;
     cursor: pointer;
-    width: 50px !important;
+    width: 90% !important;
     height: 50px !important;
 }
 
 .forum-header-menu-mobile-button:hover {
     opacity: 0.6;
 }
+
+
+
+@media (max-width:500px){
+    .menu-menu-1-container{
+        width: 90%;
+    }
+    .forum-header-menu li {
+        width:100%;
+        text-align: center;
+    }
+    .username-text{
+        display:none
+    }
+
+
+}
+
+
+
+
+
+
+
 
 
 /* HEADER CATEGORY PAGE STYLES */
