@@ -7,7 +7,6 @@ jQuery( ".forum-header-menu-mobile-button" ).click(function() {
 
 
 
-
 // Comment Textarea Width Dynamic Width
 setInterval(function() {
 	var width = jQuery('.col-md-10').width();
@@ -24,9 +23,9 @@ setInterval(function() {
 
 	jQuery(".forum-post-block pre").css("max-width", width-80);
 
-	
 
-}, 100);
+}, 120);
+
 
 // Single Post Scrool Go Top
 jQuery( ".scroll-container-first-button" ).on( "click", function() { jQuery(document).scrollTop(0); });
