@@ -13,7 +13,9 @@ menu, nav, output, ruby, section, summary, video, time, mark, audio
 {margin: 0;	padding: 0;	border: 0;  list-style:none; text-decoration: none !important; }
 
 
-html {    scroll-behavior: smooth;  }
+html {    
+    scroll-behavior: smooth;  
+}
 
 a {color:#C10C0C}
 a:hover {color:#f06a6a}
@@ -158,6 +160,7 @@ img     {  max-width: 880px;}
 }
 
 .forum-header-menu  .dropdown-user li:hover{ 
+    cursor: auto;
 }
 
 
@@ -287,6 +290,7 @@ body.category .forum-header-menu{
     cursor: pointer;
     margin-bottom: 20px;
     text-align: center;
+    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -709,6 +713,7 @@ body.category .forum-header-menu{
     border-radius: 30px;
     cursor: pointer;
     font-size: 21px;
+    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -722,8 +727,7 @@ body.category .forum-header-menu{
 
 
 .index-container {
-    
-    
+    cursor: auto;
 }
 
 .index-container textarea{
@@ -879,7 +883,7 @@ body.category .forum-header-menu{
 }
 
 #quote-reply-share  .dashicons-admin-comments{
-    
+    cursor: auto;
 }
  
 #quote-reply-share  .dashicons-twitter{
@@ -1072,7 +1076,7 @@ body.category .forum-header-menu{
 }
 
 .bp-user #item-nav a{ 
-    
+    cursor: auto;
 }
 
 .bp-user #item-body{
@@ -1089,12 +1093,15 @@ body.category .forum-header-menu{
 
 
 @media (max-width: 980px) { 
+
     .bp-user #item-nav {
         width: auto;
         position: relative;
         top: 0 ; 
         left: 0 ;
     }
+
+
 }
 
 
