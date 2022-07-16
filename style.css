@@ -226,6 +226,12 @@ body.category .forum-header-menu{
 
 /* INDEX POSTS STYLES  */
 
+
+.forum-post-block li ul li {
+    list-style: circle inside;
+  }
+
+
 .new-post-index-button{
     background: #C10C0C;
     color: white;
