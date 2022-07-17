@@ -47,15 +47,19 @@ DEMO: https://www.atarikafa.com/topluluk/
 - Install BuddyPress Plugin
 - Install SiForum Theme
 - Add some categories, category colors and category icons
-- Disable guest commenting since this theme using comments as replies
-- Open register to everyone or use Buddypress invite system you decide (bp invite is really nice)
+- Disable guest commenting since this theme using comments as replies (use guests if you want)
+- Open register to everyone or use Buddypress invite system (bp invite is really nice)
 - Recommended: Install a Comment Edit plugin for users. (This will be added as a native feature later. )
 - - I recommend this one: https://wordpress.org/plugins/simple-comment-editing/
 - Recommended: Install a security and role restriction plugin for disabling the wp-admin for some users. (This will be added as a native feature later. )
 - - I recommend this one: https://wordpress.org/plugins/protect-wp-admin/
+- Disable ![image](https://user-images.githubusercontent.com/1686324/179417366-15058a7d-30a1-4bfd-bba9-d60a16199718.png) nested replies
 
 
-Done. You can start to have fun posting topics and engaging with community...
+
+Done. 
+
+You can have fun posting topics and start creating your community...
 
 
 ## Advantages
