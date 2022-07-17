@@ -45,6 +45,7 @@ DEMO: https://www.atarikafa.com/topluluk/
 ## Setup
 
 - Install BuddyPress Plugin
+- - Change BP setting the legacy theme ![image](https://user-images.githubusercontent.com/1686324/179418991-cdc5724f-3584-4e9c-9e25-5bc2890bb10f.png)
 - Install SiForum Theme
 - Add some categories, category colors and category icons
 - Disable guest commenting since this theme using comments as replies (use guests if you want)
