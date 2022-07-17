@@ -1,7 +1,7 @@
 <?php
 
 
-
+load_theme_textdomain( 'siforum', get_template_directory() . '/lang' );
 
 
 // Add Menu
