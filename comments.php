@@ -13,7 +13,7 @@
 
 
 	<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) { ?>
-		<p class="no-comments" id="respond">Yorumlar Kapalı</p>
+		<p class="no-comments" id="respond"><?php _e( 'Comments Closed...','siforum' ); ?></p>
 	<?php } ?>
 
 	<div class="siforum-comment-form">

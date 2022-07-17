@@ -41,12 +41,12 @@
                 <span class="username-text"><?php echo get_the_author_meta( 'login', get_current_user_id() ); ?></span>
             </a>
             <ul class="dropdown-user">
-                <li><a href="<?php bloginfo('url'); ?>/members/<?php echo get_the_author_meta( 'login', get_current_user_id() ); ?>">Profil</a></li>
-                <li><a href="<?php echo wp_logout_url( home_url() ); ?>">Çıkış Yap</a></li>
+                <li><a href="<?php bloginfo('url'); ?>/members/<?php echo get_the_author_meta( 'login', get_current_user_id() ); ?>"><?php _e( 'Profile','siforum' ); ?></a></li>
+                <li><a href="<?php echo wp_logout_url( home_url() ); ?>"><?php _e( 'Logout','siforum' ); ?></a></li>
             </ul>
         <?php } else{ ?> 
             <a href ="<?php bloginfo( 'url' ); ?>/wp-login.php?redirect_to=<?php bloginfo( 'url' ); ?>" >
-                Giriş Yap
+                <?php _e( 'Login','siforum' ); ?>
             </a> 
         <?php } ?>
     </div>

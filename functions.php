@@ -418,11 +418,11 @@ function atarikafa_comments( $comment, $args, $depth ) {
 			</div>
 			<div class="comment-body">
 				<span class="comment-author-name"><?php echo get_comment_author_link(); ?></span>
-				<span class="comment-date"><?php printf( __( '%1$s at %2$s', 'atarikafa' ), get_comment_date(), get_comment_time() ); ?></span>
+				<span class="comment-date"><?php printf( __( '%1$s at %2$s', 'siforum' ), get_comment_date(), get_comment_time() ); ?></span>
 				<?php
 				if ( $comment->comment_approved == '0' ) {
 					?>
-					<em><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> <?php _e( 'Comment awaiting approval', 'atarikafa' ); ?></em><br /><?php } ?>
+					<em><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> <?php _e( 'Comment awaiting approval', 'siforum' ); ?></em><br /><?php } ?>
 				<?php comment_text(); ?>
 				<span class="comment-reply">
 				<?php
@@ -430,7 +430,7 @@ function atarikafa_comments( $comment, $args, $depth ) {
 					array_merge(
 						$args,
 						array(
-							'reply_text' => __( 'Cevap', 'atarikafa' ),
+							'reply_text' => __( 'Reply', 'siforum' ),
 							'depth'      => $depth,
 							'max_depth'  => $args['max_depth'],
 						)
@@ -606,7 +606,7 @@ function misha_loadmore_ajax_handler() {
 			<span class="forum-post-index-author"><b><?php the_author(); ?></b>
 			<?php
 			$t = get_the_time( 'U' );
-			echo human_time_diff( $t, current_time( 'U' ) ) . ' önce';
+			echo human_time_diff( $t, current_time( 'U' ) ) . __( ' ago','siforum' );
 			?>
 
 			</span>

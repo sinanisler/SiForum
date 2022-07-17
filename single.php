@@ -79,7 +79,7 @@ $color_code = get_term_meta( $c_id, 'color_code', true );
 
 			<div class="comment-reply-dashed">
 				<?php echo get_avatar( get_current_user_id(), 70 ); ?>
-				Cevap Yaz...
+				<?php _e( 'Write Reply...','siforum' ); ?>
 			</div>
 
 			<div id="comment-bottom"></div>
@@ -99,21 +99,21 @@ $color_code = get_term_meta( $c_id, 'color_code', true );
 						if ( $status == 'open' ) {
 							?>
 							<a href="#comment-bottom" class="scroll-container-reply-button">
-							<span class="dashicons dashicons-admin-comments"></span> <?php _e( 'Cevap Yaz','siforum' ); ?></a>
+							<span class="dashicons dashicons-admin-comments"></span> <?php _e( 'Write Reply','siforum' ); ?></a>
 						<?php } else { ?>
 							<div class="scroll-container-reply-button cant-reply">
-							<span class="dashicons dashicons-lock"></span> <?php _e( 'Konu Kilitli','siforum' ); ?>
+							<span class="dashicons dashicons-lock"></span> <?php _e( 'Locked Topic','siforum' ); ?>
 							</div>
 						<?php } ?>
 					</div>
 					<?php } else { ?>
 						<a href="<?php $purl = get_the_permalink(); bloginfo( 'url' ); echo "/wp-login.php?redirect_to=$purl"; ?>"
-						class="scroll-container-reply-button"><span class="dashicons dashicons-admin-comments"></span> <?php _e( 'Giriş Yap','siforum' ); ?></a>
+						class="scroll-container-reply-button"><span class="dashicons dashicons-admin-comments"></span> <?php _e( 'Login','siforum' ); ?></a>
 					<?php }  ?>
 
 
 					<div class="scroll-block2">
-					<a href="#" class="scroll-container-first-button"><span class="dashicons dashicons-arrow-up-alt2"></span> <?php _e( 'İlk Yazı','siforum' ); ?></a>
+					<a href="#" class="scroll-container-first-button"><span class="dashicons dashicons-arrow-up-alt2"></span> <?php _e( 'First Post','siforum' ); ?></a>
 					</div>
 
 					<div class="scroll-block3">
@@ -121,7 +121,7 @@ $color_code = get_term_meta( $c_id, 'color_code', true );
 					</div>
 
 					<div class="scroll-block4">
-					<a href="#comment-bottom"  class="scroll-container-last-button"><span class="dashicons dashicons-arrow-down-alt2"></span> <?php _e( 'Son Cevap','siforum' ); ?></a>
+					<a href="#comment-bottom"  class="scroll-container-last-button"><span class="dashicons dashicons-arrow-down-alt2"></span> <?php _e( 'Last Reply','siforum' ); ?></a>
 					</div>
 				</div>
 			</div>
@@ -191,14 +191,14 @@ jQuery(".comment-respond").append('<span title="List" class="editor-list dashico
 jQuery(".comment-respond").append('<span title="Mention" class="editor-mention          dashicons  ">@</span>');
 jQuery(".comment-respond").append('<input type="file" id="image_upload" onChange="upload_image_and_return(this)" style="display:none" >');
 
-jQuery(document).on('click',".editor-bold", function(){ jQuery('#comment').val(function(i, text) {  return text + '<b> Kalın </b>';   }); });
-jQuery(document).on('click',".editor-italic", function(){ jQuery('#comment').val(function(i, text) {  return text + '<i> Yatay </i>';   }); });
-jQuery(document).on('click',".editor-h2", function(){ jQuery('#comment').val(function(i, text) {  return text + '<h2> Başlık </h2>';   }); });
+jQuery(document).on('click',".editor-bold", function(){ jQuery('#comment').val(function(i, text) {  return text + '<b> Bold </b>';   }); });
+jQuery(document).on('click',".editor-italic", function(){ jQuery('#comment').val(function(i, text) {  return text + '<i> Italic </i>';   }); });
+jQuery(document).on('click',".editor-h2", function(){ jQuery('#comment').val(function(i, text) {  return text + '<h2> Title </h2>';   }); });
 jQuery(document).on('click',".editor-code", function(){ jQuery('#comment').val(function(i, text) {  return text + '<pre><code>\n \n</code></pre>'; }); });
-jQuery(document).on('click',".editor-link", function(){ jQuery('#comment').val(function(i, text) {  return text + '<a href="https://google.com"> LİNK TEXT </a>'; }); });
+jQuery(document).on('click',".editor-link", function(){ jQuery('#comment').val(function(i, text) {  return text + '<a href="https://google.com"> Link Text </a>'; }); });
 jQuery(document).on('click',".editor-image", function(){ jQuery('#comment').val(function(i, text) {  return text + '<img src="https://google.com/imagename.png">'; }); });
 jQuery(document).on('click',".upload-image", function(){ jQuery('#image_upload').trigger("click"); });
-jQuery(document).on('click',".editor-list", function(){ jQuery('#comment').val(function(i, text) {  return text + '<ul>'+'\n <li> bir </li>\n<li> iki </li>\n<li> üç </li> \n'+'</ul>';   }); });
+jQuery(document).on('click',".editor-list", function(){ jQuery('#comment').val(function(i, text) {  return text + '<ul>'+'\n <li> 1 </li>\n<li> 2 </li>\n<li> 3 </li> \n'+'</ul>';   }); });
 jQuery(document).on('click',".editor-mention", function(){ jQuery('#comment').val(function(i, text) {  return text + '@username';   }); });
 
 
@@ -276,10 +276,10 @@ jQuery( document ).delegate( "#share-linkedin", "click", function() {
 <div id="cal2">&nbsp;</div>
 <div id="quote-reply-share">
 <?php  if( is_user_logged_in() ){  ?>
-    <span      title="Cevap Yaz"         id="share-reply"        class="share-reply dashicons dashicons-admin-comments">  </span>    <?php }  ?>
-	<a href="" title="Twitter Paylaş"    id="share-twitter"      class="share-twitter dashicons dashicons-twitter" target="_blank">  </a>
-	<a href="" title="Facebook Paylaş"   id="share-facebook"     class="share-facebook dashicons dashicons-facebook" target="_blank" >  </a>
-	<a href="" title="Linkedin Paylaş"   id="share-linkedin"     class="share-linkedin dashicons dashicons-linkedin" target="_blank">  </a>
+    <span      title="<?php _e( 'Quote and Reply','siforum' ); ?>"     id="share-reply"        class="share-reply dashicons dashicons-admin-comments">  </span>    <?php }  ?>
+	<a href="" title="<?php _e( 'Share on Twitter','siforum' ); ?>"    id="share-twitter"      class="share-twitter dashicons dashicons-twitter" target="_blank">  </a>
+	<a href="" title="<?php _e( 'Share on Facebook','siforum' ); ?>"   id="share-facebook"     class="share-facebook dashicons dashicons-facebook" target="_blank" >  </a>
+	<a href="" title="<?php _e( 'Share on Linkedin','siforum' ); ?>"   id="share-linkedin"     class="share-linkedin dashicons dashicons-linkedin" target="_blank">  </a>
 </div>
 
 
