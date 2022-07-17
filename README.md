@@ -48,11 +48,11 @@ DEMO: https://www.atarikafa.com/topluluk/
 - Install SiForum Theme
 - Add some categories, category colors and category icons
 - Disable guest commenting since this theme using comments as replies
-- Open register to everyone or use Buddypress invite system you decide
+- Open register to everyone or use Buddypress invite system you decide (bp invite is really nice)
 - Recommended: Install a Comment Edit plugin for users. (This will be added as a native feature later. )
-- I recommend this one: https://wordpress.org/plugins/simple-comment-editing/
+- - I recommend this one: https://wordpress.org/plugins/simple-comment-editing/
 - Recommended: Install a security and role restriction plugin for disabling the wp-admin for some users. (This will be added as a native feature later. )
-- I recommend this one: https://wordpress.org/plugins/protect-wp-admin/
+- - I recommend this one: https://wordpress.org/plugins/protect-wp-admin/
 
 
 Done. You can start to have fun posting topics and engaging with community...
