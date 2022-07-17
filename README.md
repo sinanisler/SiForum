@@ -53,7 +53,7 @@ DEMO: https://www.atarikafa.com/topluluk/
 - - I recommend this one: https://wordpress.org/plugins/simple-comment-editing/
 - Recommended: Install a security and role restriction plugin for disabling the wp-admin for some users. (This will be added as a native feature later. )
 - - I recommend this one: https://wordpress.org/plugins/protect-wp-admin/
-- Disable ![image](https://user-images.githubusercontent.com/1686324/179417338-2936e4df-3e55-460a-b0b6-c93151dcf0e7.png) nested replies
+- Disable ![image](https://user-images.githubusercontent.com/1686324/179417366-15058a7d-30a1-4bfd-bba9-d60a16199718.png) nested replies
 
 
 
