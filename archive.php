@@ -16,7 +16,7 @@
 
             <?php include('sidecategories.php'); ?>
 
-            <?php dynamic_sidebar('Sidebar_Index'); ?>
+            <?php //dynamic_sidebar('Sidebar_Index'); ?>
  
 
         </div>
@@ -40,7 +40,7 @@
             <div class="forum-post-index-avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?></div>
             <div href="<?php the_permalink(); ?>" class="forum-post-index-title"><?php the_title(); ?> </div> 
             <span class="forum-post-index-author"><b><?php the_author(); ?></b>
-            <?php $t = get_the_time('U'); echo human_time_diff($t,current_time( 'U' )). " önce"; ?> 
+            <?php $t = get_the_time('U'); echo human_time_diff($t,current_time( 'U' )).  __( ' ago','siforum' ); ?> 
             </span> 
         </a>
         <?php endwhile; else : ?><p><?php esc_html_e( 'No posts here.' ); ?></p><?php endif; ?>
@@ -52,10 +52,10 @@
         global $wp_query; 
         
         if (  $wp_query->max_num_pages > 1 )
-            echo '<div class="load_more_posts">Daha Fazla Yükle</div>'; 
+            echo '<div class="load_more_posts">'.__( 'Load More','siforum' ).'</div>'; 
         ?>
 
-
+        
 
 
         </div>
@@ -79,11 +79,11 @@ jQuery(function($){
 			data : data,
 			type : 'POST',
 			beforeSend : function ( xhr ) {
-				button.text('Yükleniyor...'); 
+				button.text('<?php _e('Loading...','siforum'); ?>...'); 
 			},
 			success : function( data ){
 				if( data ) { 
-					button.text( 'Daha Fazla Yükle' ).prev().before(data); 
+					button.text( '<?php _e('Load More','siforum'); ?>' ).prev().before(data); 
 					misha_loadmore_params.current_page++;
  
 					if ( misha_loadmore_params.current_page == misha_loadmore_params.max_page ) 
