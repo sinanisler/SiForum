@@ -6,7 +6,7 @@
 		<div class="col-md-3 sidebar_index">
 
 			<?php if ( is_user_logged_in() ) { ?>
-				<div class="new-post-index-button"><?php _e('Yeni Konu Başlat','siforum'); ?></div>
+				<div class="new-post-index-button"><?php _e('Start New Topic','siforum'); ?></div>
 
 			<?php } ?>
 
@@ -48,11 +48,11 @@
 				$get_post = get_post( get_the_ID() );
 				$status   = $get_post->comment_status; if ( 'closed' === $status ) {
 					?>
-					<span class="dashicons dashicons-lock locked-post" title="<?php _e('Konu Kilitli','siforum'); ?>"></span>
+					<span class="dashicons dashicons-lock locked-post" title="<?php _e('Licked Topic','siforum'); ?>"></span>
 					<?php } ?>
 
 							<?php if ( is_sticky() ) { ?>
-					<span class="dashicons dashicons-sticky sticky-and-<?php echo $status; ?>" title="<?php _e('Konu Sabit','siforum'); ?>"></span>
+					<span class="dashicons dashicons-sticky sticky-and-<?php echo $status; ?>" title="<?php _e('Pinned Topic','siforum'); ?>"></span>
 				<?php } ?>
 
 			</div>
@@ -61,7 +61,7 @@
 							<?php
 							$t = get_the_time( 'U' );
                             //phpcs:disable
-							echo human_time_diff( $t, current_time( 'U' ) ) . __(' önce','siforum');
+							echo human_time_diff( $t, current_time( 'U' ) ) . __(' ago','siforum');
                             //phpcs:enable
 							?>
 			</span>
@@ -69,7 +69,7 @@
 					<?php
 		endwhile; else :
 			?>
-						<p><?php _e( 'No posts here.','siforum' ); ?></p><?php endif; ?>
+						<p><?php _e( 'No topics here.','siforum' ); ?></p><?php endif; ?>
 
 
 
@@ -78,7 +78,7 @@
 		global $wp_query;
 
 		if ( $wp_query->max_num_pages > 1 ) {
-			echo '<div class="load_more_posts">'.__('Daha Fazla Yükle','siforum').'</div>';
+			echo '<div class="load_more_posts">'.__('Load More','siforum').'</div>';
 		}
 		?>
 		</div>
@@ -94,16 +94,16 @@
 	<div class="siforum-comment-form">
 	<div id="respond" class="new-post-form comment-respond" style="">
 		<form action="new_post" method="post" id="newpostform" class="newpostform">
-			<input type="text" id="title" name="title" val=""  required placeholder="<?php _e( 'Başlık','siforum' ); ?>" class="new-post-form-title">
+			<input type="text" id="title" name="title" val=""  required placeholder="<?php _e( 'Title...','siforum' ); ?>" class="new-post-form-title">
 
 			<?php wp_dropdown_categories( 'selected=1' ); ?>
 
 			<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525"
-			required="required" spellcheck="true" placeholder="<?php _e( 'Yazı Gir','siforum' ); ?>"></textarea>
+			required="required" spellcheck="true" placeholder="<?php _e( 'Start Writing...','siforum' ); ?>"></textarea>
 
 			<p class="form-submit">
 				<input name="author" type="hidden" id="author" value="<?php echo get_current_user_id(); ?>">
-				<input name="submit" type="submit" id="submit" class="submit" value="<?php _e( 'Yeni Konu Gönder','siforum' ); ?>">
+				<input name="submit" type="submit" id="submit" class="submit" value="<?php _e( 'Publish New Topic','siforum' ); ?>">
 			</p>
 		</form>
 	</div>
@@ -155,11 +155,11 @@ jQuery(".new-post-form").append('<span title="List" class="editor-list dashicons
 jQuery(".new-post-form").append('<span title="Mention" class="editor-mention          dashicons  ">@</span>');
 jQuery(".new-post-form").append('<input type="file" id="image_upload" onChange="upload_image_and_return(this)" style="display:none" >');
 
-jQuery(document).on('click',".editor-bold", function(){ jQuery('#comment').val(function(i, text) {  return text + '<b> Kalın </b>';   }); });
-jQuery(document).on('click',".editor-italic", function(){ jQuery('#comment').val(function(i, text) {  return text + '<i> Yatay </i>';   }); });
-jQuery(document).on('click',".editor-h2", function(){ jQuery('#comment').val(function(i, text) {  return text + '<h2> Başlık </h2>';   }); });
+jQuery(document).on('click',".editor-bold", function(){ jQuery('#comment').val(function(i, text) {  return text + '<b> Bold </b>';   }); });
+jQuery(document).on('click',".editor-italic", function(){ jQuery('#comment').val(function(i, text) {  return text + '<i> Italic </i>';   }); });
+jQuery(document).on('click',".editor-h2", function(){ jQuery('#comment').val(function(i, text) {  return text + '<h2> Title </h2>';   }); });
 jQuery(document).on('click',".editor-code", function(){ jQuery('#comment').val(function(i, text) {  return text + '<pre><code>\n \n</code></pre>'; }); });
-jQuery(document).on('click',".editor-link", function(){ jQuery('#comment').val(function(i, text) {  return text + '<a href="https://examplelink.com"> LİNK TEXT </a>'; }); });
+jQuery(document).on('click',".editor-link", function(){ jQuery('#comment').val(function(i, text) {  return text + '<a href="https://examplelink.com"> link Text </a>'; }); });
 jQuery(document).on('click',".editor-image", function(){ jQuery('#comment').val(function(i, text) {  return text + '<img src="https://examplelink.com/photo.png">'; }); });
 jQuery(document).on('click',".editor-list", function(){ jQuery('#comment').val(function(i, text) {  return text + '<ul>'+'\n <li> 1 </li>\n<li> 2 </li>\n<li> 3 </li> \n'+'</ul>';   }); });
 jQuery(document).on('click',".editor-mention", function(){ jQuery('#comment').val(function(i, text) {  return text + '@username';   }); });
@@ -234,11 +234,11 @@ jQuery(function($){
 			data : data,
 			type : 'POST',
 			beforeSend : function ( xhr ) {
-				button.text('Yükleniyor...');
+				button.text('<?php _e( 'Loading','siforum' ); ?>...');
 			},
 			success : function( data ){
 				if( data ) {
-					button.text( 'Daha Fazla Yükle' ).prev().before(data);
+					button.text( '<?php _e( 'Load More','siforum' ); ?>' ).prev().before(data);
 					misha_loadmore_params.current_page++;
 
 					if ( misha_loadmore_params.current_page == misha_loadmore_params.max_page )

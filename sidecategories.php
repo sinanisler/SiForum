@@ -3,7 +3,7 @@
             <div class="search-and-find">
             <form action="<?php bloginfo('url'); ?>" method="get">
                 <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" 
-                class="input-search" placeholder="Ara ve Enter"  />
+                class="input-search" placeholder="<?php _e( 'Search and Enter...','siforum' ); ?>"  />
             </form> 
             </div>
 
@@ -14,7 +14,7 @@
 
                 <li class="cat-list-home">
                 <a href="<?php bloginfo('url'); ?>">
-                    <span style="color:white" class="dashicons dashicons-admin-comments"></span>Tüm Tartışmalar 
+                    <span style="color:white" class="dashicons dashicons-admin-comments"></span><?php _e( 'All Discussions','siforum' ); ?>
                 </a>
                 </li>
 

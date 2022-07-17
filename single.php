@@ -99,21 +99,21 @@ $color_code = get_term_meta( $c_id, 'color_code', true );
 						if ( $status == 'open' ) {
 							?>
 							<a href="#comment-bottom" class="scroll-container-reply-button">
-							<span class="dashicons dashicons-admin-comments"></span> Cevap Yaz</a>
+							<span class="dashicons dashicons-admin-comments"></span> <?php _e( 'Cevap Yaz','siforum' ); ?></a>
 						<?php } else { ?>
 							<div class="scroll-container-reply-button cant-reply">
-							<span class="dashicons dashicons-lock"></span> Konu Kilitli
+							<span class="dashicons dashicons-lock"></span> <?php _e( 'Konu Kilitli','siforum' ); ?>
 							</div>
 						<?php } ?>
 					</div>
 					<?php } else { ?>
 						<a href="<?php $purl = get_the_permalink(); bloginfo( 'url' ); echo "/wp-login.php?redirect_to=$purl"; ?>"
-						class="scroll-container-reply-button"><span class="dashicons dashicons-admin-comments"></span> Giriş Yap</a>
+						class="scroll-container-reply-button"><span class="dashicons dashicons-admin-comments"></span> <?php _e( 'Giriş Yap','siforum' ); ?></a>
 					<?php }  ?>
 
 
 					<div class="scroll-block2">
-					<a href="#" class="scroll-container-first-button"><span class="dashicons dashicons-arrow-up-alt2"></span> İlk Yazı</a>
+					<a href="#" class="scroll-container-first-button"><span class="dashicons dashicons-arrow-up-alt2"></span> <?php _e( 'İlk Yazı','siforum' ); ?></a>
 					</div>
 
 					<div class="scroll-block3">
@@ -121,7 +121,7 @@ $color_code = get_term_meta( $c_id, 'color_code', true );
 					</div>
 
 					<div class="scroll-block4">
-					<a href="#comment-bottom"  class="scroll-container-last-button"><span class="dashicons dashicons-arrow-down-alt2"></span> Son Cevap</a>
+					<a href="#comment-bottom"  class="scroll-container-last-button"><span class="dashicons dashicons-arrow-down-alt2"></span> <?php _e( 'Son Cevap','siforum' ); ?></a>
 					</div>
 				</div>
 			</div>
