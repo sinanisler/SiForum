@@ -6,7 +6,7 @@
 		<div class="col-md-3 sidebar_index">
 
 			<?php if ( is_user_logged_in() ) { ?>
-				<div class="new-post-index-button"><?php __('Yeni Konu Başlat','siforum'); ?></div>
+				<div class="new-post-index-button"><?php _e('Yeni Konu Başlat','siforum'); ?></div>
 
 			<?php } ?>
 
@@ -48,11 +48,11 @@
 				$get_post = get_post( get_the_ID() );
 				$status   = $get_post->comment_status; if ( 'closed' === $status ) {
 					?>
-					<span class="dashicons dashicons-lock locked-post" title="<?php __('Konu Kilitli','siforum'); ?>"></span>
+					<span class="dashicons dashicons-lock locked-post" title="<?php _e('Konu Kilitli','siforum'); ?>"></span>
 					<?php } ?>
 
 							<?php if ( is_sticky() ) { ?>
-					<span class="dashicons dashicons-sticky sticky-and-<?php echo $status; ?>" title="<?php __('Konu Sabit','siforum'); ?>"></span>
+					<span class="dashicons dashicons-sticky sticky-and-<?php echo $status; ?>" title="<?php _e('Konu Sabit','siforum'); ?>"></span>
 				<?php } ?>
 
 			</div>
@@ -61,7 +61,7 @@
 							<?php
 							$t = get_the_time( 'U' );
                             //phpcs:disable
-							echo human_time_diff( $t, current_time( 'U' ) ) . __('önce','siforum');
+							echo human_time_diff( $t, current_time( 'U' ) ) . __(' önce','siforum');
                             //phpcs:enable
 							?>
 			</span>
@@ -69,7 +69,7 @@
 					<?php
 		endwhile; else :
 			?>
-						<p><?php __( 'No posts here.','siforum' ); ?></p><?php endif; ?>
+						<p><?php _e( 'No posts here.','siforum' ); ?></p><?php endif; ?>
 
 
 
@@ -94,16 +94,16 @@
 	<div class="siforum-comment-form">
 	<div id="respond" class="new-post-form comment-respond" style="">
 		<form action="new_post" method="post" id="newpostform" class="newpostform">
-			<input type="text" id="title" name="title" val=""  required placeholder="<?php __( 'Başlık','siforum' ); ?>" class="new-post-form-title">
+			<input type="text" id="title" name="title" val=""  required placeholder="<?php _e( 'Başlık','siforum' ); ?>" class="new-post-form-title">
 
 			<?php wp_dropdown_categories( 'selected=1' ); ?>
 
 			<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525"
-			required="required" spellcheck="true" placeholder="<?php __( 'Yazı Gir','siforum' ); ?>"></textarea>
+			required="required" spellcheck="true" placeholder="<?php _e( 'Yazı Gir','siforum' ); ?>"></textarea>
 
 			<p class="form-submit">
 				<input name="author" type="hidden" id="author" value="<?php echo get_current_user_id(); ?>">
-				<input name="submit" type="submit" id="submit" class="submit" value="<?php __( 'Yeni Konu Gönder','siforum' ); ?>">
+				<input name="submit" type="submit" id="submit" class="submit" value="<?php _e( 'Yeni Konu Gönder','siforum' ); ?>">
 			</p>
 		</form>
 	</div>
