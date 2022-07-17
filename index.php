@@ -217,6 +217,7 @@ jQuery('#newpostform').submit(async function( event ){
 
 
 
+
 // Pagination Load More
 jQuery(function($){
 	$('.load_more_posts').click(function(){
