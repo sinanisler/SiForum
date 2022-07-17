@@ -215,7 +215,7 @@ jQuery('#newpostform').submit(async function( event ){
 
 <?php } ?>
 
-
+ 
 
 
 // Pagination Load More
