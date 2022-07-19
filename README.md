@@ -46,6 +46,7 @@ DEMO: https://www.atarikafa.com/topluluk/
 - Install BuddyPress Plugin
 - - Change BP theme setting to legacy theme (Settings > Buddypress > options)
 - Install SiForum Theme
+- Set the default registered user to "author" role
 - Add some categories, category colors and category icons
 - Disable guest commenting since this theme using comments as replies 
 - Open register to everyone or use Buddypress invite system (bp invite is really nice)
