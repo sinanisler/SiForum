@@ -42,8 +42,7 @@ DEMO: https://www.atarikafa.com/topluluk/
 
 ## Setup
 
-1. Install BuddyPress Plugin
-1. 1. Change BP theme setting to legacy theme (Settings > Buddypress > options)
+1. Install BuddyPress Plugin and  Change BuddyPress setting to legacy theme (Settings > Buddypress > options)
 2. Install SiForum Theme
 3. Set the default registered user to "author" role
 4. Add some categories, category colors and category icons
