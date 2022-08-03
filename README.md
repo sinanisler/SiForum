@@ -40,24 +40,22 @@ DEMO: https://www.atarikafa.com/topluluk/
 - BuddyPress
 - SiForum Theme
 
-
 ## Setup
 
 1. Install BuddyPress Plugin
 1. 1. Change BP theme setting to legacy theme (Settings > Buddypress > options)
-- Install SiForum Theme
-- Set the default registered user to "author" role
-- Add some categories, category colors and category icons
+2. Install SiForum Theme
+3. Set the default registered user to "author" role
+4. Add some categories, category colors and category icons
 ![image](https://user-images.githubusercontent.com/1686324/182618258-cc5833a4-4e2e-47f0-9dcb-0df77d0b64ee.png)
-
-- Disable guest commenting since this theme using comments as replies 
-- Open register to everyone or use Buddypress invite system (bp invite is really nice)
-- Recommended: Install a Comment Edit plugin for users.  https://wordpress.org/plugins/simple-comment-editing/
-- Recommended: Install a security and role restriction plugin for disabling the wp-admin  https://wordpress.org/plugins/protect-wp-admin/
-- Disable ![image](https://user-images.githubusercontent.com/1686324/179417366-15058a7d-30a1-4bfd-bba9-d60a16199718.png) nested replies
-
+5. Disable guest commenting since this theme using comments as replies 
+6. Open register to everyone or use Buddypress invite system or both.
+7. Recommended: Install a Comment Edit plugin for users.  https://wordpress.org/plugins/simple-comment-editing/
+8. Recommended: Install a security and role restriction plugin for disabling the wp-admin  https://wordpress.org/plugins/protect-wp-admin/
+9. Disable ![image](https://user-images.githubusercontent.com/1686324/179417366-15058a7d-30a1-4bfd-bba9-d60a16199718.png) nested replies
 
 Done. 
+
 
 You can have fun posting topics and start creating your community...
 
