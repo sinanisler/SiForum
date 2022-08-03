@@ -50,10 +50,8 @@ DEMO: https://www.atarikafa.com/topluluk/
 - Add some categories, category colors and category icons
 - Disable guest commenting since this theme using comments as replies 
 - Open register to everyone or use Buddypress invite system (bp invite is really nice)
-- Recommended: Install a Comment Edit plugin for users. (This will be added as a native feature later. )
-- - I recommend this one: https://wordpress.org/plugins/simple-comment-editing/
-- Recommended: Install a security and role restriction plugin for disabling the wp-admin for some users. (This will be added as a native feature later. )
-- - I recommend this one: https://wordpress.org/plugins/protect-wp-admin/
+- Recommended: Install a Comment Edit plugin for users.  https://wordpress.org/plugins/simple-comment-editing/
+- Recommended: Install a security and role restriction plugin for disabling the wp-admin  https://wordpress.org/plugins/protect-wp-admin/
 - Disable ![image](https://user-images.githubusercontent.com/1686324/179417366-15058a7d-30a1-4bfd-bba9-d60a16199718.png) nested replies
 - and use this too https://wordpress.org/plugins/hide-admin-bar/
 
