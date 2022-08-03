@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?php bloginfo("stylesheet_directory"); ?>/style.css?v=89">
     
 <?php wp_head(); ?>
-<?php if ( current_user_can( 'delete_others_posts' ) and is_user_logged_in( ) ) { ?>
+<?php if ( current_user_can( 'delete_others_posts' ) and is_user_logged_in( ) ) {} else { ?>
     <style> #wpadminbar{display:none} html{margin-top: 0px !important;} </style>
 <?php } ?>
 </head>
