@@ -16,9 +16,13 @@ register_nav_menus(
 // Show Admin bar only on Admins and Editors
 add_action('after_setup_theme', 'remove_admin_bar');
 function remove_admin_bar() {
-	if (!current_user_can('administrator') || !is_admin() || !current_user_can('editor') ) {
+
+	if (!current_user_can('administrator') or !is_admin() or !current_user_can('editor') ) {
+
 	show_admin_bar(false);
+
 	}
+	
 }
 
 
