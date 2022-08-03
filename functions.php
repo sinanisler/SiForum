@@ -665,10 +665,10 @@ function si_get_image_for_return( $id, $size = 'full' ) {
 		check_ajax_referer( 'new_post_sec', 'security' );
 
 		$the_content_text = $_POST['text'];
-
+		/*
 		$tidy = new tidy();
 		$clean_text = $tidy->repairString($the_content_text);
-
+		*/
 		$args = array(
 		'post_title'    => wp_strip_all_tags( $_POST['title'] ),
 		'post_content'  => $_POST['text'],
