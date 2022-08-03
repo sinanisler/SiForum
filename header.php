@@ -33,9 +33,6 @@
 
 
 
-
-
-
     <div class="forum-header-profile">
         <?php  if( is_user_logged_in() ){  ?> 
             <a href ="<?php bloginfo('url'); ?>/members/<?php echo get_the_author_meta( 'login', get_current_user_id() ); ?>" >
