@@ -1278,7 +1278,7 @@ body.activity-permalink #buddypress div.activity-comments{
 
 .sv-wrapper{
     background-color: #14191f !important;
-    color: white;
+    color: white !important;
 }
 
 .sv-like{
