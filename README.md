@@ -48,6 +48,8 @@ DEMO: https://www.atarikafa.com/topluluk/
 - Install SiForum Theme
 - Set the default registered user to "author" role
 - Add some categories, category colors and category icons
+![image](https://user-images.githubusercontent.com/1686324/182618258-cc5833a4-4e2e-47f0-9dcb-0df77d0b64ee.png)
+
 - Disable guest commenting since this theme using comments as replies 
 - Open register to everyone or use Buddypress invite system (bp invite is really nice)
 - Recommended: Install a Comment Edit plugin for users.  https://wordpress.org/plugins/simple-comment-editing/
