@@ -43,8 +43,8 @@ DEMO: https://www.atarikafa.com/topluluk/
 
 ## Setup
 
-- Install BuddyPress Plugin
-- - Change BP theme setting to legacy theme (Settings > Buddypress > options)
+1. Install BuddyPress Plugin
+1. - Change BP theme setting to legacy theme (Settings > Buddypress > options)
 - Install SiForum Theme
 - Set the default registered user to "author" role
 - Add some categories, category colors and category icons
@@ -55,8 +55,6 @@ DEMO: https://www.atarikafa.com/topluluk/
 - Recommended: Install a Comment Edit plugin for users.  https://wordpress.org/plugins/simple-comment-editing/
 - Recommended: Install a security and role restriction plugin for disabling the wp-admin  https://wordpress.org/plugins/protect-wp-admin/
 - Disable ![image](https://user-images.githubusercontent.com/1686324/179417366-15058a7d-30a1-4bfd-bba9-d60a16199718.png) nested replies
-- and use this too https://wordpress.org/plugins/hide-admin-bar/
-
 
 
 Done. 
