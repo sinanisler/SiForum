@@ -48,7 +48,7 @@
 				$get_post = get_post( get_the_ID() );
 				$status   = $get_post->comment_status; if ( 'closed' === $status ) {
 					?>
-					<span class="dashicons dashicons-lock locked-post" title="<?php _e('Licked Topic','siforum'); ?>"></span>
+					<span class="dashicons dashicons-lock locked-post" title="<?php _e('Locked Topic','siforum'); ?>"></span>
 					<?php } ?>
 
 							<?php if ( is_sticky() ) { ?>
