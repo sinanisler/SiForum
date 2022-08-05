@@ -45,7 +45,7 @@ DEMO: https://www.atarikafa.com/topluluk/
 1. Install BuddyPress Plugin and  Change BuddyPress setting to legacy theme (Settings > Buddypress > options)
 2. Install SiForum Theme
 3. Set the default registered user to "author" role
-4. Add some categories, category colors and category icons
+4. Add some categories, category colors (css color names or #ccc color codes) and category icons (i used dashicons just paste the class name thats it)
 ![image](https://user-images.githubusercontent.com/1686324/182628208-15a47709-f971-4a0f-adf2-4d32faf78386.png)
 5. Disable guest commenting since this theme using comments as replies 
 6. Open register to everyone or use Buddypress invite system or both.
