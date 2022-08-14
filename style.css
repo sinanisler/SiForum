@@ -730,6 +730,31 @@ body.category .forum-header-menu{
 
 
 
+
+
+.comment-reply-dashed-comment{
+    height: 130px;
+    border: dashed 3px  #252c33 ;
+    padding: 30px;
+    line-height: 55px;
+    margin-bottom: 150px ;
+    color: #252c33;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 21px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.comments-locked-alert{
+    font-size:30px !important;
+    position: relative;
+    margin-top: 13px;
+    left: -11px;
+}
+
+
+
 .index-container {
     cursor: auto;
 }

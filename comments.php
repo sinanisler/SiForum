@@ -13,7 +13,16 @@
 
 
 	<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) { ?>
-		<p class="no-comments" id="respond"><?php _e( 'Comments Closed...','siforum' ); ?></p>
+
+
+		<div class="comment-reply-dashed-comment">
+					
+				<span class="dashicons dashicons-lock locked-post comments-locked-alert" title="<?php _e('Locked Topic','siforum'); ?>"></span> 
+				<?php _e( 'Discussion is Locked...','siforum' ); ?>
+			
+		</div>
+
+
 	<?php } ?>
 
 	<div class="siforum-comment-form">

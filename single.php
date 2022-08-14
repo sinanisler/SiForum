@@ -76,11 +76,20 @@ $color_code = get_term_meta( $c_id, 'color_code', true );
 
 			<?php comments_template( '/comments.php' ); ?>
 
+			<?php
+			$get_post = get_post( get_the_ID() );
+			$status   = $get_post->comment_status; if ( 'closed' === $status ) {  } else {?>
 
-			<div class="comment-reply-dashed">
+				<div class="comment-reply-dashed">
 				<?php echo get_avatar( get_current_user_id(), 70 ); ?>
 				<?php _e( 'Write Reply...','siforum' ); ?>
-			</div>
+				</div>
+				
+			<?php  } ?>
+
+
+
+
 
 			<div id="comment-bottom"></div>
 		</div>
@@ -102,7 +111,7 @@ $color_code = get_term_meta( $c_id, 'color_code', true );
 							<span class="dashicons dashicons-admin-comments"></span> <?php _e( 'Write Reply','siforum' ); ?></a>
 						<?php } else { ?>
 							<div class="scroll-container-reply-button cant-reply">
-							<span class="dashicons dashicons-lock"></span> <?php _e( 'Locked Topic','siforum' ); ?>
+							<span class="dashicons dashicons-lock"></span> <?php _e( 'Locked','siforum' ); ?>
 							</div>
 						<?php } ?>
 					</div>

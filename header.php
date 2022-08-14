@@ -7,7 +7,7 @@
     <title><?php if(is_front_page() || is_home()){  bloginfo('name');    } else{ echo wp_title('');    }?></title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php bloginfo("stylesheet_directory"); ?>/style.css?v=90">
+    <link rel="stylesheet" href="<?php bloginfo("stylesheet_directory"); ?>/style.css?v=94">
     
 <?php wp_head(); ?>
 <?php if ( current_user_can( 'delete_others_posts' ) and is_user_logged_in( ) ) {} else { ?> 
