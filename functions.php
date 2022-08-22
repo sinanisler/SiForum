@@ -2,7 +2,7 @@
 
 
 load_theme_textdomain( 'siforum', get_template_directory() . '/lang' );
-
+require_once get_stylesheet_directory() . '/class-siforumcustomizer.php';
 
 // Add Menu
 add_theme_support( 'menus' );
@@ -16,7 +16,7 @@ register_nav_menus(
 
 
 
-// Add Widgets 
+// Add Widgets
 /*
 register_sidebars( 1, array( 'name' => 'Sidebar_Single' ) );
 register_sidebars( 1, array( 'name' => 'Sidebar_Index' ) );
@@ -26,23 +26,30 @@ register_sidebars( 1, array( 'name' => 'Sidebar_Index' ) );
 
 // Login - Register Logo Change
 function siforum_logo_change() { ?>
-	<style type="text/css">
-		body{
-			background:#14191f !important;
-			font-size:20px !important;
-		}
-		.login form{
-			border-radius:10px;
-		}
+<style type="text/css">
+body {
+	background: #14191f !important;
+	font-size: 20px !important;
+}
 
-		#login h1 a, .login h1 a {
-			background: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png) center no-repeat red;
-			height:105px;
-			width:320px;
-			padding-bottom: 30px ;
-			border-radius:10px;
-		}
-	</style>
+.login form {
+	border-radius: 10px;
+}
+
+#login h1 a,
+.login h1 a {
+	background: url(
+	<?php
+	echo get_stylesheet_directory_uri();
+	?>
+	/img/logo.png) center no-repeat red;
+	height: 105px;
+	width: 320px;
+	padding-bottom: 30px;
+	border-radius: 10px;
+}
+
+</style>
 	<?php
 }
 add_action( 'login_enqueue_scripts', 'siforum_logo_change' );
@@ -51,12 +58,63 @@ add_action( 'login_enqueue_scripts', 'siforum_logo_change' );
 // LOGIN  and REGISTER LOGO URL
 /*
 function custom_loginlogo_url($url) {
-     return bloginfo('url');
+	return bloginfo('url');
 }
 add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 
 
 */
+
+
+
+function siforum_get_header_logo_and_link() {
+	$logo = get_theme_mod( 'siforum_header_image' );
+	$link = get_theme_mod( 'siforum_header_link' );
+	$wh   = str_replace( get_home_url() . '/', '', $logo );
+	$whh  = getimagesize( $wh );
+
+	if ( ! empty( $logo ) && ! empty( $link ) ) {
+		$html  = '<a href="' . $link . '" class="forum-header-menu-logo-customized"> </a>';
+		$html .= '<style>.forum-header-menu-logo-customized{width: ' . $whh[0] . 'px;height: ' . $whh[1] . 'px;float: left;box-sizing: border-box;outline: none;text-align: left;background: url(' . $logo . ') center no-repeat;margin:10px 15px 10px 13px;}</style>';
+
+		return $html;
+	} else {
+		return '<a href="https://www.atarikafa.com/" class="forum-header-menu-logo"> </a>';
+	}
+}
+
+
+add_action( 'wp_head', 'siforum_add_custom_color', 9998 );
+
+function siforum_add_custom_color() {
+	$color = get_theme_mod( 'siforum_header_background_color' );
+	if ( ! empty( $color ) ) {
+		echo '<style>.header_custom_color{background-color:' . $color . '!important}</style>' . "\n";
+	}
+}
+
+
+function header_class() {
+	$color = get_theme_mod( 'siforum_header_background_color' );
+	if ( ! empty( $color ) ) {
+		return 'header_custom_color';
+	}
+	return '';
+}
+
+
+add_action( 'wp_head', 'check_fontawesome_and_install', 9999 );
+function check_fontawesome_and_install() {
+	$fontawesome = get_theme_mod( 'siforum_fontawesome_select' );
+	if ( ! empty( $fontawesome ) && 'yes' === $fontawesome ) {
+		echo '<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">' . "\n";
+	}
+}
+
+
+
+//
 
 
 
@@ -108,37 +166,41 @@ add_action( 'init', 'filter_html_usage', 11 );
 
 function wcr_category_fields( $term ) {
 
-	if ( current_filter() == 'category_edit_form_fields' ) {
+	if ( 'category_edit_form_fields' === current_filter() ) {
 		$icon_slug  = get_term_meta( $term->term_id, 'icon_slug', true );
 		$color_code = get_term_meta( $term->term_id, 'color_code', true );
 		?>
-		<tr class="form-field">
-			<th valign="top" scope="row"><label for="term_fields[icon_slug]"><?php _e( 'Dash Icon Slug-Name' ); ?></label></th>
-			<td>
-				<input type="text" size="40" value="<?php echo esc_attr( $icon_slug ); ?>" id="term_fields[icon_slug]" name="term_fields[icon_slug]"><br/>
-				<span class="description"><?php _e( 'Dash Icon Slug-Name' ); ?> - https://developer.wordpress.org/resource/dashicons/</span>
-			</td>
-		</tr>
-		<tr class="form-field">
-			<th valign="top" scope="row"><label for="term_fields[color_code]"><?php _e( 'Color code' ); ?></label></th>
-			<td>
-				<input type="text" size="40" value="<?php echo esc_attr( $color_code ); ?>" id="term_fields[color_code]" name="term_fields[color_code]"><br/>
-				<span class="description"><?php _e( 'Please enter color hex code' ); ?> - https://www.w3.org/wiki/CSS/Properties/color/keywords</span>
-			</td>
-		</tr>
+<tr class="form-field">
+	<th valign="top" scope="row"><label for="term_fields[icon_slug]"><?php _e( 'Dash Icon Slug-Name' ); ?></label></th>
+	<td>
+		<input type="text" size="40" value="<?php echo esc_attr( $icon_slug ); ?>" id="term_fields[icon_slug]"
+			name="term_fields[icon_slug]"><br />
+		<span class="description"><?php _e( 'Dash Icon Slug-Name' ); ?> -
+			https://developer.wordpress.org/resource/dashicons/ (If you enabled fontawesome. use fontawesome icon names. <code>fa-regular fa-person</code> like.)</span>
+	</td>
+</tr>
+<tr class="form-field">
+	<th valign="top" scope="row"><label for="term_fields[color_code]"><?php _e( 'Color code' ); ?></label></th>
+	<td>
+		<input type="text" size="40" value="<?php echo esc_attr( $color_code ); ?>" id="term_fields[color_code]"
+			name="term_fields[color_code]"><br />
+		<span class="description"><?php _e( 'Please enter color hex code' ); ?> -
+			https://www.w3.org/wiki/CSS/Properties/color/keywords</span>
+	</td>
+</tr>
 		<?php
-	} elseif ( current_filter() == 'category_add_form_fields' ) {
+	} elseif ( 'category_add_form_fields' === current_filter() ) {
 		?>
-		<div class="form-field">
-			<label for="term_fields[icon_slug]"><?php _e( 'Dash-Icon-Name-Slug' ); ?></label>
-			<textarea cols="40" rows="1" id="term_fields[icon_slug]" name="term_fields[icon_slug]"></textarea>
-			<p class="description">enter dashicon name - https://developer.wordpress.org/resource/dashicons/</p>
-		</div>
-		<div class="form-field">
-			<label for="term_fields[color_code]"><?php _e( 'Color code' ); ?></label>
-			<input type="text" size="40" value="" id="term_fields[color_code]" name="term_fields[color_code]">
-			<p class="description">enter color code/name - https://www.w3.org/wiki/CSS/Properties/color/keywords</p>
-		</div>
+<div class="form-field">
+	<label for="term_fields[icon_slug]"><?php _e( 'Dash-Icon-Name-Slug' ); ?></label>
+	<textarea cols="40" rows="1" id="term_fields[icon_slug]" name="term_fields[icon_slug]"></textarea>
+	<p class="description">enter dashicon name - https://developer.wordpress.org/resource/dashicons/</p>
+</div>
+<div class="form-field">
+	<label for="term_fields[color_code]"><?php _e( 'Color code' ); ?></label>
+	<input type="text" size="40" value="" id="term_fields[color_code]" name="term_fields[color_code]">
+	<p class="description">enter color code/name - https://www.w3.org/wiki/CSS/Properties/color/keywords</p>
+</div>
 		<?php
 	}
 
@@ -177,23 +239,29 @@ add_action( 'create_category', 'wcr_save_category_fields', 10, 2 );
 function atarikafa_comments( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 
-		<div class="comment-wrap">
-			<div class="comment-img">
-				<a href="<?php echo get_comment_author_url(); ?>">
+	<div class="comment-wrap">
+		<div class="comment-img">
+			<a href="<?php echo get_comment_author_url(); ?>">
 				<?php echo get_avatar( $comment, $args['avatar_size'], null, null, array( 'class' => array( 'img-responsive', 'img-circle' ) ) ); ?>
-				</a>
-			</div>
-			<div class="comment-body">
-				<span class="comment-author-name"><?php echo get_comment_author_link(); ?></span>
-				<span class="comment-date"><?php printf( __( '%1$s at %2$s', 'siforum' ), get_comment_date(), get_comment_time() ); ?></span>
+			</a>
+		</div>
+		<div class="comment-body">
+			<span class="comment-author-name"><?php echo get_comment_author_link(); ?></span>
+			<span class="comment-date">
 				<?php
-				if ( $comment->comment_approved == '0' ) {
-					?>
-					<em><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> <?php _e( 'Comment awaiting approval', 'siforum' ); ?></em><br /><?php } ?>
-				<?php comment_text(); ?>
-				<span class="comment-reply">
+
+				printf( /* translators: $1 comment date and $2 comment time. */ __( '%1$s at %2$s', 'siforum' ), get_comment_date(), get_comment_time() );
+				?>
+			</span>
+			<?php
+			if ( '0' === $comment->comment_approved ) {
+				?>
+			<em><i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+				<?php _e( 'Comment awaiting approval', 'siforum' ); ?></em><br /><?php } ?>
+			<?php comment_text(); ?>
+			<span class="comment-reply">
 				<?php
 				comment_reply_link(
 					array_merge(
@@ -207,9 +275,9 @@ function atarikafa_comments( $comment, $args, $depth ) {
 					$comment->comment_ID
 				);
 				?>
-				</span>
-			</div>
+			</span>
 		</div>
+	</div>
 	<?php
 }
 
@@ -252,19 +320,19 @@ function author_remove_comments_actions( $actions ) {
 
 
 // Security - Hiding comment IPs for normal users
-function lp_remove_IP_for_user( $comment_author_IP, $comment_ID, $comment ) {
+function lp_remove_ip_for_user( $comment_author_ip, $comment_id, $comment ) {
 
 	if ( ! is_admin() ) {
-		return $comment_author_IP; // only do this on admin, though with this particular function, it probably only applies to admin at all
+		return $comment_author_ip; // only do this on admin, though with this particular function, it probably only applies to admin at all
 	}
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return '';
 	}
 
-	return $comment_author_IP;
+	return $comment_author_ip;
 
 }
-add_filter( 'get_comment_author_IP', 'lp_remove_IP_for_user', 10, 3 );
+add_filter( 'get_comment_author_IP', 'lp_remove_ip_for_user', 10, 3 );
 
 
 
@@ -314,7 +382,7 @@ function misha_my_load_more_scripts() {
 
 	wp_enqueue_script( 'jquery' );
 
-	wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/assets/js/siforum.js', array( 'jquery' ) , 15 , true );
+	wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/assets/js/siforum.js', array( 'jquery' ), 15, true );
 
 	wp_localize_script(
 		'my_loadmore',
@@ -352,34 +420,36 @@ function misha_loadmore_ajax_handler() {
 			the_post();
 			?>
 
-		<a href="<?php the_permalink(); ?>" class="forum-post-index">
-			<span class="forum-post-index-comment-count">
-				<span class="dashicons dashicons-welcome-comments"></span><?php echo get_comments_number( $post->ID ); ?>
-			</span>
-			<span class="forum-post-index-category">
-				<?php
+	<a href="<?php the_permalink(); ?>" class="forum-post-index">
+		<span class="forum-post-index-comment-count">
+			<span class="dashicons dashicons-welcome-comments"></span><?php echo get_comments_number( $post->ID ); ?>
+		</span>
+		<span class="forum-post-index-category">
+			<?php
 				$categories = get_the_terms( $post->ID, 'category' );
 				$i          = 1;
-				foreach ( $categories as $c ) {
-					$termid     = $c->term_id;
-					$color_code = get_term_meta( $termid, 'color_code', true );
-					echo '<span style="background:' . $color_code . '">' . $c->name . '</span>';
-					if ( ++$i > 3 ) {
-						break;
-					}
+			foreach ( $categories as $c ) {
+				$termid     = $c->term_id;
+				$color_code = get_term_meta( $termid, 'color_code', true );
+				echo '<span style="background:' . $color_code . '">' . $c->name . '</span>';
+				if ( ++$i > 3 ) {
+					break;
 				}
-				?>
-			</span>
-			<div class="forum-post-index-avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?></div>
-			<div href="<?php the_permalink(); ?>" class="forum-post-index-title"><?php the_title(); ?> </div>
-			<span class="forum-post-index-author"><b><?php the_author(); ?></b>
+			}
+			?>
+		</span>
+		<div class="forum-post-index-avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?></div>
+		<div href="<?php the_permalink(); ?>" class="forum-post-index-title"><?php the_title(); ?> </div>
+		<span class="forum-post-index-author"><b><?php the_author(); ?></b>
 			<?php
 			$t = get_the_time( 'U' );
-			echo human_time_diff( $t, current_time( 'U' ) ) . __( ' ago','siforum' );
+			//phpcs:disable
+			echo human_time_diff( $t, current_time( 'U' ) ) . __( ' ago', 'siforum' );
+			//phpcs:enable
 			?>
 
-			</span>
-		</a>
+		</span>
+	</a>
 
 
 			<?php
@@ -430,32 +500,31 @@ function si_get_image_for_return( $id, $size = 'full' ) {
 /** Ajax New Post */
 	add_action( 'wp_ajax_create_new_from_from_index', 'create_new_from_from_index' );
 
-	function create_new_from_from_index(){
-		check_ajax_referer( 'new_post_sec', 'security' );
+function create_new_from_from_index() {
+	check_ajax_referer( 'new_post_sec', 'security' );
 
-		$the_content_text = $_POST['text'];
-		/*
-		$tidy = new tidy();
-		$clean_text = $tidy->repairString($the_content_text);
-		*/
-		$args = array(
+	$the_content_text = $_POST['text'];
+	/*
+	$tidy = new tidy();
+	$clean_text = $tidy->repairString($the_content_text);
+	*/
+	$args = array(
 		'post_title'    => wp_strip_all_tags( $_POST['title'] ),
 		'post_content'  => $_POST['text'],
 		'post_status'   => 'publish',
 		'post_author'   => $_POST['author'],
-		'post_category' => array( $_POST['cat'] )
-		);
+		'post_category' => array( $_POST['cat'] ),
+	);
 
-		$post_id = wp_insert_post($args);
-			if(!is_wp_error($post_id)){
-				wp_send_json_success( get_the_permalink( $post_id ), 200 );
-			}else{
-				wp_send_json_error( $post_id->get_error_message(), 403, );
-			}
-
+	$post_id = wp_insert_post( $args );
+	if ( ! is_wp_error( $post_id ) ) {
+		wp_send_json_success( get_the_permalink( $post_id ), 200 );
+	} else {
+		wp_send_json_error( $post_id->get_error_message(), 403, );
+	}
 
 		wp_die();
-	}
+}
 
 
 /** Ajax New Post */
