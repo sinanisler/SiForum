@@ -176,7 +176,7 @@ function wcr_category_fields( $term ) {
 		<input type="text" size="40" value="<?php echo esc_attr( $icon_slug ); ?>" id="term_fields[icon_slug]"
 			name="term_fields[icon_slug]"><br />
 		<span class="description"><?php _e( 'Dash Icon Slug-Name' ); ?> -
-			https://developer.wordpress.org/resource/dashicons/</span>
+			https://developer.wordpress.org/resource/dashicons/ (If you enabled fontawesome. use fontawesome icon names. <code>fa-regular fa-person</code> like.)</span>
 	</td>
 </tr>
 <tr class="form-field">
