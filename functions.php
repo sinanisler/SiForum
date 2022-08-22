@@ -2,7 +2,7 @@
 
 
 load_theme_textdomain( 'siforum', get_template_directory() . '/lang' );
-
+require_once get_stylesheet_directory() . '/class-siforumcustomizer.php';
 
 // Add Menu
 add_theme_support( 'menus' );
@@ -16,7 +16,7 @@ register_nav_menus(
 
 
 
-// Add Widgets 
+// Add Widgets
 /*
 register_sidebars( 1, array( 'name' => 'Sidebar_Single' ) );
 register_sidebars( 1, array( 'name' => 'Sidebar_Index' ) );
@@ -51,7 +51,7 @@ add_action( 'login_enqueue_scripts', 'siforum_logo_change' );
 // LOGIN  and REGISTER LOGO URL
 /*
 function custom_loginlogo_url($url) {
-     return bloginfo('url');
+	return bloginfo('url');
 }
 add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 
@@ -108,7 +108,7 @@ add_action( 'init', 'filter_html_usage', 11 );
 
 function wcr_category_fields( $term ) {
 
-	if ( current_filter() == 'category_edit_form_fields' ) {
+	if ( 'category_edit_form_fields' === current_filter() ) {
 		$icon_slug  = get_term_meta( $term->term_id, 'icon_slug', true );
 		$color_code = get_term_meta( $term->term_id, 'color_code', true );
 		?>
@@ -127,7 +127,7 @@ function wcr_category_fields( $term ) {
 			</td>
 		</tr>
 		<?php
-	} elseif ( current_filter() == 'category_add_form_fields' ) {
+	} elseif ( 'category_add_form_fields' === current_filter() ) {
 		?>
 		<div class="form-field">
 			<label for="term_fields[icon_slug]"><?php _e( 'Dash-Icon-Name-Slug' ); ?></label>
@@ -187,9 +187,14 @@ function atarikafa_comments( $comment, $args, $depth ) {
 			</div>
 			<div class="comment-body">
 				<span class="comment-author-name"><?php echo get_comment_author_link(); ?></span>
-				<span class="comment-date"><?php printf( __( '%1$s at %2$s', 'siforum' ), get_comment_date(), get_comment_time() ); ?></span>
+				<span class="comment-date">
 				<?php
-				if ( $comment->comment_approved == '0' ) {
+
+				printf( /* translators: $1 comment date and $2 comment time. */ __( '%1$s at %2$s', 'siforum' ), get_comment_date(), get_comment_time() );
+				?>
+				</span>
+				<?php
+				if ( '0' === $comment->comment_approved ) {
 					?>
 					<em><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> <?php _e( 'Comment awaiting approval', 'siforum' ); ?></em><br /><?php } ?>
 				<?php comment_text(); ?>
@@ -252,19 +257,19 @@ function author_remove_comments_actions( $actions ) {
 
 
 // Security - Hiding comment IPs for normal users
-function lp_remove_IP_for_user( $comment_author_IP, $comment_ID, $comment ) {
+function lp_remove_ip_for_user( $comment_author_ip, $comment_id, $comment ) {
 
 	if ( ! is_admin() ) {
-		return $comment_author_IP; // only do this on admin, though with this particular function, it probably only applies to admin at all
+		return $comment_author_ip; // only do this on admin, though with this particular function, it probably only applies to admin at all
 	}
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return '';
 	}
 
-	return $comment_author_IP;
+	return $comment_author_ip;
 
 }
-add_filter( 'get_comment_author_IP', 'lp_remove_IP_for_user', 10, 3 );
+add_filter( 'get_comment_author_IP', 'lp_remove_ip_for_user', 10, 3 );
 
 
 
@@ -314,7 +319,7 @@ function misha_my_load_more_scripts() {
 
 	wp_enqueue_script( 'jquery' );
 
-	wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/assets/js/siforum.js', array( 'jquery' ) , 15 , true );
+	wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/assets/js/siforum.js', array( 'jquery' ), 15, true );
 
 	wp_localize_script(
 		'my_loadmore',
@@ -375,7 +380,9 @@ function misha_loadmore_ajax_handler() {
 			<span class="forum-post-index-author"><b><?php the_author(); ?></b>
 			<?php
 			$t = get_the_time( 'U' );
-			echo human_time_diff( $t, current_time( 'U' ) ) . __( ' ago','siforum' );
+			//phpcs:disable
+			echo human_time_diff( $t, current_time( 'U' ) ) . __( ' ago', 'siforum' );
+			//phpcs:enable
 			?>
 
 			</span>
@@ -430,32 +437,31 @@ function si_get_image_for_return( $id, $size = 'full' ) {
 /** Ajax New Post */
 	add_action( 'wp_ajax_create_new_from_from_index', 'create_new_from_from_index' );
 
-	function create_new_from_from_index(){
-		check_ajax_referer( 'new_post_sec', 'security' );
+function create_new_from_from_index() {
+	check_ajax_referer( 'new_post_sec', 'security' );
 
-		$the_content_text = $_POST['text'];
-		/*
-		$tidy = new tidy();
-		$clean_text = $tidy->repairString($the_content_text);
-		*/
-		$args = array(
+	$the_content_text = $_POST['text'];
+	/*
+	$tidy = new tidy();
+	$clean_text = $tidy->repairString($the_content_text);
+	*/
+	$args = array(
 		'post_title'    => wp_strip_all_tags( $_POST['title'] ),
 		'post_content'  => $_POST['text'],
 		'post_status'   => 'publish',
 		'post_author'   => $_POST['author'],
-		'post_category' => array( $_POST['cat'] )
-		);
+		'post_category' => array( $_POST['cat'] ),
+	);
 
-		$post_id = wp_insert_post($args);
-			if(!is_wp_error($post_id)){
-				wp_send_json_success( get_the_permalink( $post_id ), 200 );
-			}else{
-				wp_send_json_error( $post_id->get_error_message(), 403, );
-			}
-
+	$post_id = wp_insert_post( $args );
+	if ( ! is_wp_error( $post_id ) ) {
+		wp_send_json_success( get_the_permalink( $post_id ), 200 );
+	} else {
+		wp_send_json_error( $post_id->get_error_message(), 403, );
+	}
 
 		wp_die();
-	}
+}
 
 
 /** Ajax New Post */
