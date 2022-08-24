@@ -70,10 +70,10 @@ add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 function siforum_get_header_logo_and_link() {
 	$logo = get_theme_mod( 'siforum_header_image' );
 	$link = get_theme_mod( 'siforum_header_link' );
-	$wh   = str_replace( get_home_url() . '/', '', $logo );
-	$whh  = getimagesize( $wh );
-
 	if ( ! empty( $logo ) && ! empty( $link ) ) {
+		$wh  = str_replace( get_home_url() . '/', '', $logo );
+		$whh = getimagesize( $wh );
+
 		$html  = '<a href="' . $link . '" class="forum-header-menu-logo-customized"> </a>';
 		$html .= '<style>.forum-header-menu-logo-customized{width: ' . $whh[0] . 'px;height: ' . $whh[1] . 'px;float: left;box-sizing: border-box;outline: none;text-align: left;background: url(' . $logo . ') center no-repeat;margin:10px 15px 10px 13px;}</style>';
 
